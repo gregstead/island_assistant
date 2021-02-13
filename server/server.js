@@ -44,10 +44,10 @@ const FORCE_SCHEMA = process.env.NODE_ENV === 'test';
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/project3', {
   useNewUrlParser: true,
   useFindAndModify: false,
-  useUnifiedTopology: true,
+  useUnifiedTopology: true
 });
 
-app.listen(PORT, (err) => {
+app.listen(PORT, err => {
   if (err) throw err;
   console.log(`🌎 Server is Ready and Listening on http://localhost:${PORT}`); // eslint-disable-line no-console
 });
