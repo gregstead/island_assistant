@@ -16,7 +16,9 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(helmet());
-app.use(session({ secret: 'TBD', resave: true, saveUninitialized: true }));
+app.use(
+  session({ secret: 'candycorn', resave: true, saveUninitialized: true })
+);
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors(corsOptions));
@@ -39,7 +41,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Dynamically force schema refresh only for 'test'
-const FORCE_SCHEMA = process.env.NODE_ENV === 'test';
+const FORCE_SCHEMA = process.env.NODE_ENV === 'test'; // eslint-disable-line  no-unused-vars
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/project3', {
   useNewUrlParser: true,
@@ -47,7 +49,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/project3', {
   useUnifiedTopology: true
 });
 
-app.listen(PORT, err => {
+app.listen(PORT, (err) => {
   if (err) throw err;
   console.log(`🌎 Server is Ready and Listening on http://localhost:${PORT}`); // eslint-disable-line no-console
 });
