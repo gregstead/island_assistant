@@ -1,7 +1,7 @@
-const { model, Schema } = require('mongoose');
+const { model, Schema } = require("mongoose");
 // https://www.npmjs.com/package/passport-local-mongoose
-const passportLocalMongoose = require('passport-local-mongoose');
-const validator = require('validator').isEmail;
+const passportLocalMongoose = require("passport-local-mongoose");
+const validator = require("validator").isEmail;
 
 const User = new Schema({
   // User Common Name (to be displayed on the site)
@@ -10,26 +10,26 @@ const User = new Schema({
     trim: true,
     lowercase: true,
     unique: true,
-    required: 'Username is required'
+    //required: 'Username is required'
   },
   // User Email Address
   email: {
     type: String,
     validate: {
       validator: validator,
-      message: 'That is not a valid email',
-      isAsync: false
-    }
+      message: "That is not a valid email",
+      isAsync: false,
+    },
   },
   // Password
   password: String,
   // Date Account Was Created
   dateCreated: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 User.plugin(passportLocalMongoose);
 
-module.exports = model('User', User);
+module.exports = model("User", User);
