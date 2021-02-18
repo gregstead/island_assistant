@@ -29,7 +29,12 @@ router.get("/user/:id", (req, res) => {
   // Get a specific user
   const id = req.params.id;
   db.User.find({ _id: id }).then((data) => {
-    res.json(data);
+    data.password = null;
+    res.json({
+      username: data[0].username,
+      email: data[0].email,
+      dateCreated: data[0].dateCreated,
+    });
   });
 });
 
