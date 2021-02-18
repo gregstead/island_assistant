@@ -10,17 +10,19 @@ router.get("/user", (req, res) => {
   db.User.find().then((users) => res.json(users));
 });
 
-router.post("/user", (req, res) => {
+router.post("/user", ({ body }, res) => {
   // Create a new user
   db.User.create({
-    username: req.body.username,
-    password: req.body.password,
-    email: req.body.email,
+    username: body.username,
+    password: body.password,
+    email: body.email,
   })
-    .then((data) => {
+    .then(function(data) {
       res.json(data);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      throw err;
+    });
 });
 
 router.get("/user/:id", (req, res) => {
