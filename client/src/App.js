@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 //import { Wrapper, Login, Register, Flowers } from "./components";
-//import Navbar from "./components/Navbar/Navbar";
+import AppBar from "./components/Navbar/Navbar";
 //import Container from "./components/Container/Container";
 import Login from "./components/Login/login";
 import Register from "./components/Login/register";
