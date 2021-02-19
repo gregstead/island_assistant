@@ -1,5 +1,6 @@
 import React from "react";
-import { Tabs, Tab, AppBar } from "@material-ui/core";
+import PropTypes from 'prop-types';
+import { AppBar, Container, Tabs, Tab } from "@material-ui/core";
 import About from "./aAbout";
 import Cosmos from "./aCosmos";
 import Hyacinths from "./aHyacinths";
@@ -43,11 +44,43 @@ const Flowers = props => {
     setSelectedTab(newValue);
   };
 
-  // return <div>This is our flowers Page</div>;
+  function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+  
+    return (
+      <div
+        role="tabpanel"
+        hidden={value !== index}
+        id={`scrollable-force-tabpanel-${index}`}
+        aria-labelledby={`scrollable-force-tab-${index}`}
+        {...other}
+      >
+        {value === index && (
+          <Box p={3}>
+            <Typography>{children}</Typography>
+          </Box>
+        )}
+      </div>
+    );
+  }
+  
+  TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.any.isRequired,
+    value: PropTypes.any.isRequired,
+  };
+
   return (
     <>
-      <AppBar position="static">
-        <Tabs value={selectedTab} onChange={handleChange}>
+    <Container maxWidth='xlg'>
+      <AppBar position="static" style={{ backgroundColor: "#FFB075", marginBottom: "50px", color: "#333", fontWeight: "bolder" }}>
+        <Tabs 
+          value={selectedTab} 
+          onChange={handleChange} 
+          variant="scrollable" 
+          scrollButtons="on" 
+          centered
+        >
           <Tab label="About" />
           <Tab label="Cosmos" />
           <Tab label="Hyacinths" />
@@ -68,6 +101,7 @@ const Flowers = props => {
       {selectedTab === 6 && <Roses />}
       {selectedTab === 7 && <Tulips />}
       {selectedTab === 8 && <Windflowers />}
+    </Container>
     </>
   );
 };

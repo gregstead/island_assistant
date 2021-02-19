@@ -1,5 +1,5 @@
 import React from "react";
-import RegisterTextFields from "../components/Login/register";
+import RegisterTextFields from "../components/Login/Register";
 
 function Register () {
     return (
