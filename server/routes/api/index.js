@@ -40,8 +40,10 @@ router.get("/user/:id", (req, res) => {
 
 router.put("/user/:id", (req, res) => {
   // Update a specific user
-  const id = req.params.id;
-  db.User.findOneAndUpdate({ _id: id }).then((data) => {
+  const filter = { _id: req.params.id };
+  const update = { ...req.body };
+  const opts = { new: true };
+  db.User.findOneAndUpdate(filter, update, opts).then((data) => {
     res.json(data);
   });
 });
