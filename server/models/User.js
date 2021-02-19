@@ -26,12 +26,21 @@ const User = new Schema({
       required: true,
     },
   },
+  firstName: String,
+  lastName: String,
   // Password
   password: { type: String, required: true },
+  // Friend Code
+  friendCode: String,
+  dreamAddress: String,
   // Date Account Was Created
   dateCreated: {
     type: Date,
     default: Date.now,
+  },
+  items: {
+    type: Array,
+    default: [],
   },
 });
 // https://stackoverflow.com/questions/14588032/mongoose-password-hashing/14595363
