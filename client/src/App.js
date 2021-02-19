@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-// import { Wrapper, Login, Register, Flowers } from "./components";
+//import { Wrapper, Login, Register, Flowers } from "./components";
 //import Navbar from "./components/Navbar/Navbar";
 //import Container from "./components/Container/Container";
 import Login from "./components/Login/login";
 import Register from "./components/Login/register";
-//import Flowers from "./Pages/Flowers";
+import Flowers from "./pages/Flowers";
 //import Villagers from "./components/Card/VillagerCard";
 
 function App() {
@@ -18,9 +18,9 @@ function App() {
             <Route exact path="/" component={Login} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
-            {/* <Redirect exact from="/flowers" to="/flowers/about" />
+            <Redirect exact from="/flowers" to="/flowers/about" />
             <Route path="/Flowers/:page?" render={props => <Flowers {...props} />} />
-            <Route exact path="/Villagers" component={Villagers} /> */}
+            {/* <Route exact path="/Villagers" component={Villagers} /> */}
           </Switch>
           {/* <Route exact path="/search" component={Search} /> */}
         {/* </Container> */}
