@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <div>
-        {/* <Navbar /> */}
+        <AppBar />
         {/* <Container> */}
           <Switch>
             <Route exact path="/" component={Login} />
