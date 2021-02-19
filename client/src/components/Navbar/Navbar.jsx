@@ -18,7 +18,7 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ backgroundColor: "#7cc9c3", marginBottom: "50px" }}>
+      <AppBar position="static" style={{ backgroundColor: "#b3f4ef", marginBottom: "50px", color: "#333333" }}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} aria-label="menu">
             <MenuIcon />
