@@ -16,6 +16,8 @@ router.post("/user", ({ body }, res) => {
     username: body.username,
     password: body.password,
     email: body.email,
+    friendCode: body.friendCode,
+    dreamAddress: body.dreamAddress,
   })
     .then(function(data) {
       res.json(data);
