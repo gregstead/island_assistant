@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 //import { Wrapper, Login, Register, Flowers } from "./components";
 import AppBar from "./components/Navbar/Navbar";
 //import Container from "./components/Container/Container";
-import Login from "./components/Login/login";
-import Register from "./components/Login/register";
+import Login from "./components/Login/Login";
+import Register from "./components/Login/Register";
 import Flowers from "./pages/Flowers";
 //import Villagers from "./components/Card/VillagerCard";
 
