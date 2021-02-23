@@ -1,7 +1,41 @@
-import React from "react";
+import React from 'react';
+import { makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableRow } from '@material-ui/core';
 
-const Lilies = () => {
-  return <div>This is our Lilies Flowers page</div>;
-};
+const useStyles = makeStyles({
+  table: {
+    minWidth: 650,
+  },
+});
 
-export default Lilies;
+function createData(f1, plus, f2, equals, f3) {
+  return { f1, plus, f2, equals, f3 };
+}
+
+const rows = [
+  createData('Lilies-Red', '+', 'Lilies-Yellow',  '=', 'Lilies-Orange'),
+  createData('Lilies-Red', '+', 'Lilies-Red',     '=', 'Lilies-Black'),
+  createData('Lilies-Red', '+', 'Lilies-Red',     '=', 'Lilies-Pink'),
+  createData('Lilies-Red', '+', 'Lilies-White',   '=', 'Lilies-Pink'),
+];
+
+export default function BasicTable() {
+  const classes = useStyles();
+
+  return (
+    <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="simple table">
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow>
+              <TableCell component="th" scope="row">{row.f1}</TableCell>
+              <TableCell align="right">{row.plus}</TableCell>
+              <TableCell align="right">{row.f2}</TableCell>
+              <TableCell align="right">{row.equals}</TableCell>
+              <TableCell align="right">{row.f3}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+}
