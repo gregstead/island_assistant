@@ -5,6 +5,7 @@ import AppBar from "./components/Navbar/Navbar";
 //import Container from "./components/Container/Container";
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
+import Accordion from "./pages/Home";
 import Flowers from "./pages/Flowers";
 //import Villagers from "./components/Card/VillagerCard";
 
@@ -18,6 +19,7 @@ function App() {
             <Route exact path="/" component={Login} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/home" component={Accordion} />
             <Redirect exact from="/flowers" to="/flowers/about" />
             <Route path="/Flowers/:page?" render={props => <Flowers {...props} />} />
             {/* <Route exact path="/Villagers" component={Villagers} /> */}
