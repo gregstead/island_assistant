@@ -72,7 +72,7 @@ const Flowers = props => {
 
   return (
     <>
-    <Container maxWidth='xlg'>
+    <Container maxWidth='lg'>
       <AppBar position="static" style={{ backgroundColor: "#FFB075", marginBottom: "50px", color: "#333", fontWeight: "bolder" }}>
         <Tabs 
           value={selectedTab} 
