@@ -1,7 +1,40 @@
-import React from "react";
+import React from 'react';
+import { makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableRow } from '@material-ui/core';
 
-const Cosmos = () => {
-  return <div>This is our Cosmos Flowers page</div>;
-};
+const useStyles = makeStyles({
+  table: {
+    minWidth: 650,
+  },
+});
 
-export default Cosmos;
+function createData(f1, plus, f2, equals, f3) {
+  return { f1, plus, f2, equals, f3 };
+}
+
+const rows = [
+  createData('Cosmos-Red',    '+', 'Cosmos-Yellow', '=', 'Cosmos-Orange'),
+  createData('Cosmos-Red',    '+', 'Cosmos-White',  '=', 'Cosmos-Pink'),
+  createData('Cosmos-Orange', '+', 'Cosmos-Orange', '=', 'Cosmos-Black'),
+];
+
+export default function BasicTable() {
+  const classes = useStyles();
+
+  return (
+    <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="simple table">
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow>
+              <TableCell component="th" scope="row">{row.f1}</TableCell>
+              <TableCell align="right">{row.plus}</TableCell>
+              <TableCell align="right">{row.f2}</TableCell>
+              <TableCell align="right">{row.equals}</TableCell>
+              <TableCell align="right">{row.f3}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+}
