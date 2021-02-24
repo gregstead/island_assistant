@@ -5,4 +5,3 @@ const login = async (req, res) => {
 };
 
 exports.login = login;
-c;
