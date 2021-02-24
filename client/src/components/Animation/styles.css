@@ -22,7 +22,6 @@ body {
 }
 
 #root {
-  overflow: hidden;
   background: #f0f0f0;
 }
 
@@ -68,10 +67,10 @@ body {
 }
 
 .container {
-  width:50%;
-  height: 100%;
+  position: 'relative';
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 5em;
+  margin-top: 15%;
+ 
 }
