@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Box,
@@ -8,7 +8,7 @@ import {
   TextField,
 } from "@material-ui/core";
 import Image from "material-ui-image";
-// import "./style.css";
+import API from "../../utils/API";
 
 const useStyles = makeStyles((theme) => ({
   root: { display: "flex", flexWrap: "wrap" },
@@ -30,6 +30,10 @@ export default function RegisterTextFields() {
     dreamAddress: "",
   });
   const classes = useStyles();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
 
   return (
     // <div className={classes.root}>
