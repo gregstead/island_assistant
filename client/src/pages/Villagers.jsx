@@ -20,6 +20,7 @@ export default function MediaCard() {
   };
   const handleClick = (event) => {
     API.getVillagerNames(search).then((results) => {
+    // API.getOne("villagers").then((results) => {
       console.log(search, results.data);
       setVillager(results.data);
     });

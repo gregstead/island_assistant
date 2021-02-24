@@ -13,7 +13,8 @@ import Register from "./components/Login/Register";
 import Accordion from "./pages/Home";
 import Flowers from "./pages/Flowers";
 import ProtectedRoute from "./components/ProtectedRoute";
-//import Villagers from "./components/Card/VillagerCard";
+import Villagers from "./pages/Villagers";
+
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
           />
           {/* <Route exact path="/Villagers" component={Villagers} /> */}
         </Switch>
-        {/* <Route exact path="/search" component={Search} /> */}
+        
         {/* </Container> */}
         {/* <Footer /> */}
       </div>
