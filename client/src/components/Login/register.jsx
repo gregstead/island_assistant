@@ -1,46 +1,34 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import { Container } from '@material-ui/core';
-import { Button } from '@material-ui/core';
-import "./style.css";
+import { Container, Box, Button, makeStyles, Row, TextField } from "@material-ui/core";
+import Image from 'material-ui-image'
+// import "./style.css";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    flexWrap: "wrap",
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: "25ch",
-  },
+  root: { display: "flex", flexWrap: "wrap" },
+  textField: { marginLeft: theme.spacing(1), marginRight: theme.spacing(1), width: "25ch" },
 }));
 
 export default function RegisterTextFields() {
   const classes = useStyles();
 
   return (
-    //<div className={classes.root}>
-    <Container maxWidth='sm'>
-      <TextField
-        id="outlined-full-width" label="First Name" style={{margin: 12}} placeholder="First Name" helperText="" fullWidth margin="normal" InputLabelProps={{shrink: true}} variant="outlined"/>
-         <TextField
-        id="outlined-full-width" label="Last Name" style={{margin: 12}} placeholder="Last Name" helperText="" fullWidth margin="normal" InputLabelProps={{shrink: true}} variant="outlined"/>
-         <TextField
-        id="outlined-full-width" label="User Name" style={{margin: 12}} placeholder="User Name" helperText="" fullWidth margin="normal" InputLabelProps={{shrink: true}} variant="outlined"/>
-      <TextField
-        id="outlined-full-width" label="Email" style={{ margin: 12 }} placeholder="Email" helperText="" fullWidth margin="normal" InputLabelProps={{shrink: true}} variant="outlined"/>
-      <TextField
-        id="outlined-full-width" label="Password" style={{ margin: 12 }} placeholder="Password" helperText="" fullWidth margin="normal" InputLabelProps={{shrink: true}} variant="outlined"/>
-      <TextField
-        id="outlined-full-width" label="Friend Code" style={{ margin: 12 }} placeholder="Friend Code" helperText="" fullWidth margin="normal" InputLabelProps={{shrink: true}} variant="outlined"/>
-      <TextField
-        id="outlined-full-width" label="Dream Address" style={{ margin: 12 }} placeholder="Dream Address" helperText="" fullWidth margin="normal" InputLabelProps={{shrink: true}} variant="outlined"/>
-      <TextField
-        id="outlined-full-width" label="Location" style={{ margin: 12 }} placeholder="Location" helperText="" fullWidth margin="normal" InputLabelProps={{shrink: true}} variant="outlined"/>
-     <Button variant="contained" style={{ margin: 12 }} color="Primary">Enter</Button>
+    // <div className={classes.root}>
+    <Container maxWidth="sm">
+
+      <Box style={{ fontSize: "50px", height: "50px", marginBottom: "15px", textAlign: "center" }}>Registration</Box>
+
+      <Image src="../../images/welcome.jpg" style={{ border: "solid", height: "50%", marginBottom: "20px" }} />
+
+      <TextField label="Last Name"      placeholder="Last Name"      helperText="" fullWidth margin="normal" InputLabelProps={{ shrink: true }} variant="outlined" />
+      <TextField label="User Name"      placeholder="User Name"      helperText="" fullWidth margin="normal" InputLabelProps={{ shrink: true }} variant="outlined" />
+      <TextField label="Email"          placeholder="Email"          helperText="" fullWidth margin="normal" InputLabelProps={{ shrink: true }} variant="outlined" />
+      <TextField label="Password"       placeholder="Password"       helperText="" fullWidth margin="normal" InputLabelProps={{ shrink: true }} variant="outlined" />
+      <TextField label="Friend Code"    placeholder="Friend Code"    helperText="" fullWidth margin="normal" InputLabelProps={{ shrink: true }} variant="outlined" />
+      <TextField label="Dream Address"  placeholder="Dream Address"  helperText="" fullWidth margin="normal" InputLabelProps={{ shrink: true }} variant="outlined" />
+      <TextField label="Location"       placeholder="Location"       helperText="" fullWidth margin="normal" InputLabelProps={{ shrink: true }} variant="outlined" />
+
+      <Button variant="contained" color="Primary" style={{ marginTop: "15px" }}>Enter</Button>
     </Container>
-    //</div>
+    // </div>
   );
 }
