@@ -1,22 +1,12 @@
 import React, { useState } from "react";
-import {
-  Container,
-  Box,
-  Button,
-  makeStyles,
-  Row,
-  TextField,
-} from "@material-ui/core";
+import { Box, Container, makeStyles, TextField } from "@material-ui/core";
 import Image from "material-ui-image";
+import BtnStyle from "../Button/Button";
 import API from "../../utils/API";
 
 const useStyles = makeStyles((theme) => ({
   root: { display: "flex", flexWrap: "wrap" },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: "25ch",
-  },
+  textField: { marginLeft: theme.spacing(1), marginRight: theme.spacing(1), width: "25ch" },
 }));
 
 export default function RegisterTextFields() {
@@ -47,108 +37,78 @@ export default function RegisterTextFields() {
   return (
     // <div className={classes.root}>
     <Container maxWidth="sm">
-      <Box
-        style={{
-          fontSize: "50px",
-          height: "50px",
-          marginBottom: "15px",
-          textAlign: "center",
-        }}
-      >
-        Registration
-      </Box>
+      <Box style={{ fontSize: "50px", height: "50px", marginBottom: "15px", textAlign: "center" }}>Registration</Box>
 
-      <Image
-        src="../../images/welcome.jpg"
-        style={{ border: "solid", height: "50%", marginBottom: "20px" }}
-      />
+      {/* <Image src="../../images/welcome.jpg" style={{ border: "solid", height: "50%", marginBottom: "20px" }} /> */}
+      <Image src="../../images/welcome.jpg" style={{ border: "solid", height: "50%", marginBottom: "20px" }} />
+      
       <TextField
-        name="firstName"
+        fullWidth margin="normal"
+        helperText=""
+        InputLabelProps={{ shrink: true }}
         label="First Name"
+        onChange={handleChange}
         placeholder="First Name"
-        helperText=""
-        fullWidth
-        margin="normal"
-        InputLabelProps={{ shrink: true }}
         variant="outlined"
-        onChange={handleChange}
       />
       <TextField
-        name="lastName"
+        fullWidth margin="normal"
+        helperText=""
+        InputLabelProps={{ shrink: true }}
         label="Last Name"
+        onChange={handleChange}
         placeholder="Last Name"
-        helperText=""
-        fullWidth
-        margin="normal"
-        InputLabelProps={{ shrink: true }}
         variant="outlined"
-        onChange={handleChange}
       />
       <TextField
-        name="username"
+        fullWidth margin="normal"
+        helperText=""
+        InputLabelProps={{ shrink: true }}
         label="Username"
+        onChange={handleChange}
         placeholder="Username"
-        helperText=""
-        fullWidth
-        margin="normal"
-        InputLabelProps={{ shrink: true }}
         variant="outlined"
-        onChange={handleChange}
       />
       <TextField
-        name="email"
+        fullWidth margin="normal"
+        helperText=""
+        InputLabelProps={{ shrink: true }}
         label="Email"
+        onChange={handleChange}
         placeholder="Email"
-        helperText=""
-        fullWidth
-        margin="normal"
-        InputLabelProps={{ shrink: true }}
         variant="outlined"
-        onChange={handleChange}
       />
       <TextField
-        name="password"
+        fullWidth margin="normal"
+        helperText=""
+        InputLabelProps={{ shrink: true }}
         label="Password"
+        onChange={handleChange}
         placeholder="Password"
-        helperText=""
-        fullWidth
-        margin="normal"
-        InputLabelProps={{ shrink: true }}
-        variant="outlined"
-        onChange={handleChange}
         type="password"
+        variant="outlined"
       />
       <TextField
-        name="friendCode"
+        fullWidth margin="normal"
+        helperText=""
+        InputLabelProps={{ shrink: true }}
         label="Friend Code"
-        placeholder="Friend Code"
-        helperText=""
-        fullWidth
-        margin="normal"
-        InputLabelProps={{ shrink: true }}
-        variant="outlined"
         onChange={handleChange}
+        placeholder="Friend Code"
+        variant="outlined"
       />
       <TextField
-        name="dreamAddress"
-        label="Dream Address"
-        placeholder="Dream Address"
+        fullWidth margin="normal"
         helperText=""
-        fullWidth
-        margin="normal"
         InputLabelProps={{ shrink: true }}
-        variant="outlined"
+        label="Dream Address"
         onChange={handleChange}
+        placeholder="Dream Address"
+        variant="outlined"
       />
 
-      <Button
-        variant="contained"
-        onClick={handleSubmit}
-        color="Primary"
-        style={{ marginTop: "15px" }}
-      >
-        Enter
-      </Button>
+      <BtnStyle onClick={handleSubmit} variant="contained"></BtnStyle>
+
     </Container>
     // </div>
   );
