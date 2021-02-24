@@ -7,7 +7,7 @@ import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
 import Accordion from "./pages/Home";
 import Flowers from "./pages/Flowers";
-//import Villagers from "./components/Card/VillagerCard";
+import Villagers from "./pages/Villagers";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
             <Route exact path="/home" component={Accordion} />
             <Redirect exact from="/flowers" to="/flowers/about" />
             <Route path="/Flowers/:page?" render={props => <Flowers {...props} />} />
-            {/* <Route exact path="/Villagers" component={Villagers} /> */}
+            <Route exact path="/Villagers" component={Villagers} />
           </Switch>
           {/* <Route exact path="/search" component={Search} /> */}
         {/* </Container> */}
