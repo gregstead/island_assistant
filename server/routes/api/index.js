@@ -10,15 +10,9 @@ router.get("/user", (req, res) => {
   db.User.find().then((users) => res.json(users));
 });
 
-router.post("/user", ({ body }, res) => {
+router.post("/user", (req, res) => {
   // Create a new user
-  db.User.create({
-    username: body.username,
-    password: body.password,
-    email: body.email,
-    friendCode: body.friendCode,
-    dreamAddress: body.dreamAddress,
-  })
+  db.User.create(req.body)
     .then(function(data) {
       res.json(data);
     })
@@ -56,10 +50,6 @@ router.delete("/user/:id", (req, res) => {
   db.User.findOneAndDelete({ _id: id }).then((data) => {
     res.json(data);
   });
-});
-
-router.post("/login", passport.authenticate("local"), (req, res) => {
-  res.json(true);
 });
 
 module.exports = router;

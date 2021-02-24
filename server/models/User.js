@@ -13,8 +13,6 @@ const User = new Schema({
     trim: true,
     lowercase: true,
     unique: true,
-    required: true,
-    //required: 'Username is required'
   },
   // User Email Address
   email: {
@@ -26,10 +24,8 @@ const User = new Schema({
       required: true,
     },
   },
-  firstName: String,
-  lastName: String,
   // Password
-  password: { type: String, required: true },
+  password: { type: String },
   // Friend Code
   friendCode: String,
   dreamAddress: String,
@@ -63,11 +59,9 @@ User.pre("save", function(next) {
   });
 });
 
-User.methods.comparePassword = function(password, cb) {
-  bcrypt.compare(password, this.password, function(err, isMatch) {
-    if (err) return cb(err);
-    cb(null, isMatch);
-  });
+User.methods.comparePassword = function(password) {
+  const user = this.user;
+  bcrypt.compareSync(password, user.password);
 };
 
 User.plugin(passportLocalMongoose);

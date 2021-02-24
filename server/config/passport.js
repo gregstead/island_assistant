@@ -6,21 +6,28 @@ const { User } = require("../models");
 // In other words, we want login with a username/email and password
 // passport.use(User.createStrategy());
 passport.use(
-  new LocalStrategy(function(username, password, done) {
-    User.findOne({ username: username }, (err, user) => {
-      console.log(user);
-      if (err) {
-        return done(err);
-      }
-      if (!user) {
-        return done(null, false, { message: "Incorrect username." });
-      }
-      if (user.password != password) {
-        return done(null, false, { message: "Incorrect password." });
-      }
-      return done(null, user);
-    });
-  })
+  new LocalStrategy(
+    {
+      usernameField: "email",
+    },
+    (email, password, done) => {
+      User.findOne({ email: email }, (err, user) => {
+        if (err) {
+          return done(err);
+        }
+        if (!user) {
+          console.log(`incorrect username`);
+          return done(null, false, { message: "Incorrect username." });
+        }
+        if (!user.comparePassword(password)) {
+          console.log(`incorrect password`);
+          return done(null, false, { message: "Incorrect password." });
+        }
+        console.log("here");
+        return done(null, user);
+      });
+    }
+  )
 );
 
 // In order to help keep authentication state across HTTP requests,
