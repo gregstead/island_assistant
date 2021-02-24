@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 import ProtectedRoute from "./components/ProtectedRoute";
 import MiniDrawer from "./components/Navbar/Navbar";
 import Login from "./components/Login/Login";
-import Register from "./components/Login/Register";
+import Register from "./components/Register/Register";
 import Accordion from "./pages/Home";
 import Flowers from "./pages/Flowers";
 import Villagers from "./pages/Villagers";
