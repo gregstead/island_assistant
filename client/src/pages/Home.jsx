@@ -59,17 +59,17 @@ export default function CustomizedAccordions() {
     <div>
       <Box style={{ fontSize: "50px", height: "50px", marginBottom: "15px", textAlign: "center" }}>Home</Box>
 
-      <Container maxWidth='lg'>
+      <Container maxWidth='lg' style={{ display: "flex", flexDirection: 'row'}}>
 
-        <Box style={{ border: "solid", borderRadius: "30px", marginBottom: "20px" }}>
+        <Box style={{ border: "solid", borderRadius: "30px", margin: "auto", marginBottom: "25px", width: "25%"  }}>
           <Card id="page-cards" />
           {/* <Card id="page-cards" /> */}
           {/* <Card id="page-cards" /> */}
         </Box>
-        <Box style={{ border: "solid", borderRadius: "30px", marginBottom: "20px", width: "25%" }}>
+        <Box style={{ border: "solid", borderRadius: "30px", margin: "auto", marginBottom: "25px", width: "25%" }}>
           <Card style={{ display: "inline" }} />
         </Box>
-        <Box style={{ border: "solid", borderRadius: "30px", marginBottom: "20px", width: "25%" }}>
+        <Box style={{ border: "solid", borderRadius: "30px", margin: "auto", marginBottom: "25px", width: "25%" }}>
           <Card style={{ display: "inline" }} />
         </Box>
 
