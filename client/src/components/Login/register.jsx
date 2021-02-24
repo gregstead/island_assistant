@@ -116,6 +116,7 @@ export default function RegisterTextFields() {
         InputLabelProps={{ shrink: true }}
         variant="outlined"
         onChange={handleChange}
+        type="password"
       />
       <TextField
         name="friendCode"
