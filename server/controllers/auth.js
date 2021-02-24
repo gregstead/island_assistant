@@ -1,8 +1,8 @@
 // const db = require('../models');
 
 const login = async (req, res) => {
-  console.log("auth line 4");
-  res.json(req.user);
+  res.json({ id: req.user.id });
 };
 
 exports.login = login;
+c;

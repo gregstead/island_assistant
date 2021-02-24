@@ -7,23 +7,25 @@ const { User } = require("../models");
 // passport.use(User.createStrategy());
 passport.use(
   new LocalStrategy(
+    // User will log in with email rather than username
     {
       usernameField: "email",
     },
     (email, password, done) => {
+      // When a user tries to sign in, this code runs
       User.findOne({ email: email }, (err, user) => {
-        if (err) {
-          return done(err);
-        }
+        if (err) throw err;
         if (!user) {
-          console.log(`incorrect username`);
-          return done(null, false, { message: "Incorrect username." });
+          console.log("Unknown email");
+          return done(null, false, { message: "Unknown email" });
         }
-        if (!user.comparePassword(password)) {
-          console.log(`incorrect password`);
-          return done(null, false, { message: "Incorrect password." });
+        if (!user.comparePassword(password, (_err, data) => data)) {
+          console.log("incorrect password");
+          return done(null, false, {
+            message: "Incorrect password",
+          });
         }
-        console.log("here");
+        console.log("Done");
         return done(null, user);
       });
     }
