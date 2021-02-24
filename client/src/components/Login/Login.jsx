@@ -28,6 +28,11 @@ function LoginTextFields() {
   function handleSubmit(e) {
     e.preventDefault();
     API.userLogin(loginState);
+    setLoginState({
+      email: "",
+      password: "",
+    });
+    window.location.replace("/home");
   }
 
   function handleChange(e) {
