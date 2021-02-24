@@ -33,6 +33,15 @@ export default function RegisterTextFields() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    API.userRegister(registerState);
+  }
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setRegisterState({
+      ...registerState,
+      [name]: value,
+    });
   }
 
   return (
@@ -62,6 +71,7 @@ export default function RegisterTextFields() {
         margin="normal"
         InputLabelProps={{ shrink: true }}
         variant="outlined"
+        onChange={handleChange}
       />
       <TextField
         name="lastName"
@@ -72,6 +82,7 @@ export default function RegisterTextFields() {
         margin="normal"
         InputLabelProps={{ shrink: true }}
         variant="outlined"
+        onChange={handleChange}
       />
       <TextField
         name="username"
@@ -82,6 +93,7 @@ export default function RegisterTextFields() {
         margin="normal"
         InputLabelProps={{ shrink: true }}
         variant="outlined"
+        onChange={handleChange}
       />
       <TextField
         name="email"
@@ -92,6 +104,7 @@ export default function RegisterTextFields() {
         margin="normal"
         InputLabelProps={{ shrink: true }}
         variant="outlined"
+        onChange={handleChange}
       />
       <TextField
         name="password"
@@ -102,6 +115,7 @@ export default function RegisterTextFields() {
         margin="normal"
         InputLabelProps={{ shrink: true }}
         variant="outlined"
+        onChange={handleChange}
       />
       <TextField
         name="friendCode"
@@ -112,6 +126,7 @@ export default function RegisterTextFields() {
         margin="normal"
         InputLabelProps={{ shrink: true }}
         variant="outlined"
+        onChange={handleChange}
       />
       <TextField
         name="dreamAddress"
@@ -122,9 +137,15 @@ export default function RegisterTextFields() {
         margin="normal"
         InputLabelProps={{ shrink: true }}
         variant="outlined"
+        onChange={handleChange}
       />
 
-      <Button variant="contained" color="Primary" style={{ marginTop: "15px" }}>
+      <Button
+        variant="contained"
+        onClick={handleSubmit}
+        color="Primary"
+        style={{ marginTop: "15px" }}
+      >
         Enter
       </Button>
     </Container>
