@@ -53,39 +53,37 @@ function LoginTextFields() {
         <Card />
 
         <Container maxWidth="sm">
-          <FormControl>
-            <TextField
-              name="email"
-              value={loginState.email}
-              onChange={handleChange}
-              id="email"
-              label="Email"
-              style={{ margin: 12 }}
-              placeholder="Email"
-              helperText=""
-              fullWidth
-              margin="normal"
-              InputLabelProps={{ shrink: true }}
-              variant="outlined"
-            />
-          </FormControl>
-          <FormControl>
-            <TextField
-              name="password"
-              value={loginState.password}
-              onChange={handleChange}
-              id="password"
-              label="Password"
-              type="password"
-              style={{ margin: 12 }}
-              placeholder="Password"
-              helperText=""
-              fullWidth
-              margin="normal"
-              InputLabelProps={{ shrink: true }}
-              variant="outlined"
-            />
-          </FormControl>
+          <TextField
+            name="email"
+            value={loginState.email}
+            onChange={handleChange}
+            id="email"
+            label="Email"
+            style={{ margin: 12 }}
+            placeholder="Email"
+            helperText=""
+            fullWidth
+            margin="normal"
+            InputLabelProps={{ shrink: true }}
+            variant="outlined"
+          />
+
+          <TextField
+            name="password"
+            value={loginState.password}
+            onChange={handleChange}
+            id="password"
+            label="Password"
+            type="password"
+            style={{ margin: 12 }}
+            placeholder="Password"
+            helperText=""
+            fullWidth
+            margin="normal"
+            InputLabelProps={{ shrink: true }}
+            variant="outlined"
+          />
+
           <Button
             variant="contained"
             style={{ margin: 12 }}

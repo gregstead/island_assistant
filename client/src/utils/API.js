@@ -21,8 +21,8 @@ const API = {
   },
 
   // getVillagerNames: function () {
-    // const url = `https://api.nookipedia.com/villagers?${NOOKIPEDIA_API_KEY}&excludedetails=true`;
-    // return axios.get(url);
+  // const url = `https://api.nookipedia.com/villagers?${NOOKIPEDIA_API_KEY}&excludedetails=true`;
+  // return axios.get(url);
   getVillagerNames: function (name) {
     url = `https://api.nookipedia.com/villagers${NOOKIPEDIA_API_KEY}&name=${name}`;
     return axios.get(url);
@@ -44,7 +44,7 @@ const API = {
         console.log(`Invalid parameter`);
     }
   },
-  
+
   // User methods
   // get user
   // get users
@@ -53,6 +53,9 @@ const API = {
   // login user
   userLogin: function (user) {
     return axios.post("/api/auth/login", user);
+  },
+  userRegister: function (user) {
+    return axios.post("/api/user", user);
   },
 };
 
