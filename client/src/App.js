@@ -5,9 +5,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-//import { Wrapper, Login, Register, Flowers } from "./components";
-import AppBar from "./components/Navbar/Navbar";
-//import Container from "./components/Container/Container";
+import MiniDrawer from "./components/Navbar/Navbar";
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
 import Accordion from "./pages/Home";
@@ -20,7 +18,7 @@ function App() {
   return (
     <Router>
       <div>
-        <AppBar />
+        <MiniDrawer />
         {/* <Container> */}
         <Switch>
           <Route exact path="/" component={Login} />
@@ -32,7 +30,7 @@ function App() {
             path="/flowers/:page?"
             render={(props) => <Flowers {...props} />}
           />
-          {/* <Route exact path="/Villagers" component={Villagers} /> */}
+          <Route exact path="/Villagers" component={Villagers} />
         </Switch>
         
         {/* </Container> */}

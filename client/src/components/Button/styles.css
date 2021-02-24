@@ -5,12 +5,12 @@
 }
 
 .buttons {
-    margin: 10%;
+    /* margin: 10%; */
     text-align: center;
 }
 
 .btn-hover {
-    width: 150px;
+    width: 40%;
     font-size: 16px;
     font-weight: 600;
     color: #fff;
