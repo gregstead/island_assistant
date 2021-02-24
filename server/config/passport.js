@@ -1,6 +1,6 @@
-const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
-const { User } = require("../models");
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const { User } = require('../models');
 
 // Telling passport we want to use a Local Strategy.
 // In other words, we want login with a username/email and password
@@ -9,18 +9,18 @@ passport.use(
   new LocalStrategy(
     // User will log in with email rather than username
     {
-      usernameField: "email",
+      usernameField: 'email'
     },
     (email, password, done) => {
       // When a user tries to sign in, this code runs
       User.findOne({ email: email }, (err, user) => {
         if (err) throw err;
         if (!user) {
-          return done(null, false, { message: "Unknown email" });
+          return done(null, false, { message: 'Unknown email' });
         }
         if (!user.comparePassword(password, (_err, data) => data)) {
           return done(null, false, {
-            message: "Incorrect password",
+            message: 'Incorrect password'
           });
         }
         return done(null, user);

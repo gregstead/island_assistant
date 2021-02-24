@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const authRoutes = require("./auth");
 const db = require("../../models");
-const passport = require("passport");
 
 router.use("/auth", authRoutes);
 
