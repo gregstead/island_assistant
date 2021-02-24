@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import { Container } from '@material-ui/core';
-import { Button } from '@material-ui/core';
-import Card from '../Animation'
-import './Login.css'
-
+import { Container } from "@material-ui/core";
+import { Button, FormControl, InputLabel, Input } from "@material-ui/core";
+import Card from "../Animation";
+import API from "../../utils/API";
+import "./Login.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,25 +19,80 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LoginTextFields() {
-    
+function LoginTextFields() {
+  const [loginState, setLoginState] = useState({
+    email: "",
+    password: "",
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    API.userLogin(loginState);
+  }
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setLoginState({
+      ...loginState,
+      [name]: value,
+    });
+  }
+
   const classes = useStyles();
-
+  //ref, handlechange, handlesubmit
+  // have a reference - does library allow us to reference textfield as an object
+  //
   return (
-  //  <div className={classes.root}>
+    <div className="login-container">
+      <form action="">
+        <Card />
 
-  <div className='login-container'>
-    <Card />
-
-  <Container maxWidth='sm'>
-      <TextField
-        id="outlined-full-width" label="User Name" style={{margin: 12}} placeholder="User Name" helperText="" fullWidth margin="normal" InputLabelProps={{shrink: true}} variant="outlined"/>
-     <TextField
-        id="outlined-full-width" label="Password" style={{ margin: 12 }} placeholder="Password" helperText="" fullWidth margin="normal" InputLabelProps={{shrink: true}} variant="outlined"/>
-       <Button variant="contained" style={{ margin: 12 }} color="Primary">Enter</Button>
- </Container>
-
-  </div>
-  //  </div>
+        <Container maxWidth="sm">
+          <FormControl>
+            <TextField
+              name="email"
+              value={loginState.email}
+              onChange={handleChange}
+              id="email"
+              label="Email"
+              style={{ margin: 12 }}
+              placeholder="Email"
+              helperText=""
+              fullWidth
+              margin="normal"
+              InputLabelProps={{ shrink: true }}
+              variant="outlined"
+            />
+          </FormControl>
+          <FormControl>
+            <TextField
+              name="password"
+              value={loginState.password}
+              onChange={handleChange}
+              id="password"
+              label="Password"
+              type="password"
+              style={{ margin: 12 }}
+              placeholder="Password"
+              helperText=""
+              fullWidth
+              margin="normal"
+              InputLabelProps={{ shrink: true }}
+              variant="outlined"
+            />
+          </FormControl>
+          <Button
+            variant="contained"
+            style={{ margin: 12 }}
+            color="primary"
+            onClick={handleSubmit}
+          >
+            Enter
+          </Button>
+        </Container>
+      </form>
+    </div>
   );
 }
+
+export default LoginTextFields;
