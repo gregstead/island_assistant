@@ -16,16 +16,13 @@ passport.use(
       User.findOne({ email: email }, (err, user) => {
         if (err) throw err;
         if (!user) {
-          console.log("Unknown email");
           return done(null, false, { message: "Unknown email" });
         }
         if (!user.comparePassword(password, (_err, data) => data)) {
-          console.log("incorrect password");
           return done(null, false, {
             message: "Incorrect password",
           });
         }
-        console.log("Done");
         return done(null, user);
       });
     }
