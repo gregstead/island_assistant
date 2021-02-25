@@ -42,8 +42,12 @@ import { IconButton, ListItem, ListItemIcon, ListItemText } from '@material-ui/c
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
+import HomeIcon from '@material-ui/icons/Home';
+import FilterVintageRoundedIcon from '@material-ui/icons/FilterVintageRounded';
+import CategoryIcon from '@material-ui/icons/Category';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import PeopleIcon from '@material-ui/icons/People';
 import logo from "../../images/igLogo4.png";
 
 const drawerWidth = 180;
@@ -164,10 +168,18 @@ export default function MiniDrawer() {
         </div>
         <Divider />
         <List>
-          {['Login', 'Register', 'Home', 'Items', 'Flowers', 'Villagers'].map((text, index) => (
+          {['Register', 'Home', 'Items', 'Flowers', 'Villagers', 'Logout'].map((text, index) => (
             <Link to={`/${text.toLowerCase()}`}>
               <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <AccountCircleIcon /> : <MailIcon />}</ListItemIcon>
+  
+                <ListItemIcon>
+                {index === 0 && <AccountCircleIcon/>}
+                {index === 1 && <HomeIcon />}
+                {index === 2 && <CategoryIcon />}
+                {index === 3 && <FilterVintageRoundedIcon  />}
+                {index === 4 && <PeopleIcon />}
+                {index === 5 && <ExitToAppIcon />}
+                </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             </Link>
