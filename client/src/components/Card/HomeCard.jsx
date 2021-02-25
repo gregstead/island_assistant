@@ -1,10 +1,10 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
+import { Button, Card, CardActions, CardContent, makeStyles, Typography } from "@material-ui/core";
+// import Card from "@material-ui/core/Card";
+// import CardActions from "@material-ui/core/CardActions";
+// import CardContent from "@material-ui/core/CardContent";
+// import Button from "@material-ui/core/Button";
+// import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: { minWidth: 275 },
@@ -25,16 +25,14 @@ export default function OutlinedCard() {
           variant="h5" 
           component="h2" 
           style={{ textAlign: "center" }}>
-            Page Name Goes Here
+            Flowers
         </Typography>
-
-        <br />
 
         <Typography 
           variant="body2" 
           component="p" 
           style={{ textAlign: "center" }}>
-            information goes here<br />
+            information goes here
         </Typography>
 
       </CardContent>

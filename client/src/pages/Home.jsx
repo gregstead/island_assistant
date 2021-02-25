@@ -57,16 +57,17 @@ export default function CustomizedAccordions() {
 
   return (
     <div>
-      <Box style={{ fontSize: "50px", height: "50px", marginBottom: "15px", textAlign: "center" }}>Home</Box>
+      <Box style={{ fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "50px", textAlign: "center" }}>Home</Box>
 
       <Container maxWidth='lg' style={{ display: "flex", flexDirection: 'row'}}>
 
         <Box style={{ border: "solid", borderRadius: "30px", margin: "auto", marginBottom: "25px", width: "25%"  }}>
-          <Card id="page-cards" />
           {/* <Card id="page-cards" /> */}
-          {/* <Card id="page-cards" /> */}
+          <Typography component="h2" variant="h5" style={{ textAlign: "center" }}>Flowers</Typography>
+          <Typography component="p" variant="body2" style={{ textAlign: "center" }}>information goes here</Typography>
+          <Button size="small" style={{ justifyContent: "center" }}>link to page goes here</Button>
         </Box>
-        <Box style={{ border: "solid", borderRadius: "30px", margin: "auto", marginBottom: "25px", width: "25%" }}>
+        <Box style={{ border: "solid", borderRadius: "30px", margin: "auto", marginBottom: "25px", marginwidth: "25%" }}>
           <Card style={{ display: "inline" }} />
         </Box>
         <Box style={{ border: "solid", borderRadius: "30px", margin: "auto", marginBottom: "25px", width: "25%" }}>
@@ -77,7 +78,7 @@ export default function CustomizedAccordions() {
 
       <Container maxWidth='lg'>
 
-      <Box style={{ fontSize: "50px", height: "50px", marginBottom: "15px", textAlign: "center" }}>List of Cool Apps</Box>
+      <Box style={{ fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "50px", textAlign: "center" }}>List of Cool Apps</Box>
 
         <Accordion square expanded={expanded === "panel1"} onChange={handleChange("panel1")}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1d-content" id="panel1d-header">

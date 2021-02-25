@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { AppBar, Container, Tabs, Tab } from "@material-ui/core";
+import { AppBar, Box, Container, Tabs, Tab } from "@material-ui/core";
 import About from "./aAbout";
 import Cosmos from "./aCosmos";
 import Hyacinths from "./aHyacinths";
@@ -73,13 +73,14 @@ const Flowers = props => {
   return (
     <>
     <Container maxWidth='lg'>
+      <Box style={{ fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "50px", textAlign: "center" }}>Flowers</Box>
+
       <AppBar position="static" style={{ backgroundColor: "#FFB075", marginBottom: "50px", color: "#333", fontWeight: "bolder" }}>
         <Tabs 
           value={selectedTab} 
           onChange={handleChange} 
           variant="scrollable" 
           scrollButtons="on" 
-          // centered
         >
           <Tab label="About" />
           <Tab label="Cosmos" />
