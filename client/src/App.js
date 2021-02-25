@@ -19,24 +19,33 @@ function App() {
   const [userState, setUserState] = useState({
     user: {},
   });
+  function logoutUser() {
+    setUserState({ user: {} });
+  }
+  const value = {
+    user: userState.user,
+    logoutUser: logoutUser,
+  };
   return (
     <Router>
       <div>
         <MiniDrawer />
 
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <ProtectedRoute path="/home" component={Accordion} />
-          <Redirect from="/flowers" to="/flowers/about" />
-          <Route
-            path="/flowers/:page?"
-            render={(props) => <Flowers {...props} />}
-          />
-          <Route path="/Villagers" component={Villagers} />
-          <ProtectedRoute path="/items" component={Items} />
-        </Switch>
+        <userContext.Provider value={value}>
+          <Switch>
+            <Route exact path="/" component={Login} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <ProtectedRoute path="/home" component={Accordion} />
+            <Redirect from="/flowers" to="/flowers/about" />
+            <Route
+              path="/flowers/:page?"
+              render={(props) => <Flowers {...props} />}
+            />
+            <Route path="/Villagers" component={Villagers} />
+            <ProtectedRoute path="/items" component={Items} />
+          </Switch>
+        </userContext.Provider>
 
         {/* <Footer /> */}
       </div>
