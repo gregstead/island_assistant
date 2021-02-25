@@ -13,8 +13,12 @@ import Accordion from "./pages/Home";
 import Flowers from "./pages/Flowers";
 import Villagers from "./pages/Villagers";
 import Items from "./pages/Items";
+import { userContext } from "./userContext";
 
 function App() {
+  const [userState, setUserState] = useState({
+    user: {},
+  });
   return (
     <Router>
       <div>
