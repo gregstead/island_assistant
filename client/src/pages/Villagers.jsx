@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Card, CardActions, CardActionArea, CardContent, CardMedia, makeStyles, Typography } from "@material-ui/core";
-import SearchBox from "../components/Search/SearchBox";
+import SearchVillager from "../components/Search/SearchVillager";
 import API from "../utils/API";
 
 const useStyles = makeStyles({
@@ -14,11 +14,12 @@ export default function MediaCard() {
   const [search, setSearch] = useState("");
   const [villager, setVillager] = useState([]);
 
-  const handleInputChange = (event) => {
-    const { value } = event.target;
+  const handleInputChange = (e) => {
+    const { value } = e.target;
     setSearch(value);
   };
-  const handleClick = (event) => {
+
+  const handleClick = (e) => {
     API.getVillagerNames(search).then((results) => {
     // API.getOne("villagers").then((results) => {
       console.log(search, results.data);
@@ -28,7 +29,7 @@ export default function MediaCard() {
 
   return (
     <>
-      <SearchBox 
+      <SearchVillager 
         search={search} 
         handleClick={handleClick} 
         handleInputChange={handleInputChange} />
