@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
+  Button,
   Card,
   CardActions,
   CardContent,
@@ -35,8 +36,13 @@ function Items() {
   function useEffect() {
     console.log(searchState);
   }
-  useEffect();
 
+  function handleClick(e) {
+    e.preventDefault();
+    API.getOne(searchState.category, searchState.searchTerm).then((res) => {
+      console.log(res);
+    });
+  }
   function handleChange(e) {
     const { name, value } = e.target;
     setSearchState({
@@ -47,9 +53,9 @@ function Items() {
 
   return (
     <div>
-      <Container>
+      <main>
         <div className={classes.heroContent}>
-          <Container maxWidth="md">
+          <Container maxWidth="sm">
             <Typography
               component="h1"
               variant="h2"
@@ -106,30 +112,6 @@ function Items() {
                       </MenuItem>
                     </Select>
                   </FormControl>
-                  {/* <TextField
-                    // margin="dense"
-                    id="itemSelect"
-                    value="Category"
-                    label="Category"
-                    onChange={handleChange}
-                    select
-                  >
-                    <MenuItem name="category" value="fish">
-                      Fish
-                    </MenuItem>
-                    <MenuItem name="category" value="bugs">
-                      Bugs
-                    </MenuItem>
-                    <MenuItem name="category" value="sea">
-                      Sea Creatures
-                    </MenuItem>
-                    <MenuItem name="category" value="art">
-                      Art
-                    </MenuItem>
-                    <MenuItem name="category" value="recipes">
-                      Recipes
-                    </MenuItem>
-                  </TextField> */}
                 </Grid>
                 <Grid item>
                   <TextField
@@ -140,12 +122,13 @@ function Items() {
                     name="searchTerm"
                     onChange={handleChange}
                   ></TextField>
+                  <Button onClick={handleClick}>search</Button>
                 </Grid>
               </Grid>
             </div>
           </Container>
         </div>
-      </Container>
+      </main>
     </div>
   );
 }
