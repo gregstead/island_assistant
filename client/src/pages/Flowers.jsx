@@ -79,7 +79,7 @@ const Flowers = props => {
           onChange={handleChange} 
           variant="scrollable" 
           scrollButtons="on" 
-          centered
+          // centered
         >
           <Tab label="About" />
           <Tab label="Cosmos" />
