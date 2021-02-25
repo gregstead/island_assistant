@@ -13,15 +13,11 @@ body {
 html,
 body,
 #root {
-  background-color: white;
+  /* background-color: white; */
   height: 100%;
   margin: 0;
   padding: 0;
   width: 100%;
-}
-
-#root {
-  background: #f0f0f0;
 }
 
 .card1,

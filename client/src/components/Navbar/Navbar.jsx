@@ -36,6 +36,7 @@
 
 import React from 'react';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -51,24 +52,20 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-// import InboxIcon from '@material-ui/icons/MoveToInbox';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import logo from "../../images/ig-logo-2.png";
-import './Navbar.css'
-import { Link } from 'react-router-dom'
+import logo from "../../images/igLogo4.png";
+// import './Navbar.css'
 
-const drawerWidth = 240;
+const drawerWidth = 180;
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
+  root: { display: 'flex' },
+  appBar: { zIndex: theme.zIndex.drawer + 1, 
+  transition: theme.transitions.create(['width', 'margin'], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
     }),
   },
   appBarShift: {
@@ -139,12 +136,10 @@ export default function MiniDrawer() {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
+        className={clsx(classes.appBar, {[classes.appBarShift]: open})}
         position="fixed"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
       >
-        <Toolbar className="styleBar">
+        <Toolbar className="styleBar" style={{ backgroundImage: "linear-gradient(45DEG, #4E2FD6, #7CC9C3)", height: "68px" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -157,7 +152,7 @@ export default function MiniDrawer() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-          <img src={logo} alt="Island Guru logo" className={classes.logo} />
+          <img src={logo} alt="Island Guru logo" className={classes.logo} style={{ width: "100%",  marginTop: "50px" }}/>
           </Typography>
         </Toolbar>
       </AppBar>
