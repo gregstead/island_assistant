@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
-  Button,
   Card,
   CardActions,
   CardContent,
@@ -32,6 +31,11 @@ function Items() {
   }));
 
   const classes = useStyles();
+
+  function useEffect() {
+    console.log(searchState);
+  }
+  useEffect();
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -80,9 +84,10 @@ function Items() {
                     <Select
                       labelId="demo-simple-select-outlined-label"
                       id="demo-simple-select-outlined"
-                      value=""
                       onChange={handleChange}
+                      value={searchState.category}
                       label="Category"
+                      name="category"
                     >
                       <MenuItem name="category" value="fish">
                         Fish
@@ -131,7 +136,7 @@ function Items() {
                     type="search"
                     id="itemText"
                     label="Item name"
-                    value=""
+                    value={searchState.searchTerm}
                     name="searchTerm"
                     onChange={handleChange}
                   ></TextField>
