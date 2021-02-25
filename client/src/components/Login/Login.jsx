@@ -38,23 +38,24 @@ function LoginTextFields() {
   //have a reference - does library allow us to reference textfield as an object
 
   return (
-    <div className="login-container" style={{ display: "block", marginTop: "10%" }}>
-      <Animation />
-
-      <Container maxWidth="sm"
+    <div className="login-container" style={{ display: "block" }}>
+      
+      
+      <Container maxWidth="xs"
         style={{
-          backgroundColor: "rgba(255,255,255,0.7)",
-          backdropFilter: "blur(4px)",
+          backgroundColor: "rgba(244,244,244,0.5)",
+          backdropFilter: "blur(3px)",
           borderRadius: "1em",
-          boxShadow: "0px 10px 10px 0px grey",
+          boxShadow: "0px 14px 14px 8px lightgrey",
           display: "flex",
           flexDirection: "column",
-          marginTop: "12em", 
+          marginTop: "8em", 
           padding: "1em",
           position: "relative",
         }}
       >
-
+        <Animation />
+       <h2 className="page-name" style={{textAlign: "center", fontSize: '48px', fontFamily: "Helvetica", marginTop: '1rem'  }}>Login</h2>
         <FormControl>
           <TextField
             id="email"

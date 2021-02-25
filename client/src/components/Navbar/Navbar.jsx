@@ -51,9 +51,11 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+// import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import logo from "../../images/ig-logo-2.png";
+import './Navbar.css'
 import { Link } from 'react-router-dom'
 
 const drawerWidth = 240;
@@ -142,7 +144,7 @@ export default function MiniDrawer() {
           [classes.appBarShift]: open,
         })}
       >
-        <Toolbar>
+        <Toolbar className="styleBar">
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -155,7 +157,7 @@ export default function MiniDrawer() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Island Guru
+          <img src={logo} alt="Island Guru logo" className={classes.logo} />
           </Typography>
         </Toolbar>
       </AppBar>
@@ -182,7 +184,7 @@ export default function MiniDrawer() {
           {['Login', 'Register', 'Home', 'Items', 'Flowers', 'Villagers'].map((text, index) => (
             <Link to={`/${text.toLowerCase()}`}>
               <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemIcon>{index % 2 === 0 ? <AccountCircleIcon /> : <MailIcon />}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             </Link>
@@ -199,7 +201,7 @@ export default function MiniDrawer() {
         </List> */}
       </Drawer>
       <main className={classes.content}>
-        <div className={classes.toolbar} />
+        {/* <div className={classes.toolbar} /> */}
         {/* <Typography paragraph>
         </Typography> */}
         
