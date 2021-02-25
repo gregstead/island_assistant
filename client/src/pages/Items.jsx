@@ -6,11 +6,14 @@ import {
   CardContent,
   CardMedia,
   Container,
+  FormControl,
   Grid,
+  InputLabel,
   Link,
   MenuItem,
   TextField,
   Typography,
+  Select,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import API from "../utils/API";
@@ -40,9 +43,9 @@ function Items() {
 
   return (
     <div>
-      <main>
+      <Container>
         <div className={classes.heroContent}>
-          <Container maxWidth="sm">
+          <Container maxWidth="md">
             <Typography
               component="h1"
               variant="h2"
@@ -66,10 +69,42 @@ function Items() {
             <div className={classes.heroSearch}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <TextField
-                    margin="dense"
+                  <FormControl
+                    variant="outlined"
+                    className={classes.formControl}
+                    style={{ width: "25vw" }}
+                  >
+                    <InputLabel id="demo-simple-select-outlined-label">
+                      Category
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-outlined-label"
+                      id="demo-simple-select-outlined"
+                      value=""
+                      onChange={handleChange}
+                      label="Category"
+                    >
+                      <MenuItem name="category" value="fish">
+                        Fish
+                      </MenuItem>
+                      <MenuItem name="category" value="bugs">
+                        Bugs
+                      </MenuItem>
+                      <MenuItem name="category" value="sea">
+                        Sea Creatures
+                      </MenuItem>
+                      <MenuItem name="category" value="art">
+                        Art
+                      </MenuItem>
+                      <MenuItem name="category" value="recipes">
+                        Recipes
+                      </MenuItem>
+                    </Select>
+                  </FormControl>
+                  {/* <TextField
+                    // margin="dense"
                     id="itemSelect"
-                    value=""
+                    value="Category"
                     label="Category"
                     onChange={handleChange}
                     select
@@ -89,7 +124,7 @@ function Items() {
                     <MenuItem name="category" value="recipes">
                       Recipes
                     </MenuItem>
-                  </TextField>
+                  </TextField> */}
                 </Grid>
                 <Grid item>
                   <TextField
@@ -105,7 +140,7 @@ function Items() {
             </div>
           </Container>
         </div>
-      </main>
+      </Container>
     </div>
   );
 }
