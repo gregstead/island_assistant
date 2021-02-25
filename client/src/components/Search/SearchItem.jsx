@@ -11,12 +11,10 @@ export default function SearchItem(props) {
 
   return (
     //  <div className={classes.root}>
-      <Container maxWidth="sm">
-        <Box 
-          style={{ fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "15px", textAlign: "center" }}>Items
-        </Box>
+      <Container maxWidth="sm" style={{ alignItems: "center" }}>
+        <Box style={{ fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "50px", textAlign: "center" }}>Items</Box>
         
-        <TextField style={{ alignSelf: "center" }}
+        <TextField style={{ alignItems: "center" }}
           onChange={props.handleInputChange} 
           value={props.search} 
           placeholder="Search for Items Here" 

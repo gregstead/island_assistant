@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, FormControl, makeStyles, TextField } from "@material-ui/core";
+import { Box, Container, FormControl, makeStyles, TextField } from "@material-ui/core";
 import Animation from "../Animation/Animation";
 import BtnStyle from "../Button/Button";
 import API from "../../utils/API";
@@ -39,7 +39,7 @@ function LoginTextFields() {
 
   return (
     <div className="login-container" style={{ display: "block" }}>
-      
+    <Box style={{ fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "50px", textAlign: "center" }}>Login</Box>
       
       <Container maxWidth="xs"
         style={{
