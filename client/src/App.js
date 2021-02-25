@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -16,36 +16,24 @@ import Items from "./pages/Items";
 import { userContext } from "./userContext";
 
 function App() {
-  const [userState, setUserState] = useState({
-    user: {},
-  });
-  function logoutUser() {
-    setUserState({ user: {} });
-  }
-  const value = {
-    user: userState.user,
-    logoutUser: logoutUser,
-  };
   return (
     <Router>
       <div>
-        <userContext.Provider value={value}>
-          <MiniDrawer />
+        <MiniDrawer />
 
-          <Switch>
-            <Route exact path="/" component={Login} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <ProtectedRoute path="/home" component={Accordion} />
-            <Redirect from="/flowers" to="/flowers/about" />
-            <Route
-              path="/flowers/:page?"
-              render={(props) => <Flowers {...props} />}
-            />
-            <Route path="/Villagers" component={Villagers} />
-            <ProtectedRoute path="/items" component={Items} />
-          </Switch>
-        </userContext.Provider>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <ProtectedRoute path="/home" component={Accordion} />
+          <Redirect from="/flowers" to="/flowers/about" />
+          <Route
+            path="/flowers/:page?"
+            render={(props) => <Flowers {...props} />}
+          />
+          <Route path="/Villagers" component={Villagers} />
+          <ProtectedRoute path="/items" component={Items} />
+        </Switch>
 
         {/* <Footer /> */}
       </div>
