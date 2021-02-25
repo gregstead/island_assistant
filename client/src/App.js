@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -29,9 +29,9 @@ function App() {
   return (
     <Router>
       <div>
-        <MiniDrawer />
-
         <userContext.Provider value={value}>
+          <MiniDrawer />
+
           <Switch>
             <Route exact path="/" component={Login} />
             <Route path="/login" component={Login} />
