@@ -37,7 +37,7 @@ export default function MediaCard(props) {
         {villager.length > 0 ? villager.map((villager) => {
 
           return (
-            <Card className={classes.root} style={{ backgroundColor: "#fff9e5", borderRadius: "25px", justifyContent: "center", margin: "auto" }}>
+            <Card className={classes.root} style={{ backgroundColor: "#fff9e5", border: "solid #786951", borderRadius: "20px", justifyContent: "center", margin: "auto" }}>
               
               <CardActionArea>
                 <Typography 
