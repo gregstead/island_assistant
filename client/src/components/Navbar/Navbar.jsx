@@ -131,7 +131,7 @@ export default function MiniDrawer() {
         className={clsx(classes.appBar, {[classes.appBarShift]: open})}
         position="fixed"
       >
-        <Toolbar className="styleBar" style={{ backgroundImage: "linear-gradient(45DEG, #4E2FD6, #7CC9C3)", height: "68px" }}>
+        <Toolbar className="styleBar" style={{ backgroundImage: "linear-gradient(30DEG, #017c74, #7CC9C3,  #febdc3, #f7d359)", height: "68px" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -160,6 +160,7 @@ export default function MiniDrawer() {
             [classes.drawerClose]: !open,
           }),
         }}
+        style={{background: '#88c9a1'}}
       >
         <div className={classes.toolbar}>
           <IconButton onClick={handleDrawerClose}>
@@ -169,16 +170,16 @@ export default function MiniDrawer() {
         <Divider />
         <List>
           {['Register', 'Home', 'Items', 'Flowers', 'Villagers', 'Logout'].map((text, index) => (
-            <Link to={`/${text.toLowerCase()}`}>
+            <Link to={`/${text.toLowerCase()}`} style={{ textDecoration: 'none', color: '#017c74'}}>
               <ListItem button key={text}>
   
                 <ListItemIcon>
-                {index === 0 && <AccountCircleIcon/>}
-                {index === 1 && <HomeIcon />}
-                {index === 2 && <CategoryIcon />}
-                {index === 3 && <FilterVintageRoundedIcon  />}
-                {index === 4 && <PeopleIcon />}
-                {index === 5 && <ExitToAppIcon />}
+                {index === 0 && <AccountCircleIcon style={{color: '#017c74'}} />}
+                {index === 1 && <HomeIcon style={{color: '#68b893'}} />}
+                {index === 2 && <CategoryIcon style={{color: '#786951'}} />}
+                {index === 3 && <FilterVintageRoundedIcon style={{color: '#ff7c69'}} />}
+                {index === 4 && <PeopleIcon style={{color: '#f5c24c'}} />}
+                {index === 5 && <ExitToAppIcon style={{color: '#017c74'}} />}
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>

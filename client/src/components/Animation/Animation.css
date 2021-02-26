@@ -34,25 +34,25 @@ body,
 
 .card1 {
   background-image: url(https://image.flaticon.com/icons/svg/119/119596.svg);
-  height: 20vw;
+  height: 15vw;
   max-width: 80ch;
   max-height: 80ch;
   min-width: 30ch;
   min-height: 30ch;
-  width: 20vw;
+  width: 15vw;
 }
 
 .card2 {
   background-image: url(https://image.flaticon.com/icons/svg/789/789395.svg);
-  height: 10ch;
-  width: 10ch;
+  height: 7ch;
+  width: 7ch;
 }
 
 .card3 {
   background-image: url(https://image.flaticon.com/icons/svg/414/414927.svg);
-  height: 8ch;
+  height: 7ch;
   opacity: 0.7;
-  width: 8ch;
+  width: 7ch;
 }
 
 .card4 {
