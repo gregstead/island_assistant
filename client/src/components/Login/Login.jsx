@@ -1,12 +1,23 @@
 import React, { useState } from "react";
-import { Box, Container, FormControl, makeStyles, TextField } from "@material-ui/core";
+import {
+  Box,
+  Container,
+  FormControl,
+  makeStyles,
+  TextField,
+} from "@material-ui/core";
 import Animation from "../Animation/Animation";
 import BtnStyle from "../Button/Button";
 import API from "../../utils/API";
+import { useAuth } from "../../userContext";
 
 const useStyles = makeStyles((theme) => ({
   root: { display: "flex", flexWrap: "wrap" },
-  textField: { marginLeft: theme.spacing(1), marginRight: theme.spacing(1), width: "25ch" },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: "25ch",
+  },
 }));
 
 function LoginTextFields() {
@@ -14,16 +25,38 @@ function LoginTextFields() {
     email: "",
     password: "",
   });
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const { setAuthTokens } = useAuth();
 
   function handleSubmit(e) {
     e.preventDefault();
+    console.log(`I work`);
     API.userLogin(loginState);
     setLoginState({
       email: "",
       password: "",
-    });
-    window.location.replace("/home");
+    })
+      .then((result) => {
+        if (result.status === 200) {
+          setAuthTokens(result.data);
+          setLoggedIn(true);
+        } else {
+          setIsError(true);
+        }
+      })
+      .catch((err) => {
+        setIsError(true);
+      });
+    if (isLoggedIn) {
+      <Redirect to="/home" />;
+    }
   }
+
+  function useEffect() {
+    console.log(loginState);
+  }
+  useEffect();
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -39,9 +72,20 @@ function LoginTextFields() {
 
   return (
     <div className="login-container" style={{ display: "block" }}>
-    <Box style={{ fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "50px", textAlign: "center" }}>Login</Box>
-      
-      <Container maxWidth="xs"
+      <Box
+        style={{
+          fontSize: "50px",
+          height: "50px",
+          marginBottom: "30px",
+          marginTop: "50px",
+          textAlign: "center",
+        }}
+      >
+        Login
+      </Box>
+
+      <Container
+        maxWidth="xs"
         style={{
           backgroundColor: "rgba(244,244,244,0.5)",
           backdropFilter: "blur(3px)",
@@ -49,22 +93,34 @@ function LoginTextFields() {
           boxShadow: "0px 14px 14px 8px lightgrey",
           display: "flex",
           flexDirection: "column",
-          marginTop: "8em", 
+          marginTop: "8em",
           padding: "1em",
           position: "relative",
         }}
       >
         <Animation />
-       <h2 className="page-name" style={{textAlign: "center", fontSize: '48px', fontFamily: "Helvetica", marginTop: '1rem'  }}>Login</h2>
+        <h2
+          className="page-name"
+          style={{
+            textAlign: "center",
+            fontSize: "48px",
+            fontFamily: "Helvetica",
+            marginTop: "1rem",
+          }}
+        >
+          Login
+        </h2>
         <FormControl>
           <TextField
             id="email"
             label="Email"
-            fullWidth margin="normal"
+            fullWidth
+            margin="normal"
             helperText=""
             InputLabelProps={{ shrink: true }}
             onChange={handleChange}
             placeholder="Email"
+            name="email"
             value={loginState.email}
             variant="outlined"
           />
@@ -74,7 +130,9 @@ function LoginTextFields() {
           <TextField
             id="password"
             label="Password"
-            fullWidth margin="normal"
+            fullWidth
+            margin="normal"
+            name="password"
             helperText=""
             InputLabelProps={{ shrink: true }}
             onChange={handleChange}
@@ -86,7 +144,6 @@ function LoginTextFields() {
         </FormControl>
 
         <BtnStyle onClick={handleSubmit} variant="contained"></BtnStyle>
-
       </Container>
     </div>
   );

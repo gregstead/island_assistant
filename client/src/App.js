@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -16,24 +16,43 @@ import Items from "./pages/Items";
 import { userContext } from "./userContext";
 
 function App() {
+  const existingTokens = JSON.parse(localStorage.getItem("tokens"));
+  const [authTokens, setAuthTokens] = useState(existingTokens);
+  const [userState, setUserState] = useState({
+    user: {},
+  });
+  function setTokens(data) {
+    localStorage.setItem("tokens", JSON.stringufy(data));
+    setAuthTokens(data);
+  }
+  function logout() {
+    setUserState({ user: {} });
+  }
+  const value = {
+    user: userState.user,
+    logout: logout,
+  };
+
   return (
     <Router>
       <div>
         <MiniDrawer />
 
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <ProtectedRoute path="/home" component={Accordion} />
-          <Redirect from="/flowers" to="/flowers/about" />
-          <Route
-            path="/flowers/:page?"
-            render={(props) => <Flowers {...props} />}
-          />
-          <Route path="/Villagers" component={Villagers} />
-          <ProtectedRoute path="/items" component={Items} />
-        </Switch>
+        <userContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
+          <Switch>
+            <Route exact path="/" component={Login} />
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <ProtectedRoute path="/home" component={Accordion} />
+            <Redirect from="/flowers" to="/flowers/about" />
+            <Route
+              path="/flowers/:page?"
+              render={(props) => <Flowers {...props} />}
+            />
+            <ProtectedRoute path="/Villagers" component={Villagers} />
+            <ProtectedRoute path="/items" component={Items} />
+          </Switch>
+        </userContext.Provider>
 
         {/* <Footer /> */}
       </div>

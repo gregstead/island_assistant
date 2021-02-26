@@ -1,5 +1,9 @@
-import React from "react";
+import { createContext, useContext } from "react";
 
-const userContext = React.createContext({ user: {} }); // Create a context object
+const userContext = createContext({ user: {} }); // Create a context object
 
 export { userContext };
+
+export function useAuth() {
+  return useContext(userContext);
+}
