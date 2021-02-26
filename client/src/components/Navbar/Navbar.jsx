@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom'
-import { AppBar, CssBaseline, Divider, Drawer, List, makeStyles, useTheme, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Button, CssBaseline, Divider, Drawer, List, makeStyles, useTheme, Toolbar, Typography } from '@material-ui/core';
 import { IconButton, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -110,6 +110,7 @@ export default function MiniDrawer() {
           <Typography variant="h6" noWrap>
           <img src={logo} alt="Island Guru logo" className={classes.logo} style={{ width: "100%",  marginTop: "50px" }}/>
           </Typography>
+          {/* <Button color="inherit" style={{}}>Login</Button> */}
         </Toolbar>
       </AppBar>
       <Drawer
@@ -133,17 +134,18 @@ export default function MiniDrawer() {
         </div>
         <Divider />
         <List>
-          {['Register', 'Home', 'Items', 'Flowers', 'Villagers', 'Logout'].map((text, index) => (
+          {['Login', 'Register', 'Home', 'Items', 'Flowers', 'Villagers', 'Logout'].map((text, index) => (
             <Link to={`/${text.toLowerCase()}`} style={{ color: '#017c74', textDecoration: 'none', fontWeight: "bold" }}>
               <ListItem button key={text} style={{ paddingLeft: "23px", paddingRight: "23px" }}>
   
                 <ListItemIcon>
-                {index === 0 && <AccountCircleIcon style={{color: '#017c74'}} />}
-                {index === 1 && <HomeIcon style={{color: '#7cc9c3'}} />}
-                {index === 2 && <CategoryIcon style={{color: '#ef785a'}} />}
-                {index === 3 && <FilterVintageRoundedIcon style={{color: '#febdc3'}} />}
-                {index === 4 && <PeopleIcon style={{color: '#f5c24c'}} />}
-                {index === 5 && <ExitToAppIcon style={{color: '#786951'}} />}
+                {index === 0 && <ExitToAppIcon style={{color: '#786951'}} />}
+                {index === 1 && <AccountCircleIcon style={{color: '#017c74'}} />}
+                {index === 2 && <HomeIcon style={{color: '#7cc9c3'}} />}
+                {index === 3 && <CategoryIcon style={{color: '#ef785a'}} />}
+                {index === 4 && <FilterVintageRoundedIcon style={{color: '#febdc3'}} />}
+                {index === 5 && <PeopleIcon style={{color: '#f5c24c'}} />}
+                {index === 6 && <ExitToAppIcon style={{color: '#786951', }} />}
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>

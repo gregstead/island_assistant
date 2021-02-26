@@ -73,7 +73,7 @@ const Flowers = props => {
   return (
     <>
     <Container maxWidth='lg'>
-      <Box style={{ fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "50px", textAlign: "center" }}>Flowers</Box>
+      <Box style={{ fontFamily: "FinkHeavy", fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "90px", textAlign: "center" }}>Flowers</Box>
 
       <AppBar position="static" style={{ backgroundColor: "#FFB075", marginBottom: "50px", color: "#333", fontWeight: "bolder" }}>
         <Tabs 

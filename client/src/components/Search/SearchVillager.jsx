@@ -12,7 +12,7 @@ export default function SearchVillager(props) {
   return (
     //  <div className={classes.root}>
       <Container maxWidth="sm" style={{ alignItems: "center" }}>
-        <Box style={{ fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "50px", textAlign: "center" }}>Villager</Box>
+        <Box style={{ fontFamily: "FinkHeavy", fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "90px", textAlign: "center" }}>Villager</Box>
         
         <TextField style={{ alignItems: "center" }}
           onChange={props.handleInputChange} 

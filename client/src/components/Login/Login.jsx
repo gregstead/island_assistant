@@ -69,10 +69,11 @@ function LoginTextFields() {
     <div className="login-container" style={{ display: "block" }}>
       <Box
         style={{
+          fontFamily: "FinkHeavy",
           fontSize: "50px",
           height: "50px",
           marginBottom: "30px",
-          marginTop: "50px",
+          marginTop: "90px",
           textAlign: "center",
         }}
       >

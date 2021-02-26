@@ -57,7 +57,7 @@ export default function CustomizedAccordions() {
 
   return (
     <div>
-      <Box style={{ fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "50px", textAlign: "center" }}>Home</Box>
+      <Box style={{ fontFamily: "FinkHeavy", fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "90px", textAlign: "center" }}>Home</Box>
 
       <Container maxWidth='md' style={{ display: "flex", flexDirection: 'row'}}>
 
@@ -83,7 +83,7 @@ export default function CustomizedAccordions() {
 
       <Container maxWidth='md'>
 
-      <Box style={{ fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "50px", textAlign: "center" }}>List of Cool Apps</Box>
+      <Box style={{ fontFamily: "FinkHeavy", fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "50px", textAlign: "center" }}>List of Cool Apps</Box>
 
         {/* Accordion #1 */}
         <Accordion expanded={expanded === "panel1"} onChange={handleChange("panel1")} style={{ backgroundColor: "#febdc3", borderTopLeftRadius: "20px", borderTopRightRadius: "20px"}}>
