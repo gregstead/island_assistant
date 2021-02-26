@@ -25,22 +25,22 @@ function LoginTextFields() {
     email: "",
     password: "",
   });
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isError, setIsError] = useState(false);
   const { setAuthTokens } = useAuth();
 
   function handleSubmit(e) {
     e.preventDefault();
     console.log(`I work`);
-    API.userLogin(loginState);
-    setLoginState({
-      email: "",
-      password: "",
-    })
+    API.userLogin(loginState)
       .then((result) => {
+        setLoginState({
+          email: "",
+          password: "",
+        });
         if (result.status === 200) {
           setAuthTokens(result.data);
-          setLoggedIn(true);
+          setIsLoggedIn(true);
         } else {
           setIsError(true);
         }
@@ -52,11 +52,6 @@ function LoginTextFields() {
       <Redirect to="/home" />;
     }
   }
-
-  function useEffect() {
-    console.log(loginState);
-  }
-  useEffect();
 
   function handleChange(e) {
     const { name, value } = e.target;

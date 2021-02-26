@@ -22,7 +22,7 @@ function App() {
     user: {},
   });
   function setTokens(data) {
-    localStorage.setItem("tokens", JSON.stringufy(data));
+    localStorage.setItem("tokens", JSON.stringify(data.id));
     setAuthTokens(data);
   }
   function logout() {
