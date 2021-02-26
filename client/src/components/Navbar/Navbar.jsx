@@ -1,39 +1,3 @@
-// import React from "react";
-// import { makeStyles } from "@material-ui/core/styles";
-// import AppBar from "@material-ui/core/AppBar";
-// import Toolbar from "@material-ui/core/Toolbar";
-// import Typography from "@material-ui/core/Typography";
-// import Button from "@material-ui/core/Button";
-// import IconButton from "@material-ui/core/IconButton";
-// import MenuIcon from "@material-ui/icons/Menu";
-
-// const useStyles = makeStyles((theme) => ({
-//   root: { flexGrow: 1, },
-//   menuButton: { marginRight: theme.spacing(2), },
-//   title: { flexGrow: 1, },
-// }));
-
-// export default function ButtonAppBar() {
-//   const classes = useStyles();
-
-//   return (
-//     <div className={classes.root}>
-//       <AppBar position="static" style={{ backgroundColor: "#b3f4ef", marginBottom: "50px", color: "#333333" }}>
-//         <Toolbar>
-//           <IconButton edge="start" className={classes.menuButton} aria-label="menu">
-//             <MenuIcon />
-//           </IconButton>
-//           <Typography variant="h6" className={classes.title}>
-//             Island Guru
-//           </Typography>
-//           <Button color="inherit">Login</Button>
-//         </Toolbar>
-//       </AppBar>
-//     </div>
-//   );
-// }
-
-
 import React from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom'
@@ -50,7 +14,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import PeopleIcon from '@material-ui/icons/People';
 import logo from "../../images/igLogo4.png";
 
-const drawerWidth = 180;
+const drawerWidth = 170;
 
 const useStyles = makeStyles((theme) => ({
   root: { display: 'flex' },
@@ -69,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   menuButton: {
-    marginRight: 36,
+    marginRight: 30,
   },
   hide: {
     display: 'none',
@@ -131,7 +95,7 @@ export default function MiniDrawer() {
         className={clsx(classes.appBar, {[classes.appBarShift]: open})}
         position="fixed"
       >
-        <Toolbar className="styleBar" style={{ backgroundImage: "linear-gradient(30DEG, #017c74, #7CC9C3,  #febdc3, #f7d359)", height: "68px" }}>
+        <Toolbar className="styleBar" style={{ backgroundImage: "linear-gradient(30DEG, #017c74, #7cc9c3, #ef785a, #febdc3, #f5c24c, #fcea64)", height: "68px" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -170,38 +134,25 @@ export default function MiniDrawer() {
         <Divider />
         <List>
           {['Register', 'Home', 'Items', 'Flowers', 'Villagers', 'Logout'].map((text, index) => (
-            <Link to={`/${text.toLowerCase()}`} style={{ textDecoration: 'none', color: '#017c74'}}>
-              <ListItem button key={text}>
+            <Link to={`/${text.toLowerCase()}`} style={{ color: '#017c74', textDecoration: 'none', fontWeight: "bold" }}>
+              <ListItem button key={text} style={{ paddingLeft: "23px", paddingRight: "23px" }}>
   
                 <ListItemIcon>
                 {index === 0 && <AccountCircleIcon style={{color: '#017c74'}} />}
-                {index === 1 && <HomeIcon style={{color: '#68b893'}} />}
-                {index === 2 && <CategoryIcon style={{color: '#786951'}} />}
-                {index === 3 && <FilterVintageRoundedIcon style={{color: '#ff7c69'}} />}
+                {index === 1 && <HomeIcon style={{color: '#7cc9c3'}} />}
+                {index === 2 && <CategoryIcon style={{color: '#ef785a'}} />}
+                {index === 3 && <FilterVintageRoundedIcon style={{color: '#febdc3'}} />}
                 {index === 4 && <PeopleIcon style={{color: '#f5c24c'}} />}
-                {index === 5 && <ExitToAppIcon style={{color: '#017c74'}} />}
+                {index === 5 && <ExitToAppIcon style={{color: '#786951'}} />}
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             </Link>
           ))}
         </List>
-        {/* <Divider /> */}
-        {/* <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List> */}
+
       </Drawer>
-      <main className={classes.content}>
-        {/* <div className={classes.toolbar} /> */}
-        {/* <Typography paragraph>
-        </Typography> */}
-        
-      </main>
+
     </div>
   );
 }
