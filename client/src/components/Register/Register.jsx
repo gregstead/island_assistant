@@ -37,7 +37,7 @@ export default function RegisterTextFields() {
   return (
     // <div className={classes.root}>
     <Container maxWidth="sm">
-      <Box style={{ fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "50px", textAlign: "center" }}>Registration</Box>
+      <Box style={{ fontFamily: "FinkHeavy", fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "90px", textAlign: "center" }}>Registration</Box>
 
       <Image src="../../images/welcome.jpg" style={{ border: "solid", height: "50%", marginBottom: "20px" }} />
       
