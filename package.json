@@ -2,6 +2,9 @@
   "name": "island-guru",
   "version": "1.0.0",
   "description": "island-guru",
+  "engines": {
+    "node": "12.18.3"
+  },
   "author": "island-guru",
   "license": "MIT",
   "main": "server/server.js",
