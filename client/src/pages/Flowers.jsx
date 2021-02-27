@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { AppBar, Box, Container, Tabs, Tab } from "@material-ui/core";
-import About from "./aAbout";
+import All from "./aAll";
 import Cosmos from "./aCosmos";
 import Hyacinths from "./aHyacinths";
 import Lilies from "./aLilies";
@@ -14,9 +14,9 @@ import Windflowers from "./aWindflowers";
 const Flowers = props => {
   const { match, history } = props;
   const { params } = match;
-  const { page } = params;
+  const { flowerName = "all" } = params;
   const tabNameToIndex = {
-    0: "about",
+    0: "all",
     1: "cosmos",
     2: "hyacinths",
     3: "lilies",
@@ -27,7 +27,7 @@ const Flowers = props => {
     8: "windflowers",
   };
   const indexToTabName = {
-    about: 0,
+    all: 0,
     cosmos: 1,
     hyacinths: 2,
     lilies: 3,
@@ -37,7 +37,7 @@ const Flowers = props => {
     tulips: 7,
     windflowers: 8,
   };
-  const [selectedTab, setSelectedTab] = React.useState(indexToTabName[page]);
+  const [selectedTab, setSelectedTab] = React.useState(indexToTabName[flowerName]);
 
   const handleChange = (event, newValue) => {
     history.push(`/flowers/${tabNameToIndex[newValue]}`);
@@ -74,6 +74,7 @@ const Flowers = props => {
     <>
     <Container maxWidth='lg'>
       <Box style={{ fontFamily: "FinkHeavy", fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "90px", textAlign: "center" }}>Flowers</Box>
+      {/* <Box style={{ fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "50px", textAlign: "center" }}>Flowers</Box> */}
 
       <AppBar position="static" style={{ backgroundColor: "#FFB075", marginBottom: "50px", color: "#333", fontWeight: "bolder" }}>
         <Tabs 
@@ -82,7 +83,7 @@ const Flowers = props => {
           variant="scrollable" 
           scrollButtons="on" 
         >
-          <Tab label="About" />
+          <Tab label="All" />
           <Tab label="Cosmos" />
           <Tab label="Hyacinths" />
           <Tab label="Lilies" />
@@ -93,7 +94,7 @@ const Flowers = props => {
           <Tab label="Windflowers" />
         </Tabs>
       </AppBar>
-      {selectedTab === 0 && <About />}
+      {selectedTab === 0 && <All />}
       {selectedTab === 1 && <Cosmos />}
       {selectedTab === 2 && <Hyacinths />}
       {selectedTab === 3 && <Lilies />}
