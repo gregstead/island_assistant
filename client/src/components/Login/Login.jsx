@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
-import {
-  Box,
-  Container,
-  FormControl,
-  makeStyles,
-  TextField,
-} from "@material-ui/core";
+import { Box, Container, FormControl, makeStyles, TextField } from "@material-ui/core";
+import { useAuth } from "../../userContext";
 import Animation from "../Animation/Animation";
 import BtnStyle from "../Button/Button";
 import API from "../../utils/API";
-import { useAuth } from "../../userContext";
+
 
 const useStyles = makeStyles((theme) => ({
   root: { display: "flex", flexWrap: "wrap" },
