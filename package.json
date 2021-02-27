@@ -1,15 +1,15 @@
 {
-  "name": "TBD",
+  "name": "island-guru",
   "version": "1.0.0",
-  "description": "TBD",
-  "author": "TBD",
+  "description": "island-guru",
+  "author": "island-guru",
   "license": "MIT",
   "main": "server/server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TBD"
+    "url": "git+https://github.com/island-guru"
   },
-  "homepage": "TBD",
+  "homepage": "island-guru",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node ./server/server.js",
