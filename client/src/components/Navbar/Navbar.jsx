@@ -139,13 +139,13 @@ export default function MiniDrawer() {
               <ListItem button key={text} style={{ paddingLeft: "23px", paddingRight: "23px" }}>
   
                 <ListItemIcon>
-                {index === 0 && <ExitToAppIcon style={{color: '#786951'}} />}
-                {index === 1 && <AccountCircleIcon style={{color: '#017c74'}} />}
-                {index === 2 && <HomeIcon style={{color: '#7cc9c3'}} />}
-                {index === 3 && <CategoryIcon style={{color: '#ef785a'}} />}
-                {index === 4 && <FilterVintageRoundedIcon style={{color: '#febdc3'}} />}
-                {index === 5 && <PeopleIcon style={{color: '#f5c24c'}} />}
-                {index === 6 && <ExitToAppIcon style={{color: '#786951', }} />}
+                {index === 0 && <ExitToAppIcon key={"login"} style={{color: '#786951'}} />}
+                {index === 1 && <AccountCircleIcon  key={"register"} style={{color: '#017c74'}} />}
+                {index === 2 && <HomeIcon  key={"home"} style={{color: '#7cc9c3'}} />}
+                {index === 3 && <CategoryIcon  key={"items"} style={{color: '#ef785a'}} />}
+                {index === 4 && <FilterVintageRoundedIcon  key={"flowers"} style={{color: '#febdc3'}} />}
+                {index === 5 && <PeopleIcon  key={"villagers"} style={{color: '#f5c24c'}} />}
+                {index === 6 && <ExitToAppIcon  key={"exit"} style={{color: '#786951', }} />}
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
