@@ -19,6 +19,7 @@ export default function RegisterTextFields() {
     friendCode: "",
     dreamAddress: "",
   });
+  
   const classes = useStyles();
 
   function handleSubmit(e) {
@@ -39,7 +40,7 @@ export default function RegisterTextFields() {
     <Container maxWidth="sm">
       <Box style={{ fontFamily: "FinkHeavy", fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "90px", textAlign: "center" }}>Registration</Box>
 
-      <Image src="../../images/welcome.jpg" style={{ border: "solid", height: "50%", marginBottom: "20px" }} />
+      {/* <Image src="../../images/welcome.jpg" style={{ border: "solid", height: "50%", marginBottom: "20px" }} /> */}
       
       <TextField
         fullWidth margin="normal"
@@ -49,6 +50,7 @@ export default function RegisterTextFields() {
         onChange={handleChange}
         placeholder="First Name"
         variant="outlined"
+        style={{ backgroundColor: "mintcream" }}
       />
       <TextField
         fullWidth margin="normal"
@@ -58,6 +60,7 @@ export default function RegisterTextFields() {
         onChange={handleChange}
         placeholder="Last Name"
         variant="outlined"
+        style={{ backgroundColor: "mintcream" }}
       />
       <TextField
         fullWidth margin="normal"
@@ -67,6 +70,7 @@ export default function RegisterTextFields() {
         onChange={handleChange}
         placeholder="Username"
         variant="outlined"
+        style={{ backgroundColor: "mintcream" }}
       />
       <TextField
         fullWidth margin="normal"
@@ -76,6 +80,7 @@ export default function RegisterTextFields() {
         onChange={handleChange}
         placeholder="Email"
         variant="outlined"
+        style={{ backgroundColor: "mintcream" }}
       />
       <TextField
         fullWidth margin="normal"
@@ -86,6 +91,7 @@ export default function RegisterTextFields() {
         placeholder="Password"
         type="password"
         variant="outlined"
+        style={{ backgroundColor: "mintcream" }}
       />
       <TextField
         fullWidth margin="normal"
@@ -95,6 +101,7 @@ export default function RegisterTextFields() {
         onChange={handleChange}
         placeholder="Friend Code"
         variant="outlined"
+        style={{ backgroundColor: "mintcream" }}
       />
       <TextField
         fullWidth margin="normal"
@@ -104,6 +111,7 @@ export default function RegisterTextFields() {
         onChange={handleChange}
         placeholder="Dream Address"
         variant="outlined"
+        style={{ backgroundColor: "mintcream" }}
       />
 
       <BtnStyle onClick={handleSubmit} variant="contained"></BtnStyle>
