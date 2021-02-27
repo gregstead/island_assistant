@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import {
   Box,
   Container,
@@ -21,36 +22,46 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function LoginTextFields() {
+  const { setAuthTokens } = useAuth();
+  const history = useHistory();
   const [loginState, setLoginState] = useState({
     email: "",
     password: "",
   });
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const { setAuthTokens } = useAuth();
+  const [isLoggedIn, setIsLoggedIn] = useState({
+    state: false,
+  });
+  const [isError, setIsError] = useState({
+    state: false,
+  });
 
   function handleSubmit(e) {
     e.preventDefault();
     console.log(`I work`);
     API.userLogin(loginState)
       .then((result) => {
+        console.log("result.status :>> ", typeof result.status);
         setLoginState({
           email: "",
           password: "",
         });
         if (result.status === 200) {
           setAuthTokens(result.data);
-          setIsLoggedIn(true);
+
+          setIsLoggedIn({
+            state: true,
+          });
+          history.push("/home");
+
+          console.log(isLoggedIn.state);
         } else {
           setIsError(true);
         }
       })
       .catch((err) => {
+        console.log(err);
         setIsError(true);
       });
-    if (isLoggedIn) {
-      <Redirect to="/home" />;
-    }
   }
 
   function handleChange(e) {
