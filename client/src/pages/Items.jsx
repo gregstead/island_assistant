@@ -1,21 +1,7 @@
 import React, { useEffect, useState } from "react";
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Container,
-  FormControl,
-  Grid,
-  InputLabel,
-  Link,
-  MenuItem,
-  TextField,
-  Typography,
-  Select,
-} from "@material-ui/core";
+import { Button, Card, CardActions, CardContent, CardMedia, Container, FormControl, Grid, InputLabel, Link, MenuItem, TextField, Typography, Select } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
+import BtnStyle from "../components/Button/Button";
 import API from "../utils/API";
 
 function Items() {
@@ -25,9 +11,6 @@ function Items() {
   });
 
   const useStyles = makeStyles((theme) => ({
-    heroContent: {
-      backgroundColor: theme.palette.background.paper,
-    },
     heroSearch: {},
   }));
 
@@ -56,45 +39,20 @@ function Items() {
       <main>
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
-            <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="textPrimary"
-              gutterBottom
-            >
+            <Typography component="h1" gutterBottom variant="h2" style={{ fontFamily: "FinkHeavy", fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "90px", textAlign: "center" }}>
+              {" "}
               Swap or Drop
             </Typography>
-            <Typography
-              variant="h5"
-              align="center"
-              color="textSecondary"
-              paragraph
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-              expedita placeat in dicta ab, quod magni quia iure quaerat non
-              neque velit ducimus sed debitis! Doloribus voluptatibus dolore
-              incidunt cumque?
+            <Typography variant="h5" align="center" color="textSecondary" paragraph>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo expedita placeat in dicta ab, quod magni quia iure quaerat non neque velit ducimus sed debitis! Doloribus voluptatibus
+              dolore incidunt cumque?
             </Typography>
             <div className={classes.heroSearch}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <FormControl
-                    variant="outlined"
-                    className={classes.formControl}
-                    style={{ width: "25vw" }}
-                  >
-                    <InputLabel id="demo-simple-select-outlined-label">
-                      Category
-                    </InputLabel>
-                    <Select
-                      labelId="demo-simple-select-outlined-label"
-                      id="demo-simple-select-outlined"
-                      onChange={handleChange}
-                      value={searchState.category}
-                      label="Category"
-                      name="category"
-                    >
+                  <FormControl variant="outlined" className={classes.formControl} style={{ width: "25vw" }}>
+                    <InputLabel id="demo-simple-select-outlined-label">Category</InputLabel>
+                    <Select labelId="demo-simple-select-outlined-label" id="demo-simple-select-outlined" onChange={handleChange} value={searchState.category} label="Category" name="category">
                       <MenuItem name="category" value="fish">
                         Fish
                       </MenuItem>
@@ -114,15 +72,8 @@ function Items() {
                   </FormControl>
                 </Grid>
                 <Grid item>
-                  <TextField
-                    type="search"
-                    id="itemText"
-                    label="Item name"
-                    value={searchState.searchTerm}
-                    name="searchTerm"
-                    onChange={handleChange}
-                  ></TextField>
-                  <Button onClick={handleClick}>search</Button>
+                  <TextField label="Item name" name="searchTerm" onChange={handleChange} type="search" value={searchState.searchTerm} variant="outlined" style={{ width: "25vw" }}></TextField>
+                  <BtnStyle onClick={handleClick} variant="contained"></BtnStyle>
                 </Grid>
               </Grid>
             </div>
