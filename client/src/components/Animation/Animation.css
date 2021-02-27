@@ -1,0 +1,70 @@
+body {
+  background: transparent;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  cursor: default;
+  user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+html,
+body,
+#root {
+  background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("../../images/wallpaperflare.jpg");
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.card1,
+.card2,
+.card3,
+.card4 {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  position: absolute;
+  will-change: transform;
+}
+
+.card1 {
+  background-image: url(https://image.flaticon.com/icons/svg/119/119596.svg);
+  height: 15vw;
+  max-width: 80ch;
+  max-height: 80ch;
+  min-width: 30ch;
+  min-height: 30ch;
+  width: 15vw;
+}
+
+.card2 {
+  background-image: url(https://image.flaticon.com/icons/svg/789/789395.svg);
+  height: 7ch;
+  width: 7ch;
+}
+
+.card3 {
+  background-image: url(https://image.flaticon.com/icons/svg/414/414927.svg);
+  height: 7ch;
+  opacity: 0.7;
+  width: 7ch;
+}
+
+.card4 {
+  background-image: url(https://image.flaticon.com/icons/svg/789/789392.svg);
+  height: 10ch;
+  width: 10ch;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 15%;
+  position: 'relative';
+}
