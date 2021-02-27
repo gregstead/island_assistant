@@ -1,7 +1,7 @@
 {
-  "name": "TBD",
+  "name": "island-guru",
   "version": "0.1.0",
-  "description": "TBD",
+  "description": "island-guru",
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
