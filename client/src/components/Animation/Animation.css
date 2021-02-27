@@ -33,7 +33,7 @@ body,
 }
 
 .card1 {
-  background-image: url(https://image.flaticon.com/icons/svg/119/119596.svg);
+  background-image: url(../../images/bkgd-island.svg);
   height: 15vw;
   max-width: 80ch;
   max-height: 80ch;
@@ -43,20 +43,20 @@ body,
 }
 
 .card2 {
-  background-image: url(https://image.flaticon.com/icons/svg/789/789395.svg);
+  background-image: url(../../images/sun.svg);
   height: 7ch;
   width: 7ch;
 }
 
 .card3 {
-  background-image: url(https://image.flaticon.com/icons/svg/414/414927.svg);
+  background-image: url(../../images/cloud.svg);
   height: 7ch;
   opacity: 0.7;
   width: 7ch;
 }
 
 .card4 {
-  background-image: url(https://image.flaticon.com/icons/svg/789/789392.svg);
+  background-image: url(../../images/bird.svg);
   height: 10ch;
   width: 10ch;
 }
