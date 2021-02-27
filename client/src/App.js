@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import MiniDrawer from "./components/Navbar/Navbar";
 import Login from "./components/Login/Login";
@@ -30,22 +25,20 @@ function App() {
     authTokens,
     setAuthTokens: setTokens,
   };
+
   return (
     <Router>
       <div>
         <MiniDrawer />
 
         <userContext.Provider value={value}>
+        {/* <userContext.Provider value={{ authTokens, setAuthTokens: setTokens }}> */}
           <Switch>
             <Route exact path="/" component={Login} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <ProtectedRoute path="/home" component={Accordion} />
-            <Redirect from="/flowers" to="/flowers/about" />
-            <Route
-              path="/flowers/:page?"
-              render={(props) => <Flowers {...props} />}
-            />
+            <Route path="/flowers/:flowerName?" render={(props) => <Flowers {...props} />} />
             <ProtectedRoute path="/Villagers" component={Villagers} />
             <ProtectedRoute path="/items" component={Items} />
           </Switch>
