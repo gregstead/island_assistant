@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom'
-import { AppBar, Button, CssBaseline, Divider, Drawer, List, makeStyles, useTheme, Toolbar, Typography } from '@material-ui/core';
+import { Avatar, AppBar, Button, CssBaseline, Divider, Drawer, List, makeStyles, useTheme, Toolbar, Typography } from '@material-ui/core';
 import { IconButton, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -11,8 +11,10 @@ import HomeIcon from '@material-ui/icons/Home';
 import FilterVintageRoundedIcon from '@material-ui/icons/FilterVintageRounded';
 import CategoryIcon from '@material-ui/icons/Category';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import PersonAddRoundedIcon from '@material-ui/icons/PersonAddRounded';
 import PeopleIcon from '@material-ui/icons/People';
 import logo from "../../images/igLogo4.png";
+
 
 const drawerWidth = 170;
 
@@ -136,16 +138,20 @@ export default function MiniDrawer() {
         <List>
           {['Login', 'Register', 'Home', 'Items', 'Flowers', 'Villagers', 'Logout'].map((text, index) => (
             <Link to={`/${text.toLowerCase()}`} style={{ color: '#017c74', textDecoration: 'none', fontWeight: "bold" }}>
-              <ListItem button key={text} style={{ paddingLeft: "23px", paddingRight: "23px" }}>
-  
+              <ListItem button key={text} style={{ paddingLeft: "18px", paddingRight: "23px" }}>
+
                 <ListItemIcon>
-                {index === 0 && <ExitToAppIcon key={"login"} style={{color: '#786951'}} />}
-                {index === 1 && <AccountCircleIcon  key={"register"} style={{color: '#017c74'}} />}
+                <Avatar style={{background: "#EDEDED", boxShadow: "1px 3px 1px #9E9E9E"}}>
+                {index === 0 && <AccountCircleIcon  key={"login"} style={{color: '#786951'}} />}
+                {index === 1 && <PersonAddRoundedIcon   key={"register"} style={{color: '#017c74'}} />}
                 {index === 2 && <HomeIcon  key={"home"} style={{color: '#7cc9c3'}} />}
                 {index === 3 && <CategoryIcon  key={"items"} style={{color: '#ef785a'}} />}
                 {index === 4 && <FilterVintageRoundedIcon  key={"flowers"} style={{color: '#febdc3'}} />}
                 {index === 5 && <PeopleIcon  key={"villagers"} style={{color: '#f5c24c'}} />}
-                {index === 6 && <ExitToAppIcon  key={"exit"} style={{color: '#786951', }} />}
+                {index === 6 && <ExitToAppIcon key={"exit"} onClick={async() => {
+                          await axios.get('/logout')
+                }} style={{color: '#786951', transform: "rotate(96)" }} />}
+                </Avatar>
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
