@@ -16,29 +16,26 @@ import Items from "./pages/Items";
 import { userContext } from "./userContext";
 
 function App() {
+  // either a token or null - checks to see if there is a token in local storage
   const existingTokens = JSON.parse(localStorage.getItem("tokens"));
+  // sets authTokens default
   const [authTokens, setAuthTokens] = useState(existingTokens);
-  const [userState, setUserState] = useState({
-    user: {},
-  });
+
   function setTokens(data) {
     localStorage.setItem("tokens", JSON.stringify(data.id));
     setAuthTokens(data);
   }
-  function logout() {
-    setUserState({ user: {} });
-  }
-  const value = {
-    user: userState.user,
-    logout: logout,
-  };
 
+  const value = {
+    authTokens,
+    setAuthTokens: setTokens,
+  };
   return (
     <Router>
       <div>
         <MiniDrawer />
 
-        <userContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
+        <userContext.Provider value={value}>
           <Switch>
             <Route exact path="/" component={Login} />
             <Route path="/login" component={Login} />
