@@ -59,14 +59,15 @@ function Items() {
   const itemCards = itemState.map((data, index) => {
     return (
       <Grid item key={index} xs={12} sm={6} md={4}>
-        <Card id="card-background" className={classes.card}>
-          <CardMedia className={classes.cardMedia} image={data.image_url} title={data.name} />
+        <Card id="card-background" className={classes.card} style={{ padding: "2px"}}>
+          <CardMedia className={classes.cardMedia} image={data.image_url} title={data.name} style={{ alignContent: "center", margin: "auto", width: "75%"}}/>
           <CardContent className={classes.cardContent}>
-            <Typography component="h2" gutterBottom variant="h5" >{data.name}</Typography>
-            <Typography>{data.catchphrases[0]}</Typography>
-            <Typography>Bell value: {data.sell_nook}</Typography>
+            <Typography component="h2" gutterBottom variant="h5" style={{fontFamily: "FinkHeavy", fontSize: "40px", textAlign: "center" }}>{data.name}</Typography>
+            <Typography style={{textAlign: "center", fontSize: "20px"}}>{data.catchphrases[0]}</Typography>
+            <br />
+            <Typography style={{fontSize: "24px", textAlign: "center" }}>Bell value: {data.sell_nook}</Typography>
             <CardActions>
-              <Button size="small" onClick={handleFavoriteClick}>Favorite</Button>
+              <Button size="medium" onClick={handleFavoriteClick} style={{ alignContent: "center", margin: "auto", backgroundColor: "lightgray", borderRadius: "7px", padding: ".5rem", fontSize: "18px" }}>⭐Favorite</Button>
             </CardActions>
           </CardContent>
         </Card>
@@ -116,7 +117,7 @@ function Items() {
                   value={searchState.searchTerm}
                   variant="outlined">
                 </TextField>       
-                <BtnStyle onClick={handleClick} variant="contained"></BtnStyle>
+                <BtnStyle id="btn" onClick={handleClick} variant="contained"></BtnStyle>
               </Grid>
             </Grid>
           </div>
