@@ -37,20 +37,20 @@ export default function MediaCard(props) {
         {villager.length > 0 ? villager.map((villager) => {
 
           return (
-            <Card className={classes.root} style={{backgroundColor: "rgba(244,244,244,0.5)", border: "solid #786951", borderRadius: "20px", backdropFilter: "blur(3px)", boxShadow: "0px 3px 8px 1px lightgray", justifyContent: "center", margin: "auto" }}>
+            <Card className={classes.root} style={{backgroundColor: "rgba(244,244,244,0.7)", border: "solid #786951", borderRadius: "20px", backdropFilter: "blur(3px)", boxShadow: "0px 3px 8px 1px lightgray", justifyContent: "center", margin: "auto" }}>
               
               <CardActionArea>
                 <Typography 
                   gutterBottom variant="h4" 
                   component="h2" 
-                  style={{ fontFamily: "FinkHeavy", textAlign: "center", marginTop: "25px", marginBottom: "25px" }}>{villager.name}
+                  style={{ fontFamily: "FinkHeavy", fontSize: "40px", color: "#786951",textAlign: "center", marginTop: "25px", marginBottom: "25px" }}>{villager.name}
                 </Typography>
 
                 <CardMedia
                   className={ classes.media}
                   image= {villager.image_url}
                   title="Contemplative Reptile"
-                  style={{ alignContent: "center", border: "solid #786951", borderRadius: "25px", margin: "auto", width: "29%" }}
+                  style={{ alignContent: "center", borderRadius: "25px", margin: "auto", width: "29%" }}
                 />
 
                 <CardContent style={{ textAlign: "center" }}>
