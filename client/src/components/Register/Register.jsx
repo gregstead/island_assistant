@@ -29,7 +29,17 @@ export default function RegisterTextFields() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(registerState);
-    // API.userRegister(registerState);
+    API.userRegister(registerState);
+
+    setRegisterState({
+      firstName: "",
+      lastName: "",
+      username: "",
+      email: "",
+      password: "",
+      friendCode: "",
+      dreamAddress: "",
+    });
   }
 
   function handleChange(e) {

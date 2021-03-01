@@ -16,6 +16,7 @@ router.post("/user", (req, res) => {
       res.json(data);
     })
     .catch((err) => {
+      res.status(401);
       throw err;
     });
 });
