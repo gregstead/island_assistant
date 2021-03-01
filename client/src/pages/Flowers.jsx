@@ -49,10 +49,10 @@ const Flowers = props => {
   
     return (
       <div
-        role="tabpanel"
+        aria-labelledby={`scrollable-force-tab-${index}`}
         hidden={value !== index}
         id={`scrollable-force-tabpanel-${index}`}
-        aria-labelledby={`scrollable-force-tab-${index}`}
+        role="tabpanel"
         {...other}
       >
         {value === index && (
@@ -72,16 +72,16 @@ const Flowers = props => {
 
   return (
     <>
-    <Container maxWidth='lg'>
-      <Box style={{ fontFamily: "FinkHeavy", fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "90px", textAlign: "center" }}>Flowers</Box>
-      {/* <Box style={{ fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "50px", textAlign: "center" }}>Flowers</Box> */}
+    <Container maxWidth='md'>
+      <Box id="page-header" >Flowers</Box>
 
-      <AppBar position="static" style={{ backgroundColor: "#FFB075", marginBottom: "50px", color: "#333", fontWeight: "bolder" }}>
+      <AppBar id="flower-tab-bar" position="static">
         <Tabs 
-          value={selectedTab} 
-          onChange={handleChange} 
-          variant="scrollable" 
+          font="HeavyFink"
           scrollButtons="on" 
+          onChange={handleChange} 
+          value={selectedTab} 
+          variant="scrollable" 
         >
           <Tab label="All" />
           <Tab label="Cosmos" />
@@ -94,15 +94,15 @@ const Flowers = props => {
           <Tab label="Windflowers" />
         </Tabs>
       </AppBar>
-      {selectedTab === 0 && <All />}
-      {selectedTab === 1 && <Cosmos />}
-      {selectedTab === 2 && <Hyacinths />}
-      {selectedTab === 3 && <Lilies />}
-      {selectedTab === 4 && <Mums />}
-      {selectedTab === 5 && <Pansies />}
-      {selectedTab === 6 && <Roses />}
-      {selectedTab === 7 && <Tulips />}
-      {selectedTab === 8 && <Windflowers />}
+      {selectedTab === 0 && <All subcategory="all" />}
+      {selectedTab === 1 && <Cosmos category="cosmos" />}
+      {selectedTab === 2 && <Hyacinths category="hyacinths"  />}
+      {selectedTab === 3 && <Lilies category="lilies"  />}
+      {selectedTab === 4 && <Mums category="mums" />}
+      {selectedTab === 5 && <Pansies category="pansies" />}
+      {selectedTab === 6 && <Roses category="roses" />}
+      {selectedTab === 7 && <Tulips category="tulips" />}
+      {selectedTab === 8 && <Windflowers category="windflowers" />}
     </Container>
     </>
   );
