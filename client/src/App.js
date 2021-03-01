@@ -8,6 +8,7 @@ import Accordion from "./pages/Home";
 import Flowers from "./pages/Flowers";
 import Villagers from "./pages/Villagers";
 import Items from "./pages/Items";
+import StickyFooter from "./components/Footer/Footer"
 import { userContext } from "./userContext";
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
           </Switch>
         </userContext.Provider>
 
-        {/* <Footer /> */}
+        <StickyFooter />
       </div>
     </Router>
   );
