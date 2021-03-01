@@ -1,5 +1,7 @@
-import React from 'react';
-import { makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableRow } from '@material-ui/core';
+import React, { useEffect, useState } from "react";
+import { makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableRow } from "@material-ui/core";
+import flowers from "../utils/flowers.json";
+import "./pages.css";
 
 const useStyles = makeStyles({
   table: {
@@ -11,26 +13,31 @@ function createData(f1, plus, f2, equals, f3) {
   return { f1, plus, f2, equals, f3 };
 }
 
-const rows = [
-  createData('Cosmos-Red',    '+', 'Cosmos-Yellow', '=', 'Cosmos-Orange'),
-  createData('Cosmos-Red',    '+', 'Cosmos-White',  '=', 'Cosmos-Pink'),
-  createData('Cosmos-Orange', '+', 'Cosmos-Orange', '=', 'Cosmos-Black'),
-];
-
-export default function BasicTable() {
+export default function BasicTable(props) {
   const classes = useStyles();
+  const [rows, setRows] = useState([]);
+
+  useEffect(() => {
+    const newRows = [];
+    flowers.filter((flower) => {
+      if (flower.category === props.category) {
+        newRows.push(createData(<img id="flower-size" src={flower.f1Path} />, "+", <img id="flower-size" src={flower.f2Path} />, "=", <img id="flower-size" src={flower.f3Path} />));
+      }
+    });
+    setRows(newRows);
+  }, []);
 
   return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
+    <TableContainer id="card-background" component={Paper}>
+      <Table className={classes.table}>
         <TableBody>
           {rows.map((row) => (
             <TableRow>
-              <TableCell component="th" scope="row">{row.f1}</TableCell>
-              <TableCell align="right">{row.plus}</TableCell>
-              <TableCell align="right">{row.f2}</TableCell>
-              <TableCell align="right">{row.equals}</TableCell>
-              <TableCell align="right">{row.f3}</TableCell>
+              <TableCell id="sign" align="right">{row.f1}</TableCell>
+              <TableCell id="sign" align="right">{row.plus}</TableCell>
+              <TableCell id="sign" align="right">{row.f2}</TableCell>
+              <TableCell id="sign" align="right">{row.equals}</TableCell>
+              <TableCell id="sign" align="right">{row.f3}</TableCell>
             </TableRow>
           ))}
         </TableBody>
