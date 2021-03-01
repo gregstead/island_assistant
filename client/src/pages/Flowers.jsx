@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { AppBar, Box, Container, Tabs, Tab } from "@material-ui/core";
-import All from "./aAll";
-import Cosmos from "./aCosmos";
-import Hyacinths from "./aHyacinths";
-import Lilies from "./aLilies";
-import Mums from "./aMums";
-import Pansies from "./aPansies";
-import Roses from "./aRoses";
-import Tulips from "./aTulips";
-import Windflowers from "./aWindflowers";
+import All from "./All";
+import Cosmos from "./Cosmos";
+import Hyacinths from "./Hyacinths";
+import Lilies from "./Lilies";
+import Mums from "./Mums";
+import Pansies from "./Pansies";
+import Roses from "./Roses";
+import Tulips from "./Tulips";
+import Windflowers from "./Windflowers";
 
 const Flowers = props => {
   const { match, history } = props;
