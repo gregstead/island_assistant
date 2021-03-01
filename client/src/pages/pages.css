@@ -1,11 +1,60 @@
+h5{
+  font-family: FinkHeavy;
+}
+
+#acc-btn {
+  float: right;
+}
+
+#acc-details {
+  width: 100%;
+}
+
+#acc-panel1 {
+  background-color: #febdc3;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#acc-panel2 {
+  background-color: #ef758a;
+}
+
+#acc-panel3 {
+  background-color: #ff7c69;
+}
+
+#acc-panel4 {
+  background-color: #f8eebc;
+}
+
+#acc-panel5 {
+  background-color: #a4d4c2;
+}
+
+#acc-panel6 {
+  background-color: #88c9a1;
+}
+
+#acc-panel7 {
+  background-color: #68b893;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
 #card-background {
   background-color: rgba(244,244,244,0.7);
   border: solid #786951;
   border-radius: 20px;
   backdrop-filter: blur 3px;
-  box-shadow: 0px 3px 8px 1px lightgray;
+  /* box-shadow: 0px 3px 8px 1px lightgray; */
   justify-content: center;
   margin: auto;
+}
+
+#container-style {
+  display: flex;
+  flex-direction: row;
 }
 
 #flower-size {
@@ -21,10 +70,35 @@
   margin-bottom: 50px;
 }
 
+#home-card {
+  background-color: rgba(244,244,244,0.7);
+  border: solid #786951;
+  border-radius: 15px;
+  padding: 10px;
+  margin: auto;
+  min-width: 25%;
+}
+
+#home-text {
+  text-align: center;
+  font-family: FinkHeavy;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+#home-btn {
+  background-color: lightgray;
+  justify-content: center;
+}
+
 #input-background {
   background-color: mintcream;
   text-align: center;
   width: 25vw;
+}
+
+#item-img {
+
 }
 
 #page-header {
@@ -47,4 +121,26 @@
   padding-bottom: 0;
   text-align: center;
   width: 75px;
+}
+
+#villager-card {
+  font-family: FinkHeavy;
+  font-size: 40px;
+  color: #786951;
+  text-align: center;
+  margin: 25px;
+  margin-bottom: 25px;
+}
+
+#villager-img {
+  align-content: center;
+  margin: auto;
+  width: 29%;
+}
+
+#villager-text {
+  color: #786951;
+  font-family: FinkHeavy;
+  font-size: 20px;
+  text-align: center;
 }
