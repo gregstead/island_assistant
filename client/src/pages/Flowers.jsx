@@ -77,21 +77,20 @@ const Flowers = props => {
 
       <AppBar id="flower-tab-bar" position="static">
         <Tabs 
-          font="HeavyFink"
           scrollButtons="on" 
           onChange={handleChange} 
           value={selectedTab} 
           variant="scrollable" 
         >
-          <Tab label="All" />
-          <Tab label="Cosmos" />
-          <Tab label="Hyacinths" />
-          <Tab label="Lilies" />
-          <Tab label="Mums" />
-          <Tab label="Pansies" />
-          <Tab label="Roses" />
-          <Tab label="Tulips" />
-          <Tab label="Windflowers" />
+          <Tab id="tab-label" label="All" />
+          <Tab id="tab-label" label="Cosmos" />
+          <Tab id="tab-label" label="Hyacinths" />
+          <Tab id="tab-label" label="Lilies" />
+          <Tab id="tab-label" label="Mums" />
+          <Tab id="tab-label" label="Pansies" />
+          <Tab id="tab-label" label="Roses" />
+          <Tab id="tab-label" label="Tulips" />
+          <Tab id="tab-label" label="Windflowers" />
         </Tabs>
       </AppBar>
       {selectedTab === 0 && <All subcategory="all" />}
