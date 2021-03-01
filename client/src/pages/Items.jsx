@@ -64,10 +64,12 @@ function Items() {
       [name]: value,
     });
   }
-  function anyFunc() {
-    console.log(itemState);
+
+  function handleFavoriteClick(e) {
+    e.preventDefault();
+    // get user, set user item
+    console.log(`e:`, e);
   }
-  anyFunc();
 
   const itemCards = itemState.map((data, index) => {
     return (
@@ -83,8 +85,11 @@ function Items() {
               {data.name}
             </Typography>
             <Typography>{data.catchphrases[0]}</Typography>
+            <Typography>Bell value: {data.sell_nook}</Typography>
             <CardActions>
-              <Button size="small">Do something</Button>
+              <Button size="small" onClick={handleFavoriteClick}>
+                Favorite
+              </Button>
             </CardActions>
           </CardContent>
         </Card>
