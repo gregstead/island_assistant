@@ -37,27 +37,27 @@ export default function MediaCard(props) {
         {villager.length > 0 ? villager.map((villager) => {
 
           return (
-            <Card className={classes.root} style={{ backgroundColor: "#fff9e5", border: "solid #786951", borderRadius: "20px", justifyContent: "center", margin: "auto" }}>
+            <Card className={classes.root} style={{backgroundColor: "rgba(244,244,244,0.5)", border: "solid #786951", borderRadius: "20px", backdropFilter: "blur(3px)", boxShadow: "0px 3px 8px 1px lightgray", justifyContent: "center", margin: "auto" }}>
               
               <CardActionArea>
                 <Typography 
                   gutterBottom variant="h4" 
                   component="h2" 
-                  style={{ textAlign: "center", marginTop: "25px", marginBottom: "25px" }}>{villager.name}
+                  style={{ fontFamily: "FinkHeavy", textAlign: "center", marginTop: "25px", marginBottom: "25px" }}>{villager.name}
                 </Typography>
 
                 <CardMedia
-                  className={classes.media}
+                  className={ classes.media}
                   image= {villager.image_url}
                   title="Contemplative Reptile"
                   style={{ alignContent: "center", border: "solid #786951", borderRadius: "25px", margin: "auto", width: "29%" }}
                 />
 
                 <CardContent style={{ textAlign: "center" }}>
-                  <Typography component="p">{villager.species}</Typography>
-                  <Typography component="p">{villager.birthday_month} {villager.birthday_day}</Typography>
-                  <Typography component="p">{villager.personality}</Typography>
-                  <Typography component="p">{villager.sign}</Typography>
+                  <Typography component="p" style={{fontFamily: "Quicksand", fontSize: "18px"}}>{villager.species}</Typography>
+                  <Typography component="p" style={{fontFamily: "Quicksand", fontSize: "18px"}}>{villager.birthday_month} {villager.birthday_day}</Typography>
+                  <Typography component="p" style={{fontFamily: "Quicksand", fontSize: "18px"}}>{villager.personality}</Typography>
+                  <Typography component="p" style={{fontFamily: "Quicksand", fontSize: "18px"}}>{villager.sign}</Typography>
                   {/* <Typography color="textSecondary" component="p">{villager.nh_details.fav_styles}</Typography> */}
                   {/* <Typography color="textSecondary" component="p">{villager.nh_details.fav_colors}</Typography> */}
                   {/* <Typography color="textSecondary" component="p">{villager.nh_details.hobby}</Typography> */}
