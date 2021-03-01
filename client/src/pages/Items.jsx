@@ -28,6 +28,10 @@ function Items() {
 
   const useStyles = makeStyles((theme) => ({
     heroSearch: {},
+    cardGrid: {
+      paddingTop: theme.spacing(8),
+      paddingBottom: theme.spacing(8),
+    },
     card: {
       height: "100%",
       display: "flex",
@@ -35,6 +39,8 @@ function Items() {
     },
     cardMedia: {
       paddingTop: "56.25%", // 16:9
+      paddingLeft: "10px",
+      paddingRight: "10px",
     },
     cardContent: {
       flexGrow: 1,
@@ -71,17 +77,16 @@ function Items() {
             className={classes.cardMedia}
             image={data.image_url}
             title={data.name}
-          >
-            <CardContent className={classes.cardContent}>
-              <Typography gutterBottom variant="h5" component="h2">
-                {data.name}
-              </Typography>
-              <Typography>{data.catchphrases[0]}</Typography>
-              <CardActions>
-                <Button size="small">Do something</Button>
-              </CardActions>
-            </CardContent>
-          </CardMedia>
+          />
+          <CardContent className={classes.cardContent}>
+            <Typography gutterBottom variant="h5" component="h2">
+              {data.name}
+            </Typography>
+            <Typography>{data.catchphrases[0]}</Typography>
+            <CardActions>
+              <Button size="small">Do something</Button>
+            </CardActions>
+          </CardContent>
         </Card>
       </Grid>
     );
@@ -168,18 +173,11 @@ function Items() {
           </div>
         </Container>
       </div>
+      {/* End Hero Unit */}
       <main>
-        <Container>
-          <Grid
-            container
-            spacing={1}
-            alignItems="center"
-            justify="center"
-            style={{ minHeight: "100vh" }}
-          >
-            <Grid item xs={3}>
-              {itemCards}
-            </Grid>
+        <Container className={classes.cardGrid}>
+          <Grid container spacing={4} alignItems="center" justify="center">
+            {itemCards}
           </Grid>
         </Container>
       </main>
