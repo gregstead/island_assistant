@@ -28,19 +28,26 @@ function Items() {
 
   const useStyles = makeStyles((theme) => ({
     heroSearch: {},
+    card: {
+      height: "100%",
+      display: "flex",
+      flexDirection: "column",
+    },
+    cardMedia: {
+      paddingTop: "56.25%", // 16:9
+    },
+    cardContent: {
+      flexGrow: 1,
+    },
   }));
 
   const classes = useStyles();
-
-  function useEffect() {
-    console.log(searchState);
-  }
 
   function handleClick(e) {
     e.preventDefault();
     API.getOne(searchState.category, searchState.searchTerm).then((res) => {
       // Update item state array to render cards
-      setItemState((itemState) => [...itemState, res]);
+      setItemState((itemState) => [...itemState, res.data]);
       console.log(itemState);
     });
   }
@@ -51,9 +58,33 @@ function Items() {
       [name]: value,
     });
   }
+  function anyFunc() {
+    console.log(itemState);
+  }
+  anyFunc();
 
-  const itemCards = itemState.map((item) => {
-    return <p>{item.data.name}</p>;
+  const itemCards = itemState.map((data, index) => {
+    return (
+      <Grid item key={index} xs={12} sm={6} md={4}>
+        <Card className={classes.card}>
+          <CardMedia
+            className={classes.cardMedia}
+            image={data.image_url}
+            title={data.name}
+          >
+            <CardContent className={classes.cardContent}>
+              <Typography gutterBottom variant="h5" component="h2">
+                {data.name}
+              </Typography>
+              <Typography>{data.catchphrases[0]}</Typography>
+              <CardActions>
+                <Button size="small">Do something</Button>
+              </CardActions>
+            </CardContent>
+          </CardMedia>
+        </Card>
+      </Grid>
+    );
   });
 
   return (
@@ -141,11 +172,10 @@ function Items() {
         <Container>
           <Grid
             container
-            spacing={0}
-            direction="column"
+            spacing={1}
             alignItems="center"
             justify="center"
-            // style={{ minHeight: "100vh" }}
+            style={{ minHeight: "100vh" }}
           >
             <Grid item xs={3}>
               {itemCards}
