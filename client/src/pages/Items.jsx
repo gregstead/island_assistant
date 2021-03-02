@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Card, CardActions, CardContent, CardMedia, Container, FormControl, Grid, InputLabel, Link, MenuItem, TextField, Typography, Select } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import BtnStyle from "../components/Button/Button";
+import DeleteIcon from '@material-ui/icons/Delete';
 import API from "../utils/API";
 
 function Items() {
@@ -56,10 +57,15 @@ function Items() {
     console.log(`e:`, e);
   }
 
+  function handleDeleteClick(e) {
+    e.preventDefault();
+    console.log(`e:`, e);
+  }
+
   const itemCards = itemState.map((data, index) => {
     return (
       <Grid item key={index} xs={12} sm={6} md={4}>
-        <Card id="card-background" className={classes.card} style={{ padding: "2px"}}>
+        <Card id="card-background" className={classes.card} style={{ padding: "2px", boxShadow: "0px 3px 10px 1px #888888"}}>
           <CardMedia className={classes.cardMedia} image={data.image_url} title={data.name} style={{ alignContent: "center", margin: "auto", width: "75%"}}/>
           <CardContent className={classes.cardContent}>
             <Typography component="h2" gutterBottom variant="h5" style={{fontFamily: "FinkHeavy", fontSize: "40px", textAlign: "center" }}>{data.name}</Typography>
@@ -67,7 +73,11 @@ function Items() {
             <br />
             <Typography style={{fontSize: "24px", textAlign: "center" }}>Bell value: {data.sell_nook}</Typography>
             <CardActions>
-              <Button size="medium" onClick={handleFavoriteClick} style={{ alignContent: "center", margin: "auto", backgroundColor: "lightgray", borderRadius: "7px", padding: ".5rem", fontSize: "18px" }}>⭐Favorite</Button>
+              <Button size="medium" onClick={handleFavoriteClick} style={{ alignContent: "center", margin: "auto", backgroundImage: "linear-gradient(white, lightgray)", borderRadius: "7px", padding: ".75rem", fontSize: "18px", boxShadow: "0px 3px 5px 1px #888888" }}>⭐Favorite</Button>
+              <Button size="medium" onClick={handleDeleteClick} style={{ alignContent: "center", margin: "auto", backgroundImage: "linear-gradient(white, lightgray)", borderRadius: "7px", padding: ".75rem",  fontSize: "18px", boxShadow: "0px 3px 5px 1px #888888"}}>
+                <DeleteIcon  style={{ color: "red"}}/>
+                Delete
+              </Button>
             </CardActions>
           </CardContent>
         </Card>
