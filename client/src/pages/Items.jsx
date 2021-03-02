@@ -1,5 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Button, Card, CardActions, CardContent, CardMedia, Container, FormControl, Grid, InputLabel, MenuItem, TextField, Typography, Select } from "@material-ui/core";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Container,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  TextField,
+  Typography,
+  Select,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import BtnStyle from "../components/Button/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -68,23 +82,45 @@ function Items() {
     console.log("done");
   }
 
-  function handleDeleteClick(e) {
+  function handleDeleteClick(e, data) {
     e.preventDefault();
-    console.log(`e:`, e);
+    console.log(data);
   }
 
   const itemCards = itemState.map((data, index) => {
     return (
       <Grid item key={index} xs={12} sm={6} md={4}>
-        <Card id="card-background" className={classes.card} style={{ padding: "2px", boxShadow: "0px 3px 10px 1px #888888" }}>
-          <CardMedia className={classes.cardMedia} image={data.image_url} title={data.name} style={{ alignContent: "center", margin: "auto", width: "75%" }} />
+        <Card
+          id="card-background"
+          className={classes.card}
+          style={{ padding: "2px", boxShadow: "0px 3px 10px 1px #888888" }}
+        >
+          <CardMedia
+            className={classes.cardMedia}
+            image={data.image_url}
+            title={data.name}
+            style={{ alignContent: "center", margin: "auto", width: "75%" }}
+          />
           <CardContent className={classes.cardContent}>
-            <Typography component="h2" gutterBottom variant="h5" style={{ fontFamily: "FinkHeavy", fontSize: "40px", textAlign: "center" }}>
+            <Typography
+              component="h2"
+              gutterBottom
+              variant="h5"
+              style={{
+                fontFamily: "FinkHeavy",
+                fontSize: "40px",
+                textAlign: "center",
+              }}
+            >
               {data.name}
             </Typography>
-            <Typography style={{ textAlign: "center", fontSize: "20px" }}>{data.catchphrases[0]}</Typography>
+            <Typography style={{ textAlign: "center", fontSize: "20px" }}>
+              {data.catchphrases[0]}
+            </Typography>
             <br />
-            <Typography style={{ fontSize: "24px", textAlign: "center" }}>Bell value: {data.sell_nook}</Typography>
+            <Typography style={{ fontSize: "24px", textAlign: "center" }}>
+              Bell value: {data.sell_nook}
+            </Typography>
             <CardActions>
               <Button
                 size="medium"
@@ -105,7 +141,9 @@ function Items() {
               </Button>
               <Button
                 size="medium"
-                onClick={handleDeleteClick}
+                onClick={(e) => {
+                  handleDeleteClick(e, data);
+                }}
                 style={{
                   alignContent: "center",
                   margin: "auto",
@@ -134,15 +172,33 @@ function Items() {
             {" "}
             Swap or Drop
           </Typography>
-          <Typography id="page-text" color="textSecondary" paragraph variant="h5">
+          <Typography
+            id="page-text"
+            color="textSecondary"
+            paragraph
+            variant="h5"
+          >
             Choose a category and type in the name of an item to compare!
           </Typography>
           <div className={classes.heroSearch}>
             <Grid container spacing={2} justify="center">
               <Grid item>
-                <FormControl id="input-background" className={classes.formControl} variant="outlined">
-                  <InputLabel id="demo-simple-select-outlined-label">Category</InputLabel>
-                  <Select id="demo-simple-select-outlined" label="Category" labelId="demo-simple-select-outlined-label" name="category" onChange={handleChange} value={searchState.category}>
+                <FormControl
+                  id="input-background"
+                  className={classes.formControl}
+                  variant="outlined"
+                >
+                  <InputLabel id="demo-simple-select-outlined-label">
+                    Category
+                  </InputLabel>
+                  <Select
+                    id="demo-simple-select-outlined"
+                    label="Category"
+                    labelId="demo-simple-select-outlined-label"
+                    name="category"
+                    onChange={handleChange}
+                    value={searchState.category}
+                  >
                     <MenuItem name="category" value="fish">
                       Fish
                     </MenuItem>
@@ -162,8 +218,20 @@ function Items() {
                 </FormControl>
               </Grid>
               <Grid item>
-                <TextField id="input-background" label="Item name" name="searchTerm" onChange={handleChange} type="search" value={searchState.searchTerm} variant="outlined"></TextField>
-                <BtnStyle id="btn" onClick={handleClick} variant="contained"></BtnStyle>
+                <TextField
+                  id="input-background"
+                  label="Item name"
+                  name="searchTerm"
+                  onChange={handleChange}
+                  type="search"
+                  value={searchState.searchTerm}
+                  variant="outlined"
+                ></TextField>
+                <BtnStyle
+                  id="btn"
+                  onClick={handleClick}
+                  variant="contained"
+                ></BtnStyle>
               </Grid>
             </Grid>
           </div>
