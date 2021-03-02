@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { AppBar, Box, Container, Tabs, Tab } from "@material-ui/core";
-import All from "./aAll";
-import Cosmos from "./aCosmos";
-import Hyacinths from "./aHyacinths";
-import Lilies from "./aLilies";
-import Mums from "./aMums";
-import Pansies from "./aPansies";
-import Roses from "./aRoses";
-import Tulips from "./aTulips";
-import Windflowers from "./aWindflowers";
+import All from "./All";
+import Cosmos from "./Cosmos";
+import Hyacinths from "./Hyacinths";
+import Lilies from "./Lilies";
+import Mums from "./Mums";
+import Pansies from "./Pansies";
+import Roses from "./Roses";
+import Tulips from "./Tulips";
+import Windflowers from "./Windflowers";
 
 const Flowers = props => {
   const { match, history } = props;
@@ -49,10 +49,10 @@ const Flowers = props => {
   
     return (
       <div
-        role="tabpanel"
+        aria-labelledby={`scrollable-force-tab-${index}`}
         hidden={value !== index}
         id={`scrollable-force-tabpanel-${index}`}
-        aria-labelledby={`scrollable-force-tab-${index}`}
+        role="tabpanel"
         {...other}
       >
         {value === index && (
@@ -72,37 +72,36 @@ const Flowers = props => {
 
   return (
     <>
-    <Container maxWidth='lg'>
-      <Box style={{ fontFamily: "FinkHeavy", fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "90px", textAlign: "center" }}>Flowers</Box>
-      {/* <Box style={{ fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "50px", textAlign: "center" }}>Flowers</Box> */}
+    <Container maxWidth='md'>
+      <Box id="page-header" >Flowers</Box>
 
-      <AppBar position="static" style={{ backgroundColor: "#FFB075", marginBottom: "50px", color: "#333", fontWeight: "bolder" }}>
+      <AppBar id="flower-tab-bar" position="static">
         <Tabs 
-          value={selectedTab} 
-          onChange={handleChange} 
-          variant="scrollable" 
           scrollButtons="on" 
+          onChange={handleChange} 
+          value={selectedTab} 
+          variant="scrollable" 
         >
-          <Tab label="All" />
-          <Tab label="Cosmos" />
-          <Tab label="Hyacinths" />
-          <Tab label="Lilies" />
-          <Tab label="Mums" />
-          <Tab label="Pansies" />
-          <Tab label="Roses" />
-          <Tab label="Tulips" />
-          <Tab label="Windflowers" />
+          <Tab id="tab-label" label="All" />
+          <Tab id="tab-label" label="Cosmos" />
+          <Tab id="tab-label" label="Hyacinths" />
+          <Tab id="tab-label" label="Lilies" />
+          <Tab id="tab-label" label="Mums" />
+          <Tab id="tab-label" label="Pansies" />
+          <Tab id="tab-label" label="Roses" />
+          <Tab id="tab-label" label="Tulips" />
+          <Tab id="tab-label" label="Windflowers" />
         </Tabs>
       </AppBar>
-      {selectedTab === 0 && <All />}
-      {selectedTab === 1 && <Cosmos />}
-      {selectedTab === 2 && <Hyacinths />}
-      {selectedTab === 3 && <Lilies />}
-      {selectedTab === 4 && <Mums />}
-      {selectedTab === 5 && <Pansies />}
-      {selectedTab === 6 && <Roses />}
-      {selectedTab === 7 && <Tulips />}
-      {selectedTab === 8 && <Windflowers />}
+      {selectedTab === 0 && <All subcategory="all" />}
+      {selectedTab === 1 && <Cosmos category="cosmos" />}
+      {selectedTab === 2 && <Hyacinths category="hyacinths"  />}
+      {selectedTab === 3 && <Lilies category="lilies"  />}
+      {selectedTab === 4 && <Mums category="mums" />}
+      {selectedTab === 5 && <Pansies category="pansies" />}
+      {selectedTab === 6 && <Roses category="roses" />}
+      {selectedTab === 7 && <Tulips category="tulips" />}
+      {selectedTab === 8 && <Windflowers category="windflowers" />}
     </Container>
     </>
   );
