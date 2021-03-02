@@ -31,12 +31,13 @@ export default function MediaCard(props) {
       <SearchVillager 
         search={search} 
         handleClick={handleClick} 
-        handleInputChange={handleInputChange} />
+        handleInputChange={handleInputChange}
+        />
 
         {villager.length > 0 ? villager.map((villager) => {
 
           return (
-            <Card id="card-background" className={classes.root}>
+            <Card id="card-background" className={classes.root} >
               
               <CardActionArea>
                 <Typography 

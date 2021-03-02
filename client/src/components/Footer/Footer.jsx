@@ -20,9 +20,14 @@ import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    position: 'relative',
+    bottom: '0px',
+    left: '25px',
+    right: '0px',
+    top: '50px',
     display: 'flex',
     flexDirection: 'column',
-    minHeight: '100vh',
+    minHeight: '100px',
   },
   main: {
     marginTop: theme.spacing(1),

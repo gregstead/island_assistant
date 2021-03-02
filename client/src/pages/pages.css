@@ -4,6 +4,7 @@ h5{
 
 #acc-btn {
   float: right;
+  text-decoration: none;
 }
 
 #acc-details {
@@ -78,13 +79,19 @@ h5{
   padding: 10px;
   margin: auto;
   min-width: 25%;
+  height: 130px;
+  width: 250px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #home-text {
-  text-align: center;
   font-family: FinkHeavy;
   font-size: 30px;
   margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
 }
 
 #home-btn {
@@ -98,9 +105,12 @@ h5{
   width: 25vw;
 }
 
-#item-img {
-
+#link {
+  text-decoration: none;
+  color: #786951;
 }
+
+
 
 #page-header {
   font-family: FinkHeavy;

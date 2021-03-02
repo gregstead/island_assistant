@@ -5,6 +5,7 @@ import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import "../index.css"
+import { Link } from 'react-router-dom'
 
 const Accordion = withStyles({
   root: {
@@ -58,25 +59,25 @@ export default function CustomizedAccordions() {
     <div>
       <Box id="page-header">Home</Box>
 
-      <Container id="container-style" maxWidth='md'>
+      <Container id="container-style" maxWidth='md' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', }}>
 
-        <Box id="home-card">
-          <Typography id="home-text" component="h2" variant="h5">Flowers</Typography>
-          <Typography id="home-text" component="p" variant="body2"></Typography>< br/>
-          <Button id="home-btn" size="small">click me for flower breeding info</Button>
-        </Box>
+        <Link id="link" to='/flowers'>
+          <Box id="home-card">
+            <Typography id="home-text" component="h2" variant="h5">Flowers</Typography>
+          </Box>
+        </Link>
         
-        <Box id="home-card">
-          <Typography id="home-text" component="h2" variant="h5">Swap or Drop</Typography>
-          <Typography id="home-text" component="p" variant="body2"></Typography>< br/>
-          <Button id="home-btn" size="small">click me for comparing items</Button>
-        </Box>
+        <Link id="link" to='/items'>
+          <Box id="home-card">
+            <Typography id="home-text" component="h2" variant="h5">Swap or Drop</Typography>
+          </Box>
+        </Link>
 
-        <Box id="home-card">
-          <Typography id="home-text" component="h2" variant="h5">Villager</Typography>
-          <Typography id="home-text" component="p" variant="body2"></Typography>< br/>
-          <Button id="home-btn" size="small">click me for villager info</Button>
-        </Box>
+        <Link id="link" to='/villagers'>
+          <Box id="home-card">
+            <Typography id="home-text" component="h2" variant="h5">Villager</Typography>
+          </Box>
+        </Link>
 
       </Container>
 
