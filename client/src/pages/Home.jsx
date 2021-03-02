@@ -62,19 +62,19 @@ export default function CustomizedAccordions() {
       <Container id="container-style" maxWidth='md' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', }}>
 
         <Link id="link" to='/flowers'>
-          <Box id="home-card">
+          <Box id="home-card" style={{ boxShadow: "0px 3px 5px 1px #888888"}}>
             <Typography id="home-text" component="h2" variant="h5">Flowers</Typography>
           </Box>
         </Link>
         
         <Link id="link" to='/items'>
-          <Box id="home-card">
+          <Box id="home-card" style={{ boxShadow: "0px 3px 5px 1px #888888" }}>
             <Typography id="home-text" component="h2" variant="h5">Swap or Drop</Typography>
           </Box>
         </Link>
 
         <Link id="link" to='/villagers'>
-          <Box id="home-card">
+          <Box id="home-card" style={{ boxShadow: "0px 3px 5px 1px #888888"}}>
             <Typography id="home-text" component="h2" variant="h5">Villager</Typography>
           </Box>
         </Link>
