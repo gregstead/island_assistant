@@ -1,19 +1,15 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import MiniDrawer from "./components/Navbar/Navbar";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Accordion from "./pages/Home";
 import Flowers from "./pages/Flowers";
-import Villagers from "./pages/Villagers";
 import Items from "./pages/Items";
-import StickyFooter from "./components/Footer/Footer"
+import Villagers from "./pages/Villagers";
+import Favorites from "./pages/Favorites";
+import StickyFooter from "./components/Footer/Footer";
 import { userContext } from "./userContext";
 
 function App() {
@@ -44,12 +40,10 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <ProtectedRoute path="/home" component={Accordion} />
-            <Route
-              path="/flowers/:flowerName?"
-              render={(props) => <Flowers {...props} />}
-            />
-            <ProtectedRoute path="/Villagers" component={Villagers} />
+            <Route path="/flowers/:flowerName?" render={(props) => <Flowers {...props} />} />
             <ProtectedRoute path="/items" component={Items} />
+            <ProtectedRoute path="/Villagers" component={Villagers} />
+            <ProtectedRoute path="/favorites" component={Favorites} />
           </Switch>
         </userContext.Provider>
 
