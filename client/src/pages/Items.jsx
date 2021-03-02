@@ -84,7 +84,13 @@ function Items() {
 
   function handleDeleteClick(e, data) {
     e.preventDefault();
-    console.log(data);
+    const newArr = [...itemState]; // make a copy of the state
+    const idx = newArr.indexOf(data);
+    if (idx !== -1) {
+      // if data is in newArr
+      newArr.splice(idx, 1); // splice it
+      setItemState([...newArr]); // update state
+    }
   }
 
   const itemCards = itemState.map((data, index) => {
