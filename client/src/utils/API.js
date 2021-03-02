@@ -62,10 +62,12 @@ const API = {
   // update user
   addUserItem: function (id, item) {
     let url = "api/item/" + id;
-    return axios({
-      method: "put",
-      url: url,
-      data: item,
+    return axios.post(url, {
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      params: item,
     });
   },
   // login user

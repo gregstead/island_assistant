@@ -46,10 +46,9 @@ router.put("/user/:id", (req, res) => {
 });
 
 //add an item
-router.put("/item/:id", (req, res) => {
-  // Update a specific user
+router.post("/item/:id", (req, res) => {
   const filter = { _id: ObjectId(req.params.id) };
-  const update = { $push: { items: req.body.data } };
+  const update = { $push: { items: req.body.params } };
   const opts = { new: true };
   db.User.findOneAndUpdate(filter, update, opts).then((data) => {
     res.json(data);
