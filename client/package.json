@@ -4,6 +4,7 @@
   "description": "island-guru",
   "private": true,
   "proxy": "http://localhost:3001",
+  "secure": false,
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",

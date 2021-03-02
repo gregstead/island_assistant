@@ -19,19 +19,18 @@ export default function MediaCard(props) {
     setSearch(value);
   };
 
+  const handleClick = (e) => {
+    API.getVillagerNames(search).then((results) => {
+      setVillager(results.data);
+    });
+  };
+
   useEffect(() => {
     API.getVillagerNames("Merengue").then((results) => {
       console.log(search, results.data);
       setVillager(results.data);
     });
   }, []);
-
-  const handleClick = (e) => {
-    API.getVillagerNames(search).then((results) => {
-      console.log(search, results.data);
-      setVillager(results.data);
-    });
-  };
 
   return (
     <>
