@@ -1,9 +1,24 @@
 import React, { useState } from "react";
-import { Button, Card, CardActions, CardContent, CardMedia, Container, FormControl, Grid, InputLabel, Link, MenuItem, TextField, Typography, Select } from "@material-ui/core";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Container,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  TextField,
+  Typography,
+  Select,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import BtnStyle from "../components/Button/Button";
 import DeleteIcon from '@material-ui/icons/Delete';
 import API from "../utils/API";
+import { userContext } from "../userContext";
 
 function Items() {
   const [searchState, setSearchState] = useState({
@@ -51,10 +66,11 @@ function Items() {
     });
   }
 
-  function handleFavoriteClick(e) {
+  function handleFavoriteClick(e, data) {
     e.preventDefault();
-    // get user, set user item
-    console.log(`e:`, e);
+    const id = localStorage.getItem("tokens");
+    API.addUserItem(id, data);
+    console.log("done");
   }
 
   function handleDeleteClick(e) {
@@ -73,10 +89,13 @@ function Items() {
             <br />
             <Typography style={{fontSize: "24px", textAlign: "center" }}>Bell value: {data.sell_nook}</Typography>
             <CardActions>
-              <Button size="medium" onClick={handleFavoriteClick} style={{ alignContent: "center", margin: "auto", backgroundImage: "linear-gradient(white, lightgray)", borderRadius: "7px", padding: ".75rem", fontSize: "18px", boxShadow: "0px 3px 5px 1px #888888" }}>⭐Favorite</Button>
+              <Button size="medium" onClick={(e) => {
+                  handleFavoriteClick(e, data);
+                }} style={{ alignContent: "center", margin: "auto", backgroundImage: "linear-gradient(white, lightgray)", borderRadius: "7px", padding: ".75rem", fontSize: "18px", boxShadow: "0px 3px 5px 1px #888888" }}>⭐Favorite</Button>
               <Button size="medium" onClick={handleDeleteClick} style={{ alignContent: "center", margin: "auto", backgroundImage: "linear-gradient(white, lightgray)", borderRadius: "7px", padding: ".75rem",  fontSize: "18px", boxShadow: "0px 3px 5px 1px #888888"}}>
                 <DeleteIcon  style={{ color: "red"}}/>
                 Delete
+
               </Button>
             </CardActions>
           </CardContent>

@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import MiniDrawer from "./components/Navbar/Navbar";
 import Login from "./components/Login/Login";
@@ -13,12 +18,12 @@ import { userContext } from "./userContext";
 
 function App() {
   // either a token or null - checks to see if there is a token in local storage
-  const existingTokens = JSON.parse(localStorage.getItem("tokens"));
+  const existingTokens = localStorage.getItem("tokens");
   // sets authTokens default
   const [authTokens, setAuthTokens] = useState(existingTokens);
 
   function setTokens(data) {
-    localStorage.setItem("tokens", JSON.stringify(data.id));
+    localStorage.setItem("tokens", data.id);
     setAuthTokens(data);
   }
 
@@ -33,13 +38,16 @@ function App() {
         <MiniDrawer />
 
         <userContext.Provider value={value}>
-        {/* <userContext.Provider value={{ authTokens, setAuthTokens: setTokens }}> */}
+          {/* <userContext.Provider value={{ authTokens, setAuthTokens: setTokens }}> */}
           <Switch>
             <Route exact path="/" component={Login} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <ProtectedRoute path="/home" component={Accordion} />
-            <Route path="/flowers/:flowerName?" render={(props) => <Flowers {...props} />} />
+            <Route
+              path="/flowers/:flowerName?"
+              render={(props) => <Flowers {...props} />}
+            />
             <ProtectedRoute path="/Villagers" component={Villagers} />
             <ProtectedRoute path="/items" component={Items} />
           </Switch>
