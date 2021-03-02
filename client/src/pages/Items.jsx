@@ -9,7 +9,6 @@ import {
   FormControl,
   Grid,
   InputLabel,
-  Link,
   MenuItem,
   TextField,
   Typography,
@@ -18,6 +17,7 @@ import {
 import { makeStyles } from "@material-ui/core";
 import BtnStyle from "../components/Button/Button";
 import API from "../utils/API";
+import { userContext } from "../userContext";
 
 function Items() {
   const [searchState, setSearchState] = useState({
@@ -65,10 +65,11 @@ function Items() {
     });
   }
 
-  function handleFavoriteClick(e) {
+  function handleFavoriteClick(e, data) {
     e.preventDefault();
-    // get user, set user item
-    console.log(`e:`, e);
+    const id = localStorage.getItem("tokens");
+    API.addUserItem(id, data);
+    console.log("done");
   }
 
   const itemCards = itemState.map((data, index) => {
@@ -87,7 +88,12 @@ function Items() {
             <Typography>{data.catchphrases[0]}</Typography>
             <Typography>Bell value: {data.sell_nook}</Typography>
             <CardActions>
-              <Button size="small" onClick={handleFavoriteClick}>
+              <Button
+                size="small"
+                onClick={(e) => {
+                  handleFavoriteClick(e, data);
+                }}
+              >
                 Favorite
               </Button>
             </CardActions>
