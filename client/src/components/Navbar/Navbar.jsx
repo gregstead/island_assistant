@@ -148,9 +148,9 @@ export default function MiniDrawer() {
 
       <List>
         {['Login', 'Register', 'Home', 'Items', 'Flowers', 'Villagers', 'Logout'].map((text, index) => (
-          <Link to={`/${text.toLowerCase()}`} style={{ color: '#017c74', textDecoration: 'none', fontWeight: "bold" }}>
+          <Link to={`/${text.toLowerCase()}`} key={index} style={{ color: '#017c74', textDecoration: 'none', fontWeight: "bold" }}>
 
-            <ListItem button key={text} style={{ paddingLeft: "18px", paddingRight: "23px" }}>
+            <ListItem button style={{ paddingLeft: "18px", paddingRight: "23px" }}>
 
             <ListItemIcon>
               <Avatar style={{background: "#EDEDED", boxShadow: "1px 3px 1px #9E9E9E"}}>

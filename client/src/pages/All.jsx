@@ -31,8 +31,8 @@ export default function BasicTable(props) {
     <TableContainer id="card-background" component={Paper}>
       <Table className={classes.table}>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow>
+          {rows.map((row, i) => (
+            <TableRow  key={i}>
               <TableCell id="sign" align="right">{row.f1}</TableCell>
               <TableCell id="sign" align="right">{row.plus}</TableCell>
               <TableCell id="sign" align="right">{row.f2}</TableCell>
