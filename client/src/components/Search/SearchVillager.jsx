@@ -1,5 +1,7 @@
 import React from "react";
-import { Box, Button, Container, makeStyles, TextField } from "@material-ui/core";
+import { Box, Container, makeStyles, TextField } from "@material-ui/core";
+import BtnStyle from "../Button/Button";
+import "../../pages/pages.css"
 
 const useStyles = makeStyles((theme) => ({
   root: { display: "flex", flexWrap: "wrap" },
@@ -10,28 +12,26 @@ export default function SearchVillager(props) {
   const classes = useStyles();
 
   return (
-    //  <div className={classes.root}>
-      <Container maxWidth="sm" style={{ alignItems: "center" }}>
-        <Box style={{ fontFamily: "FinkHeavy", fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "90px", textAlign: "center" }}>Villager</Box>
-        
-        <TextField style={{ alignItems: "center" }}
-          onChange={props.handleInputChange} 
-          value={props.search} 
-          placeholder="Search for Villager Here" 
-          helperText="" 
-          InputLabelProps={{ shrink: true }} 
-          variant="outlined" 
-          style={{ justifyContent: "center" }}
-        />
+    <Container id="villager-search" maxWidth="sm">
+      <Box id="page-header">Villager</Box>
+      
+      <TextField
+        helperText=""
+        InputLabelProps={{ shrink: true }} 
+        onChange={props.handleInputChange}
+        placeholder="Search for Villager Here" 
+        value={props.search} 
+        variant="outlined" 
+        // id="villager-input"
+        style={{ backgroundColor: "mintcream", justifyContent: "center", margin: "auto" }}
+      />
 
-        <Button 
-          onClick={props.handleClick} 
-          variant="contained" 
-          color="Primary" 
-          style={{ height: "55px" }}>Enter
-        </Button>
+      <BtnStyle 
+        onClick={props.handleClick} 
+        variant="contained" 
+      >
+      </BtnStyle>
 
-      </Container>
-    //  </div>
+    </Container>
   );
 }

@@ -5,6 +5,6 @@ const userContext = createContext({ user: {} }); // Create a context object
 export { userContext };
 
 export function useAuth() {
-  console.log(`useAuth`);
+  console.log("userContext :>> ", userContext);
   return useContext(userContext);
 }

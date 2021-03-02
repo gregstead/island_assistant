@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Button, Card, CardActionArea, CardContent, CardMedia, makeStyles, Typography } from "@material-ui/core";
+import React, { useState, useEffect } from "react";
+import { Card, CardActionArea, CardContent, CardMedia, makeStyles, Typography } from "@material-ui/core";
 import SearchVillager from "../components/Search/SearchVillager";
 import API from "../utils/API";
 
@@ -19,9 +19,15 @@ export default function MediaCard(props) {
     setSearch(value);
   };
 
+  useEffect(() => {
+    API.getVillagerNames("Merengue").then((results) => {
+      console.log(search, results.data);
+      setVillager(results.data);
+    });
+  }, []);
+
   const handleClick = (e) => {
     API.getVillagerNames(search).then((results) => {
-    // API.getOne("villagers").then((results) => {
       console.log(search, results.data);
       setVillager(results.data);
     });
@@ -32,43 +38,45 @@ export default function MediaCard(props) {
       <SearchVillager 
         search={search} 
         handleClick={handleClick} 
-        handleInputChange={handleInputChange} />
+        handleInputChange={handleInputChange}
+      />
 
-        {villager.length > 0 ? villager.map((villager) => {
+      {villager.length > 0 ? villager.map((villager, i) => {
 
-          return (
-            <Card className={classes.root} style={{ backgroundColor: "#fff9e5", border: "solid #786951", borderRadius: "20px", justifyContent: "center", margin: "auto" }}>
-              
-              <CardActionArea>
-                <Typography 
-                  gutterBottom variant="h4" 
-                  component="h2" 
-                  style={{ textAlign: "center", marginTop: "25px", marginBottom: "25px" }}>{villager.name}
-                </Typography>
+        return (
+          <Card id="card-background" key={i} className={classes.root} >
+            
+            <CardActionArea>
+              <Typography 
+                id="villager-card"
+                component="h2" 
+                gutterBottom variant="h4">
+                  {villager.name}
+              </Typography>
 
-                <CardMedia
-                  className={classes.media}
-                  image= {villager.image_url}
-                  title="Contemplative Reptile"
-                  style={{ alignContent: "center", border: "solid #786951", borderRadius: "25px", margin: "auto", width: "29%" }}
-                />
+              <CardMedia
+                id="villager-img"
+                className={ classes.media}
+                image= {villager.image_url}
+                title="Contemplative Reptile"
+              />
 
-                <CardContent style={{ textAlign: "center" }}>
-                  <Typography component="p">{villager.species}</Typography>
-                  <Typography component="p">{villager.birthday_month} {villager.birthday_day}</Typography>
-                  <Typography component="p">{villager.personality}</Typography>
-                  <Typography component="p">{villager.sign}</Typography>
-                  {/* <Typography color="textSecondary" component="p">{villager.nh_details.fav_styles}</Typography> */}
-                  {/* <Typography color="textSecondary" component="p">{villager.nh_details.fav_colors}</Typography> */}
-                  {/* <Typography color="textSecondary" component="p">{villager.nh_details.hobby}</Typography> */}
-                </CardContent>
+              <CardContent>
+                <Typography id="villager-text" component="p">{villager.species}</Typography>
+                <Typography id="villager-text" component="p">{villager.birthday_month} {villager.birthday_day}</Typography>
+                <Typography id="villager-text" component="p">{villager.personality}</Typography>
+                <Typography id="villager-text" component="p">{villager.sign}</Typography>
+                {/* <Typography id="villager-text" component="p">{villager.nh_details.fav_styles}</Typography> */}
+                {/* <Typography id="villager-text" component="p">{villager.nh_details.fav_colors}</Typography> */}
+                {/* <Typography id="villager-text" component="p">{villager.nh_details.hobby}</Typography> */}
+              </CardContent>
 
-              </CardActionArea>
+            </CardActionArea>
 
-            </Card>
-          );
-        })
-        : ""}
+          </Card>
+        );
+      })
+      : ""}
     </>
   );
 }

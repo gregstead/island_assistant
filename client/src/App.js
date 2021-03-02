@@ -13,24 +13,23 @@ import Accordion from "./pages/Home";
 import Flowers from "./pages/Flowers";
 import Villagers from "./pages/Villagers";
 import Items from "./pages/Items";
+import StickyFooter from "./components/Footer/Footer"
 import { userContext } from "./userContext";
 
 function App() {
-  const existingTokens = JSON.parse(localStorage.getItem("tokens"));
+  // either a token or null - checks to see if there is a token in local storage
+  const existingTokens = localStorage.getItem("tokens");
+  // sets authTokens default
   const [authTokens, setAuthTokens] = useState(existingTokens);
-  const [userState, setUserState] = useState({
-    user: {},
-  });
+
   function setTokens(data) {
-    localStorage.setItem("tokens", JSON.stringify(data.id));
+    localStorage.setItem("tokens", data.id);
     setAuthTokens(data);
   }
-  function logout() {
-    setUserState({ user: {} });
-  }
+
   const value = {
-    user: userState.user,
-    logout: logout,
+    authTokens,
+    setAuthTokens: setTokens,
   };
 
   return (
@@ -38,15 +37,15 @@ function App() {
       <div>
         <MiniDrawer />
 
-        <userContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
+        <userContext.Provider value={value}>
+          {/* <userContext.Provider value={{ authTokens, setAuthTokens: setTokens }}> */}
           <Switch>
             <Route exact path="/" component={Login} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <ProtectedRoute path="/home" component={Accordion} />
-            <Redirect from="/flowers" to="/flowers/about" />
             <Route
-              path="/flowers/:page?"
+              path="/flowers/:flowerName?"
               render={(props) => <Flowers {...props} />}
             />
             <ProtectedRoute path="/Villagers" component={Villagers} />
@@ -54,7 +53,7 @@ function App() {
           </Switch>
         </userContext.Provider>
 
-        {/* <Footer /> */}
+        <StickyFooter />
       </div>
     </Router>
   );

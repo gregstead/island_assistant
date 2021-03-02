@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Container,
-  FormControl,
-  makeStyles,
-  TextField,
-} from "@material-ui/core";
+import { useHistory } from "react-router";
+import { Box, Container, FormControl, makeStyles, TextField } from "@material-ui/core";
+import { useAuth } from "../../userContext";
 import Animation from "../Animation/Animation";
 import BtnStyle from "../Button/Button";
 import API from "../../utils/API";
-import { useAuth } from "../../userContext";
+import "../../pages/pages.css"
 
 const useStyles = makeStyles((theme) => ({
   root: { display: "flex", flexWrap: "wrap" },
@@ -21,36 +17,46 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function LoginTextFields() {
+  const { setAuthTokens } = useAuth();
+  const history = useHistory();
   const [loginState, setLoginState] = useState({
     email: "",
     password: "",
   });
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const { setAuthTokens } = useAuth();
+  const [isLoggedIn, setIsLoggedIn] = useState({
+    state: false,
+  });
+  const [isError, setIsError] = useState({
+    state: false,
+  });
 
   function handleSubmit(e) {
     e.preventDefault();
     console.log(`I work`);
     API.userLogin(loginState)
       .then((result) => {
+        console.log("result.status :>> ", typeof result.status);
         setLoginState({
           email: "",
           password: "",
         });
         if (result.status === 200) {
           setAuthTokens(result.data);
-          setIsLoggedIn(true);
+
+          setIsLoggedIn({
+            state: true,
+          });
+          history.push("/home");
+
+          console.log(isLoggedIn.state);
         } else {
           setIsError(true);
         }
       })
       .catch((err) => {
+        console.log(err);
         setIsError(true);
       });
-    if (isLoggedIn) {
-      <Redirect to="/home" />;
-    }
   }
 
   function handleChange(e) {
@@ -67,24 +73,13 @@ function LoginTextFields() {
 
   return (
     <div className="login-container" style={{ display: "block" }}>
-      <Box
-        style={{
-          fontFamily: "FinkHeavy",
-          fontSize: "50px",
-          height: "50px",
-          marginBottom: "30px",
-          marginTop: "90px",
-          textAlign: "center",
-        }}
-      >
-        Login
-      </Box>
+      <Box id="page-header">Login</Box>
 
       <Container
         maxWidth="xs"
         style={{
-          backgroundColor: "rgba(244,244,244,0.5)",
           backdropFilter: "blur(3px)",
+          backgroundColor: "rgba(244,244,244,0.5)",
           borderRadius: "1em",
           boxShadow: "0px 14px 14px 8px lightgrey",
           display: "flex",
@@ -95,25 +90,17 @@ function LoginTextFields() {
         }}
       >
         <Animation />
-        <h2
-          className="page-name"
-          style={{
-            textAlign: "center",
-            fontSize: "48px",
-            fontFamily: "Helvetica",
-            marginTop: "1rem",
-          }}
-        >
-          Login
-        </h2>
+
+        <h2 id="page-header"></h2>
+
         <FormControl>
           <TextField
             id="email"
             label="Email"
             fullWidth
-            margin="normal"
             helperText=""
             InputLabelProps={{ shrink: true }}
+            margin="normal"         
             onChange={handleChange}
             placeholder="Email"
             name="email"
@@ -127,10 +114,10 @@ function LoginTextFields() {
             id="password"
             label="Password"
             fullWidth
-            margin="normal"
-            name="password"
             helperText=""
             InputLabelProps={{ shrink: true }}
+            margin="normal"
+            name="password"
             onChange={handleChange}
             placeholder="Password"
             type="password"

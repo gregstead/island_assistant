@@ -4,8 +4,8 @@ import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-// import Card from '../components/Card/HomeCard'
 import "../index.css"
+import { Link } from 'react-router-dom'
 
 const Accordion = withStyles({
   root: {
@@ -57,128 +57,128 @@ export default function CustomizedAccordions() {
 
   return (
     <div>
-      <Box style={{ fontFamily: "FinkHeavy", fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "90px", textAlign: "center" }}>Home</Box>
+      <Box id="page-header">Home</Box>
 
-      <Container maxWidth='md' style={{ display: "flex", flexDirection: 'row'}}>
+      <Container id="container-style" maxWidth='md' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', }}>
 
-        <Box style={{ backgroundColor: "#fff9e5", border: "solid #786951", borderRadius: "20px", padding: "10px", margin: "auto", marginBottom: "25px", marginWidth: "25%"  }}>
-          <Typography component="h2" variant="h5" style={{ textAlign: "center" }}>Flowers</Typography>
-          <Typography component="p" variant="body2" style={{ textAlign: "center" }}></Typography>< br/>
-          <Button size="small" style={{ justifyContent: "center" }}>click me for flower breeding info</Button>
-        </Box>
+        <Link id="link" to='/flowers'>
+          <Box id="home-card" style={{ boxShadow: "0px 3px 5px 1px #888888"}}>
+            <Typography id="home-text" component="h2" variant="h5">Flowers</Typography>
+          </Box>
+        </Link>
         
-        <Box style={{ backgroundColor: "#fff9e5", border: "solid #786951", borderRadius: "20px", padding: "10px", margin: "auto", marginBottom: "25px", marginWidth: "25%"  }}>
-          <Typography component="h2" variant="h5" style={{ textAlign: "center" }}>Swap or Drop</Typography>
-          <Typography component="p" variant="body2" style={{ textAlign: "center" }}></Typography>< br/>
-          <Button size="small" style={{ justifyContent: "center" }}>click me for comparing items</Button>
-        </Box>
+        <Link id="link" to='/items'>
+          <Box id="home-card" style={{ boxShadow: "0px 3px 5px 1px #888888" }}>
+            <Typography id="home-text" component="h2" variant="h5">Swap or Drop</Typography>
+          </Box>
+        </Link>
 
-        <Box style={{ backgroundColor: "#fff9e5", border: "solid #786951", borderRadius: "20px", padding: "10px", margin: "auto", marginBottom: "25px", marginWidth: "25%"  }}>
-          <Typography component="h2" variant="h5" style={{ textAlign: "center" }}>Villager</Typography>
-          <Typography component="p" variant="body2" style={{ textAlign: "center" }}></Typography>< br/>
-          <Button size="small" style={{ justifyContent: "center" }}>click me to get info on a villager</Button>
-        </Box>
+        <Link id="link" to='/villagers'>
+          <Box id="home-card" style={{ boxShadow: "0px 3px 5px 1px #888888"}}>
+            <Typography id="home-text" component="h2" variant="h5">Villager</Typography>
+          </Box>
+        </Link>
 
       </Container>
 
       <Container maxWidth='md'>
 
-      <Box style={{ fontFamily: "FinkHeavy", fontSize: "50px", height: "50px", marginBottom: "30px", marginTop: "50px", textAlign: "center" }}>List of Cool Apps</Box>
+      <Box id="page-header">List of Cool Apps</Box>
 
         {/* Accordion #1 */}
-        <Accordion expanded={expanded === "panel1"} onChange={handleChange("panel1")} style={{ backgroundColor: "#febdc3", borderTopLeftRadius: "20px", borderTopRightRadius: "20px"}}>
+        <Accordion id="acc-panel1" expanded={expanded === "panel1"} onChange={handleChange("panel1")}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1d-content" id="panel1d-header">
             <Typography>Nookazon</Typography>
           </AccordionSummary>
 
           <AccordionDetails>
-            <Typography style={{ width: "100%" }}>
+            <Typography id="acc-details">
               ACNH Auction House. Trade, Review & Wishlist Items too!
-              <Button size="small" variant="contained" style={{ float: "right" }}><a target="_blank" href="https://nookazon.com/">Nookazon Auction</a></Button>
+              <Button size="small" variant="contained" id="acc-btn"><a target="_blank" href="https://nookazon.com/">Nookazon Auction</a></Button>
             </Typography>
           </AccordionDetails>
         </Accordion>
 
         {/* Accordion #2 */}
-        <Accordion expanded={expanded === "panel2"} onChange={handleChange("panel2")} style={{ backgroundColor: "#ef758a" }}>
+        <Accordion id="acc-panel2" expanded={expanded === "panel2"} onChange={handleChange("panel2")}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel3d-content" id="panel3d-header">
             <Typography>ACNH Calendar</Typography>
           </AccordionSummary>
 
           <AccordionDetails>
-            <Typography style={{ width: "100%" }}>
+            <Typography id="acc-details">
               ANCH Handy Dandy Calendar & Companion Guide!
-              <Button size="small" variant="contained" style={{ float: "right" }}><a target="_blank" href="https://www.future-press.com/acnh/">Online Calendar</a></Button>
+              <Button size="small" variant="contained" id="acc-btn"><a target="_blank" href="https://www.future-press.com/acnh/">Online Calendar</a></Button>
             </Typography>
           </AccordionDetails>
         </Accordion>
 
-        {/* Accordion #4 */}
-        <Accordion expanded={expanded === "panel3"} onChange={handleChange("panel3")} style={{ backgroundColor: "#ff7c69" }}>
+        {/* Accordion #3 */}
+        <Accordion id="acc-panel3" expanded={expanded === "panel3"} onChange={handleChange("panel3")}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2d-content" id="panel2d-header">
             <Typography>Nook Plaza</Typography>
           </AccordionSummary>
 
           <AccordionDetails>
-            <Typography style={{ width: "100%" }}>
+            <Typography id="acc-details">
               Encyclopedia of all the items in the game.
-              <Button size="small" variant="contained" style={{ float: "right" }}><a target="_blank" href="https://nookplaza.net/">Nook Plaza</a></Button>
+              <Button size="small" variant="contained" id="acc-btn"><a target="_blank" href="https://nookplaza.net/">Nook Plaza</a></Button>
             </Typography>
           </AccordionDetails>
         </Accordion>
 
         {/* Accordion #4 */}
-        <Accordion expanded={expanded === "panel4"} onChange={handleChange("panel4")} style={{ backgroundColor: "#f8eebc" }}>
+        <Accordion id="acc-panel4" expanded={expanded === "panel4"} onChange={handleChange("panel4")}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2d-content" id="panel2d-header">
             <Typography>VillagerDB News</Typography>
           </AccordionSummary>
 
           <AccordionDetails>
-            <Typography style={{ width: "100%" }}>
+            <Typography id="acc-details">
               Get the latest ACNH News
-              <Button size="small" variant="contained" style={{ float: "right" }}><a target="_blank" href="https://villagerdb.com/cms/news">News</a></Button>
+              <Button size="small" variant="contained" id="acc-btn"><a target="_blank" href="https://villagerdb.com/cms/news">News</a></Button>
             </Typography>
           </AccordionDetails>
         </Accordion>
 
         {/* Accordion #5 */}
-        <Accordion expanded={expanded === "panel5"} onChange={handleChange("panel5")} style={{ backgroundColor: "#a4d4c2" }}>
+        <Accordion id="acc-panel5" expanded={expanded === "panel5"} onChange={handleChange("panel5")}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2d-content" id="panel2d-header">
             <Typography>Nooks Guide</Typography>
           </AccordionSummary>
 
           <AccordionDetails>
-            <Typography style={{ width: "100%" }}>
+            <Typography id="acc-details">
               Another all inclusive app for ACNH!
-              <Button size="small" variant="contained" style={{ float: "right" }}><a target="_blank" href="https://nooksguide.com/">Nooks Guide</a></Button>
+              <Button size="small" variant="contained" id="acc-btn"><a target="_blank" href="https://nooksguide.com/">Nooks Guide</a></Button>
             </Typography>
           </AccordionDetails>
         </Accordion>
 
         {/* Accordion #6 */}
-        <Accordion expanded={expanded === "panel6"} onChange={handleChange("panel6")} style={{ backgroundColor: "#88c9a1" }}>
+        <Accordion id="acc-panel6" expanded={expanded === "panel6"} onChange={handleChange("panel6")}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2d-content" id="panel2d-header">
             <Typography>Completionista</Typography>
           </AccordionSummary>
 
           <AccordionDetails>
-            <Typography style={{ width: "100%" }}>
+            <Typography id="acc-details">
               Easily keep track of all your ACNH stuff in fully featured boards!
-              <Button size="small" variant="contained" style={{ float: "right" }}><a target="_blank" href="https://completionista.com/">Completionista</a></Button>
+              <Button size="small" variant="contained" id="acc-btn"><a target="_blank" href="https://completionista.com/">Completionista</a></Button>
             </Typography>
           </AccordionDetails>
         </Accordion>
 
         {/* Accordion #7 */}
-        <Accordion expanded={expanded === "panel7"} onChange={handleChange("panel7")} style={{ backgroundColor: "#68b893", borderBottomLeftRadius: "20px", borderBottomRightRadius: "20px"}}>
+        <Accordion id="acc-panel7" expanded={expanded === "panel7"} onChange={handleChange("panel7")}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2d-content" id="panel2d-header">
             <Typography>Nook Center</Typography>
           </AccordionSummary>
 
           <AccordionDetails>
-            <Typography style={{ width: "100%" }}>
+            <Typography id="acc-details">
               Happy Villager Tracking!
-              <Button size="small" variant="contained" style={{ float: "right" }}><a target="_blank" href="https://nook.center/en-us">Nook Center</a></Button>
+              <Button size="small" variant="contained" id="acc-btn"><a target="_blank" href="https://nook.center/en-us">Nook Center</a></Button>
             </Typography>
           </AccordionDetails>
         </Accordion>
