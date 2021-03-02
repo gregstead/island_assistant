@@ -5,7 +5,7 @@ import { useAuth } from "../../userContext";
 import Animation from "../Animation/Animation";
 import BtnStyle from "../Button/Button";
 import API from "../../utils/API";
-
+import "../../pages/pages.css"
 
 const useStyles = makeStyles((theme) => ({
   root: { display: "flex", flexWrap: "wrap" },
@@ -73,24 +73,13 @@ function LoginTextFields() {
 
   return (
     <div className="login-container" style={{ display: "block" }}>
-      <Box
-        style={{
-          fontFamily: "FinkHeavy",
-          fontSize: "50px",
-          height: "50px",
-          marginBottom: "30px",
-          marginTop: "90px",
-          textAlign: "center",
-        }}
-      >
-        Login
-      </Box>
+      <Box id="page-header">Login</Box>
 
       <Container
         maxWidth="xs"
         style={{
-          backgroundColor: "rgba(244,244,244,0.5)",
           backdropFilter: "blur(3px)",
+          backgroundColor: "rgba(244,244,244,0.5)",
           borderRadius: "1em",
           boxShadow: "0px 14px 14px 8px lightgrey",
           display: "flex",
@@ -101,25 +90,17 @@ function LoginTextFields() {
         }}
       >
         <Animation />
-        <h2
-          className="page-name"
-          style={{
-            textAlign: "center",
-            fontSize: "48px",
-            fontFamily: "Helvetica",
-            marginTop: "1rem",
-          }}
-        >
-          Login
-        </h2>
+
+        <h2 id="page-header"></h2>
+
         <FormControl>
           <TextField
             id="email"
             label="Email"
             fullWidth
-            margin="normal"
             helperText=""
             InputLabelProps={{ shrink: true }}
+            margin="normal"         
             onChange={handleChange}
             placeholder="Email"
             name="email"
@@ -133,10 +114,10 @@ function LoginTextFields() {
             id="password"
             label="Password"
             fullWidth
-            margin="normal"
-            name="password"
             helperText=""
             InputLabelProps={{ shrink: true }}
+            margin="normal"
+            name="password"
             onChange={handleChange}
             placeholder="Password"
             type="password"
