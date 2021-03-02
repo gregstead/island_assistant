@@ -14,6 +14,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import MenuIcon from '@material-ui/icons/Menu';
 import PersonAddRoundedIcon from '@material-ui/icons/PersonAddRounded';
 import PeopleIcon from '@material-ui/icons/People';
+import ThumbUpAltRoundedIcon from '@material-ui/icons/ThumbUpAltRounded';
 import logo from "../../images/igLogo4.png";
 
 const drawerWidth = 170;
@@ -147,7 +148,7 @@ export default function MiniDrawer() {
       <Divider />
 
       <List>
-        {['Login', 'Register', 'Home', 'Items', 'Flowers', 'Villagers', 'Logout'].map((text, index) => (
+        {['Login', 'Register', 'Home', 'Items', 'Flowers', 'Villagers', 'Favorites', 'Logout'].map((text, index) => (
           <Link to={`/${text.toLowerCase()}`} key={index} style={{ color: '#017c74', textDecoration: 'none', fontWeight: "bold" }}>
 
             <ListItem button style={{ paddingLeft: "18px", paddingRight: "23px" }}>
@@ -160,7 +161,8 @@ export default function MiniDrawer() {
                 {index === 3 && <CategoryIcon             key={"items"}     style={{color: '#ef785a'}} />}
                 {index === 4 && <FilterVintageRoundedIcon key={"flowers"}   style={{color: '#febdc3'}} />}
                 {index === 5 && <PeopleIcon               key={"villagers"} style={{color: '#f5c24c'}} />}
-                {index === 6 && <ExitToAppIcon            key={"exit"}      style={{color: '#786951', transform: "rotate(96)" }}
+                {index === 6 && <ThumbUpAltRoundedIcon    key={"favorites"} style={{color: '#017c74'}} />}
+                {index === 7 && <ExitToAppIcon            key={"exit"}      style={{color: '#786951', transform: "rotate(96)" }}
                 onClick={async() => {await axios.get('/logout')}} />}
               </Avatar>
 
