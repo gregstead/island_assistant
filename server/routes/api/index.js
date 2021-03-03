@@ -1,9 +1,11 @@
 const router = require("express").Router();
 const authRoutes = require("./auth");
+const nookRoutes = require("./nook");
 const db = require("../../models");
 const ObjectId = require("mongojs").ObjectId;
 
 router.use("/auth", authRoutes);
+router.use("/nook", nookRoutes);
 
 router.get("/user", (req, res) => {
   // Get a list of all users
