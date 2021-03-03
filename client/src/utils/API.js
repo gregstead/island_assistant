@@ -1,5 +1,6 @@
 import axios from "axios";
-const NOOKIPEDIA_API_KEY = "?api_key=1811612a-677c-4647-892b-52759ab3167a";
+const myKey = process.env.NOOK_API_KEY;
+const NOOKIPEDIA_API_KEY = "?api_key=" + myKey;
 
 const API = {
   getAll: function (param) {
@@ -19,10 +20,6 @@ const API = {
         console.log(`Invalid parameter`);
     }
   },
-
-  // getVillagerNames: function () {
-  // const let url = `https://api.nookipedia.com/villagers?${NOOKIPEDIA_API_KEY}&excludedetails=true`;
-  // return axios.get(url);
   getVillagerNames: function (name) {
     let url;
     url = `https://api.nookipedia.com/villagers${NOOKIPEDIA_API_KEY}&name=${name}`;
