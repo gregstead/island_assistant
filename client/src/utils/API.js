@@ -1,50 +1,15 @@
 import axios from "axios";
-const NOOKIPEDIA_API_KEY = "?api_key=1811612a-677c-4647-892b-52759ab3167a";
 
 const API = {
-  getAll: function (param) {
-    let url;
-    switch (param) {
-      case "villagers": // New Horizons characters
-        url = `https://api.nookipedia.com/${param}${NOOKIPEDIA_API_KEY}$game=NH`;
-        return axios.get(url);
-      case "fish": // Fish
-      case "bugs": // Bugs
-      case "sea": // Sea creatures
-      case "art": // Art Works
-      case "recipes": // Recipes
-        url = `https://api.nookipedia.com/nh/${param}${NOOKIPEDIA_API_KEY}`;
-        return axios.get(url);
-      default:
-        console.log(`Invalid parameter`);
-    }
+  getAll(category) {
+    return axios.get(`/api/nook/category/${category}`);
+  },
+  getVillagerNames(name) {
+    return axios.get(`/api/nook/villager/${name}`);
   },
 
-  // getVillagerNames: function () {
-  // const let url = `https://api.nookipedia.com/villagers?${NOOKIPEDIA_API_KEY}&excludedetails=true`;
-  // return axios.get(url);
-  getVillagerNames: function (name) {
-    let url;
-    url = `https://api.nookipedia.com/villagers${NOOKIPEDIA_API_KEY}&name=${name}`;
-    return axios.get(url);
-  },
-
-  getOne: function (param, name) {
-    let url;
-    switch (param) {
-      case "villagers": // New Horizons characters
-        url = `https://api.nookipedia.com/${param}${NOOKIPEDIA_API_KEY}`;
-        return axios.get(url);
-      case "fish": // Fish
-      case "bugs": // Bugs
-      case "sea": // Sea creatures
-      case "art": // Art Works
-      case "recipes": // Recipes
-        url = `https://api.nookipedia.com/nh/${param}/${name}${NOOKIPEDIA_API_KEY}`;
-        return axios.get(url);
-      default:
-        console.log(`Invalid parameter`);
-    }
+  getOne(category, name) {
+    return axios.get(`/api/nook/category/${category}/${name}`);
   },
 
   // User methods

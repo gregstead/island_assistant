@@ -1,3 +1,4 @@
+require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const mongoose = require("mongoose");
@@ -17,7 +18,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(
-  session({ secret: "candycorn", resave: true, saveUninitialized: true })
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUninitialized: true,
+  })
 );
 app.use(passport.initialize());
 app.use(passport.session());
