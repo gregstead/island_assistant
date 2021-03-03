@@ -1,22 +1,8 @@
 import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-//import Link from '@material-ui/core/Link';
-
-// function Copyright() {
-//   return (
-//     <Typography variant="body2" color="textSecondary">
-//       {'Copyright © '}
-//       <Link color="inherit" href="https://material-ui.com/">
-//         Your Website
-//       </Link>{' '}
-//       {new Date().getFullYear()}
-//       {'.'}
-//     </Typography>
-//   );
-// }
+import "../../pages/pages.css"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: '0px',
     left: '25px',
     right: '0px',
-    top: '50px',
+    top: '30px',
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100px',
@@ -36,8 +22,6 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     padding: theme.spacing(3, 2),
     marginTop: 'auto',
-    // backgroundColor:
-    //   theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
   },
 }));
 
@@ -46,10 +30,9 @@ export default function StickyFooter() {
 
   return (
     <div className={classes.root}>
-      {/* <CssBaseline /> */}
-      <footer className={classes.footer} style={{ backgroundImage: "linear-gradient(30DEG, #017c74, #7cc9c3, #ef785a, #febdc3, #f5c24c, #fcea64)", height: "55px" }}>
+      <footer id="bg-gradient" className={classes.footer}>
         <Container maxWidth="md">
-          <Typography variant="body1" style={{textAlign: "center", fontSize: "14px", fontFamily: "Quicksand"}}>&copy; 2021 | Made with ❤️️ by | Michelle McConville | Greg Stead | Kendra Hallam</Typography>
+          <Typography id="footer" variant="body1">&copy; 2021 | Made with ❤️️ by | <a href="https://github.com/MichelleMcConville/MichelleMcConville.github.io" target="_blank">Michelle McConville</a> | <a href="https://gregstead.github.io/" target="_blank">Greg Stead</a> | <a href="https://kjhallam.github.io/" target="_blank">Kendra Hallam</a></Typography>
         </Container>
       </footer>
     </div>
