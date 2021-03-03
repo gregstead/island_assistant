@@ -32,7 +32,7 @@ export default function StickyFooter() {
     <div className={classes.root}>
       <footer id="bg-gradient" className={classes.footer}>
         <Container maxWidth="md">
-          <Typography id="footer" variant="body1">&copy; 2021 | Made with ❤️️ by | <a href="https://github.com/MichelleMcConville/MichelleMcConville.github.io" target="_blank">Michelle McConville</a> | <a href="https://gregstead.github.io/" target="_blank">Greg Stead</a> | <a href="https://kjhallam.github.io/" target="_blank">Kendra Hallam</a></Typography>
+          <Typography id="footer" variant="body1">&copy; 2021 | Made with ❤️️ by | <a href="https://michellemcconville.github.io/" target="_blank">Michelle McConville</a> | <a href="https://gregstead.github.io/" target="_blank">Greg Stead</a> | <a href="https://kjhallam.github.io/" target="_blank">Kendra Hallam</a></Typography>
         </Container>
       </footer>
     </div>
