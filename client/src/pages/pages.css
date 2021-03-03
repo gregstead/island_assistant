@@ -52,15 +52,34 @@ h5{
   background-color: rgba(244,244,244,0.7);
   border: solid #786951;
   border-radius: 20px;
+  box-shadow: 0px 3px 10px 1px #888888;
   backdrop-filter: blur 3px;
-  /* box-shadow: 0px 3px 8px 1px lightgray; */
   justify-content: center;
+  padding: 2px;
   margin: auto;
+}
+
+#card-text1 {
+  font-family: FinkHeavy;
+  font-size: 40px;
+  text-align: center;
+}
+
+#card-text2 {
+  font-size: 24px;
+  text-align: center;
 }
 
 #container-style {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+}
+
+#fav-img {
+  align-content: center;
+  margin: auto;
+  width: 75%;
 }
 
 #flower-size {
@@ -87,11 +106,12 @@ h5{
   background-color: rgba(244,244,244,0.7);
   border: solid #786951;
   border-radius: 15px;
+  box-shadow: 0px 3px 5px 1px #888888;
   padding: 10px;
   margin: auto;
   min-width: 25%;
-  height: 130px;
-  width: 250px; 
+  height: 100px;
+  width: 200px; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,6 +134,27 @@ h5{
   background-color: mintcream;
   text-align: center;
   width: 25vw;
+}
+
+#item-img {
+  align-content: center;
+  margin: auto;
+  width: 75%;
+}
+
+#item-label {
+  font-size: 20px;
+  text-align: center;
+}
+
+#item-btn {
+  align-content: center;
+  background-image: linear-gradient(white, lightgray);
+  border-radius: 7px;
+  box-shadow: 0px 3px 5px 1px #888888;
+  font-size: 18px;
+  margin: auto;
+  padding: .75rem;
 }
 
 #link {
@@ -182,8 +223,14 @@ h5{
 #villager-text {
   color: #333;
   font-family: Quicksand;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   letter-spacing: 1px;
   text-align: center;
 }
+
+/* @media only screen and (max-width: 800px) {
+  #villager-search {
+    margin-left: 100px;
+  }
+} */

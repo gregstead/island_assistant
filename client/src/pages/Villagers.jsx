@@ -35,7 +35,7 @@ export default function MediaCard(props) {
   function favColors(villager) {
     if (villager.nh_details) {
       return (
-        <Typography id="villager-text" component="p">FavColors:
+        <Typography id="villager-text" component="p">
           {villager.nh_details.fav_colors.join(", ")}
         </Typography>
       );
@@ -45,7 +45,7 @@ export default function MediaCard(props) {
   function favStyles(villager) {
     if (villager.nh_details) {
       return (
-        <Typography id="villager-text" component="p">FavStyles:
+        <Typography id="villager-text" component="p">
           {villager.nh_details.fav_styles.join(", ")}
         </Typography>
       );
@@ -55,7 +55,7 @@ export default function MediaCard(props) {
   function hobby(villager) {
     if (villager.nh_details) {
       return (
-        <Typography id="villager-text" component="p">Hobby:
+        <Typography id="villager-text" component="p">
           {villager.nh_details.hobby}
         </Typography>
       );
@@ -76,10 +76,10 @@ export default function MediaCard(props) {
                   <CardMedia id="villager-img" className={classes.media} image={villager.image_url} title="Contemplative Reptile" />
 
                   <CardContent>
-                    <Typography id="villager-text" component="p">Species: {villager.species}</Typography>
-                    <Typography id="villager-text" component="p">Birthday: {villager.birthday_month} {villager.birthday_day}</Typography>
-                    <Typography id="villager-text" component="p">Personality: {villager.personality}</Typography>
-                    <Typography id="villager-text" component="p">Zodiac Sign: {villager.sign}</Typography>
+                    <Typography id="villager-text" component="p">{villager.species}</Typography>
+                    <Typography id="villager-text" component="p">{villager.birthday_month} {villager.birthday_day}</Typography>
+                    <Typography id="villager-text" component="p">{villager.personality}</Typography>
+                    <Typography id="villager-text" component="p">{villager.sign}</Typography>
                     {favColors(villager)}
                     {favStyles(villager)}
                     {hobby(villager)}

@@ -72,13 +72,13 @@ function Favorites() {
   const itemCards = itemState.map((data, index) => {
     return (
       <Grid item key={index} xs={12} sm={6} md={4}>
-        <Card id="card-background" className={classes.card} style={{ padding: "2px", boxShadow: "0px 3px 10px 1px #888888" }}>
-          <CardMedia className={classes.cardMedia} image={data.image_url} title={data.name} style={{ alignContent: "center", margin: "auto", width: "75%" }} />
+        <Card id="card-background" className={classes.card}>
+          <CardMedia id="fav-img" className={classes.cardMedia} image={data.image_url} title={data.name}/>
           <CardContent className={classes.cardContent}>
-            <Typography component="h2" gutterBottom variant="h5" style={{ fontFamily: "FinkHeavy", fontSize: "40px", textAlign: "center" }}>
+            <Typography id="card-text1" component="h2" gutterBottom variant="h5">
               {data.name}
             </Typography>
-            <Typography style={{ fontSize: "24px", textAlign: "center" }}>Bell value: {data.sell_nook}</Typography>
+            <Typography id="card-text2">Bell value: {data.sell_nook}</Typography>
           </CardContent>
         </Card>
       </Grid>
