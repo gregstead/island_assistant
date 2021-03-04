@@ -44,3 +44,12 @@
   background-image: linear-gradient(45DEG, #7cc9c3, #017c74, #3ae0d3, #ef785a, #febdc3, #f5c24c);
   box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
 }
+
+@media only screen and (max-width: 600px) {
+  #btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto, 0px;
+  }
+}
