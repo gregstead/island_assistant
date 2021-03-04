@@ -158,7 +158,7 @@ function Items() {
           >
             Choose a category and type in the name of an item to compare!
           </Typography>
-          <div className={classes.heroSearch}>
+          <div id="searchBox" className={classes.heroSearch}>
             <Grid container spacing={2} justify="center">
               <Grid item>
                 <FormControl
@@ -196,22 +196,18 @@ function Items() {
                 </FormControl>
               </Grid>
               <Grid item>
-                <TextField
-                  id="input-background"
-                  label="Item name"
-                  name="searchTerm"
-                  onChange={handleChange}
-                  type="search"
-                  value={searchState.searchTerm}
+                <TextField 
+                  id="input-background" 
+                  label="Item name" 
+                  name="searchTerm" 
+                  onChange={handleChange} 
+                  type="search" 
+                  value={searchState.searchTerm} 
                   variant="outlined"
                 ></TextField>
-                <BtnStyle
-                  id="btn"
-                  onClick={handleClick}
-                  variant="contained"
-                ></BtnStyle>
               </Grid>
             </Grid>
+            <BtnStyle id="btn" onClick={handleClick} variant="contained"></BtnStyle>
           </div>
         </Container>
       </div>
