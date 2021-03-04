@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
-import { Box, Container, FormControl, makeStyles, TextField } from "@material-ui/core";
+import {
+  Box,
+  Container,
+  FormControl,
+  makeStyles,
+  TextField,
+} from "@material-ui/core";
 import { useAuth } from "../../userContext";
 import Animation from "../Animation/Animation";
 import BtnStyle from "../Button/Button";
 import API from "../../utils/API";
-import "../../pages/pages.css"
+import "../../pages/pages.css";
 
 const useStyles = makeStyles((theme) => ({
   root: { display: "flex", flexWrap: "wrap" },
@@ -35,7 +41,6 @@ function LoginTextFields() {
     console.log(`I work`);
     API.userLogin(loginState)
       .then((result) => {
-        console.log("result.status :>> ", typeof result.status);
         setLoginState({
           email: "",
           password: "",
@@ -47,8 +52,6 @@ function LoginTextFields() {
             state: true,
           });
           history.push("/home");
-
-          console.log(isLoggedIn.state);
         } else {
           setIsError(true);
         }
@@ -100,7 +103,7 @@ function LoginTextFields() {
             fullWidth
             helperText=""
             InputLabelProps={{ shrink: true }}
-            margin="normal"         
+            margin="normal"
             onChange={handleChange}
             placeholder="Email"
             name="email"
