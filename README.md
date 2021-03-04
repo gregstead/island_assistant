@@ -33,8 +33,11 @@ An Animal Crossing 🦁 New Horizon React App that will display information usef
 
 ## User Story 📖‍ <a name="us"></a>
 
-```md
-AS a ACNH (Animal Crossing New Horizon) Player, I want to be able to access the Island Guru App which will allow me to find information about items (in my bag), view flowers, and display villagers. In addition I will be able to view additional resources that will direct me to other useful websites.
+```text
+AS a ACNH (Animal Crossing New Horizon) Player, 
+I want to be able to access the Island Guru App which will allow me to find information about 
+items (in my bag), view flowers, and display villagers. 
+In addition I will be able to view additional resources that will direct me to other useful websites.
 ```
 
 ## Repository ⚙️ <a name="repo"></a>
