@@ -63,3 +63,24 @@ app.listen(PORT, (err) => {
 });
 
 module.exports = app;
+
+
+// /api/users/:id/favorites POST OR PUT
+
+//GET users favorites;
+//api/users/:id/favorites
+  //return the array from the user of all their favorites
+
+
+//POST 
+
+// click the button
+  //the favoriteId and the user id
+    //then you get the user from the db
+      //then you push the id of the thing into the users favorites array 
+        //then you save the user
+
+
+//DELETE 
+// /api/users/:id/favorites/:favoriteId
+//filter the array to remove the id that matches favoriteId
