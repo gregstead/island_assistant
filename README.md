@@ -4,14 +4,15 @@
 
 ## Description
 
-A simple 🦁 Animal Crossing React App that will display information regarding the game.
+An Animal Crossing 🦁 New Horizon React App that will display information useful in the game.
 
-| ***Login Page***                  | ***Registration Page***         |
-| --------------------------------- | ------------------------------- |
-| ![Home](SAMPLE.JPG)               |   ![Input](SAMPLE.JPG)          |
-| ***Home Page***                   |  ***Search Page***              |
-| ![Search](SAMPLE.JPG)             |   ![Search](SAMPLE.JPG)         |
-|                                   |
+| ***Login Page***              | ***Registration Page***                     |
+| :---------------------------: | :-----------------------------------------: |
+| ![Login](./docs/login400.jpg) | ![Registration](./docs/registration400.jpg) |
+| ***Home Page***               | ***Flowers Page***                          |
+| ![Home](./docs/home400.jpg)   | ![Flowers](./docs/flowers400.jpg)           |
+| ***Items Page***              | ***Villager Page***                         |
+| ![Items](./docs/items400.jpg) | ![Villager](./docs/villager400.jpg)         |
 
 ## Table of Contents ✨
 
@@ -28,16 +29,12 @@ A simple 🦁 Animal Crossing React App that will display information regarding 
 ```.
   HTML - CSS - JavaScript - Material-UI
   Node - MySQL - Express - Sequelize - React - Heroku - Axios
-
 ```
 
 ## User Story 📖‍ <a name="us"></a>
 
 ```md
-AS a user I want to be able to access the Island Guru App which will allow me to select
-items (in my pockets), view flowers, and display villagers. In addition I will be
-able to view additional resources that will direct me to other materials to assist me.
-I will also be able to chat with other members of the Animal Crossing community.
+AS a ACNH (Animal Crossing New Horizon) Player, I want to be able to access the Island Guru App which will allow me to find information about items (in my bag), view flowers, and display villagers. In addition I will be able to view additional resources that will direct me to other useful websites.
 ```
 
 ## Repository ⚙️ <a name="repo"></a>
