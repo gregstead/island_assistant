@@ -38,7 +38,6 @@ function LoginTextFields() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(`I work`);
     API.userLogin(loginState)
       .then((result) => {
         setLoginState({
