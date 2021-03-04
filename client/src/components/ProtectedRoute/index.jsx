@@ -12,7 +12,7 @@ function ProtectedRoute({ component: Component, ...rest }) {
     <Route
       {...rest}
       render={(props) => {
-        return isAuthenticated.authTokens ? (
+        return isAuthenticated.authTokens.id ? (
           <Component {...props} />
         ) : (
           <Redirect to="/login" />
