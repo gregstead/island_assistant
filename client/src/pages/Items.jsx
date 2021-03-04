@@ -18,7 +18,7 @@ import { makeStyles } from "@material-ui/core";
 import BtnStyle from "../components/Button/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import API from "../utils/API";
-import { userContext } from "../userContext";
+// import { userContext } from "../userContext";
 
 function Items() {
   const [searchState, setSearchState] = useState({
@@ -63,7 +63,6 @@ function Items() {
     API.getOne(searchState.category, searchState.searchTerm).then((res) => {
       // Update item state array to render cards
       setItemState((itemState) => [...itemState, res.data]);
-      console.log(itemState);
     });
   }
 
@@ -79,7 +78,6 @@ function Items() {
     e.preventDefault();
     const id = localStorage.getItem("tokens");
     API.addUserItem(id, data);
-    console.log("done");
   }
 
   function handleDeleteClick(e, data) {
@@ -96,68 +94,42 @@ function Items() {
   const itemCards = itemState.map((data, index) => {
     return (
       <Grid item key={index} xs={12} sm={6} md={4}>
-        <Card
-          id="card-background"
-          className={classes.card}
-          style={{ padding: "2px", boxShadow: "0px 3px 10px 1px #888888" }}
-        >
+        <Card id="card-background" className={classes.card}>
           <CardMedia
+            id="item-img"
             className={classes.cardMedia}
             image={data.image_url}
             title={data.name}
-            style={{ alignContent: "center", margin: "auto", width: "75%" }}
           />
           <CardContent className={classes.cardContent}>
             <Typography
+              id="card-text1"
               component="h2"
               gutterBottom
               variant="h5"
-              style={{
-                fontFamily: "FinkHeavy",
-                fontSize: "40px",
-                textAlign: "center",
-              }}
             >
               {data.name}
             </Typography>
-            <Typography style={{ textAlign: "center", fontSize: "20px" }}>
-              {data.catchphrases[0]}
-            </Typography>
+            <Typography id="item-label">{data.catchphrases[0]}</Typography>
             <br />
-            <Typography style={{ fontSize: "24px", textAlign: "center" }}>
+            <Typography id="card-text2">
               Bell value: {data.sell_nook}
             </Typography>
             <CardActions>
               <Button
+                id="item-btn"
                 size="medium"
                 onClick={(e) => {
                   handleFavoriteClick(e, data);
-                }}
-                style={{
-                  alignContent: "center",
-                  margin: "auto",
-                  backgroundImage: "linear-gradient(white, lightgray)",
-                  borderRadius: "7px",
-                  padding: ".75rem",
-                  fontSize: "18px",
-                  boxShadow: "0px 3px 5px 1px #888888",
                 }}
               >
                 ⭐Favorite
               </Button>
               <Button
+                id="item-btn"
                 size="medium"
                 onClick={(e) => {
                   handleDeleteClick(e, data);
-                }}
-                style={{
-                  alignContent: "center",
-                  margin: "auto",
-                  backgroundImage: "linear-gradient(white, lightgray)",
-                  borderRadius: "7px",
-                  padding: ".75rem",
-                  fontSize: "18px",
-                  boxShadow: "0px 3px 5px 1px #888888",
                 }}
               >
                 <DeleteIcon style={{ color: "red" }} />
@@ -186,7 +158,7 @@ function Items() {
           >
             Choose a category and type in the name of an item to compare!
           </Typography>
-          <div className={classes.heroSearch}>
+          <div id="searchBox" className={classes.heroSearch}>
             <Grid container spacing={2} justify="center">
               <Grid item>
                 <FormControl
@@ -224,22 +196,18 @@ function Items() {
                 </FormControl>
               </Grid>
               <Grid item>
-                <TextField
-                  id="input-background"
-                  label="Item name"
-                  name="searchTerm"
-                  onChange={handleChange}
-                  type="search"
-                  value={searchState.searchTerm}
+                <TextField 
+                  id="input-background" 
+                  label="Item name" 
+                  name="searchTerm" 
+                  onChange={handleChange} 
+                  type="search" 
+                  value={searchState.searchTerm} 
                   variant="outlined"
                 ></TextField>
-                <BtnStyle
-                  id="btn"
-                  onClick={handleClick}
-                  variant="contained"
-                ></BtnStyle>
               </Grid>
             </Grid>
+            <BtnStyle id="btn" onClick={handleClick} variant="contained"></BtnStyle>
           </div>
         </Container>
       </div>

@@ -40,7 +40,7 @@
     "subcategory": "all",
     "f1Path": "../images/flowers/hyacinths-white.jpg",
     "f2Path": "../images/flowers/hyacinths-white.jpg",
-    "f3Path": "../images/flowers/hyacinths-blue.jpg"
+    "f3Path": "../images/flowers/hyacinths-blue-Z.jpg"
   },
   {
     "category": "hyacinths",
@@ -104,42 +104,42 @@
     "category": "mums",
     "subcategory": "all",
     "f1Path": "../images/flowers/mums-red.jpg",
-    "f2Path": "../images/flowers/mums-yellow.jpg",
-    "f3Path": "../images/flowers/mums-yellow.jpg"
+    "f2Path": "../images/flowers/mums-yellow-S.jpg",
+    "f3Path": "../images/flowers/mums-yellow-H.jpg"
   },
   {
     "category": "mums",
     "subcategory": "all",
     "f1Path": "../images/flowers/mums-white.jpg",
     "f2Path": "../images/flowers/mums-white.jpg",
-    "f3Path": "../images/flowers/mums-purple.jpg"
+    "f3Path": "../images/flowers/mums-purple-Z.jpg"
   },
   {
     "category": "mums",
     "subcategory": "all",
-    "f1Path": "../images/flowers/mums-white.jpg",
-    "f2Path": "../images/flowers/mums-white.jpg",
-    "f3Path": "../images/flowers/mums-purple.jpg"
+    "f1Path": "../images/flowers/mums-yellow-H.jpg",
+    "f2Path": "../images/flowers/mums-yellow-H.jpg",
+    "f3Path": "../images/flowers/mums-purple-H.jpg"
   },
   {
     "category": "mums",
     "subcategory": "all",
-    "f1Path": "../images/flowers/mums-white.jpg",
-    "f2Path": "../images/flowers/mums-white.jpg",
+    "f1Path": "../images/flowers/mums-yellow-H.jpg",
+    "f2Path": "../images/flowers/mums-yellow-H.jpg",
     "f3Path": "../images/flowers/mums-green.jpg"
   },
   {
     "category": "mums",
     "subcategory": "all",
-    "f1Path": "../images/flowers/mums-purple.jpg",
-    "f2Path": "../images/flowers/mums-purple.jpg",
-    "f3Path": "../images/flowers/mums-white.jpg"
+    "f1Path": "../images/flowers/mums-purple-H.jpg",
+    "f2Path": "../images/flowers/mums-purple-H.jpg",
+    "f3Path": "../images/flowers/mums-green.jpg"
   },
 
   {
     "category": "pansies",
     "subcategory": "all",
-    "f1Path": "../images/flowers/pansies-red.jpg",
+    "f1Path": "../images/flowers/pansies-red-S.jpg",
     "f2Path": "../images/flowers/pansies-yellow.jpg",
     "f3Path": "../images/flowers/pansies-orange.jpg"
   },
@@ -153,72 +153,72 @@
   {
     "category": "pansies",
     "subcategory": "all",
-    "f1Path": "../images/flowers/pansies-red.jpg",
+    "f1Path": "../images/flowers/pansies-red-S.jpg",
     "f2Path": "../images/flowers/pansies-blue.jpg",
-    "f3Path": "../images/flowers/pansies-red.jpg"
+    "f3Path": "../images/flowers/pansies-red-H.jpg"
   },
   {
     "category": "pansies",
     "subcategory": "all",
-    "f1Path": "../images/flowers/pansies-red.jpg",
-    "f2Path": "../images/flowers/pansies-red.jpg",
+    "f1Path": "../images/flowers/pansies-red-H.jpg",
+    "f2Path": "../images/flowers/pansies-red-H.jpg",
     "f3Path": "../images/flowers/pansies-purple.jpg"
   },
 
   {
     "category": "roses",
     "subcategory": "all",
-    "f1Path": "../images/flowers/roses-red.jpg",
-    "f2Path": "../images/flowers/roses-red.jpg",
-    "f3Path": "../images/flowers/roses-pink.jpg"
+    "f1Path": "../images/flowers/roses-red-S.jpg",
+    "f2Path": "../images/flowers/roses-red-S.jpg",
+    "f3Path": "../images/flowers/roses-pink-Z.jpg"
   },
   {
     "category": "roses",
     "subcategory": "all",
-    "f1Path": "../images/flowers/roses-red.jpg",
-    "f2Path": "../images/flowers/roses-red.jpg",
+    "f1Path": "../images/flowers/roses-red-S.jpg",
+    "f2Path": "../images/flowers/roses-red-S.jpg",
     "f3Path": "../images/flowers/roses-black.jpg"
   },
   {
     "category": "roses",
     "subcategory": "all",
-    "f1Path": "../images/flowers/roses-red.jpg",
-    "f2Path": "../images/flowers/roses-white.jpg",
-    "f3Path": "../images/flowers/roses-pink.jpg"
+    "f1Path": "../images/flowers/roses-red-S.jpg",
+    "f2Path": "../images/flowers/roses-white-S.jpg",
+    "f3Path": "../images/flowers/roses-pink-Z.jpg"
   },
   {
     "category": "roses",
     "subcategory": "all",
-    "f1Path": "../images/flowers/roses-red.jpg",
+    "f1Path": "../images/flowers/roses-red-S.jpg",
     "f2Path": "../images/flowers/roses-yellow.jpg",
     "f3Path": "../images/flowers/roses-orange.jpg"
   },
   {
     "category": "roses",
     "subcategory": "all",
-    "f1Path": "../images/flowers/roses-white.jpg",
-    "f2Path": "../images/flowers/roses-white.jpg",
+    "f1Path": "../images/flowers/roses-white-S.jpg",
+    "f2Path": "../images/flowers/roses-white-S.jpg",
     "f3Path": "../images/flowers/roses-purple.jpg"
   },
   {
     "category": "roses",
     "subcategory": "all",
     "f1Path": "../images/flowers/roses-purple.jpg",
-    "f2Path": "../images/flowers/roses-red.jpg",
-    "f3Path": "../images/flowers/roses-pink.jpg"
+    "f2Path": "../images/flowers/roses-red-S.jpg",
+    "f3Path": "../images/flowers/roses-pink-H.jpg"
   },
   {
     "category": "roses",
     "subcategory": "all",
-    "f1Path": "../images/flowers/roses-pink.jpg",
+    "f1Path": "../images/flowers/roses-pink-H.jpg",
     "f2Path": "../images/flowers/roses-yellow.jpg",
-    "f3Path": "../images/flowers/roses-red.jpg"
+    "f3Path": "../images/flowers/roses-red-H1.jpg"
   },
   {
     "category": "roses",
     "subcategory": "all",
-    "f1Path": "../images/flowers/roses-red.jpg",
-    "f2Path": "../images/flowers/roses-red.jpg",
+    "f1Path": "../images/flowers/roses-red-H1.jpg",
+    "f2Path": "../images/flowers/roses-red-H1.jpg",
     "f3Path": "../images/flowers/roses-blue.jpg"
   },
 
@@ -254,7 +254,7 @@
   {
     "category": "windflowers",
     "subcategory": "all",
-    "f1Path": "../images/flowers/windflowers-red.jpg",
+    "f1Path": "../images/flowers/windflowers-red-S.jpg",
     "f2Path": "../images/flowers/windflowers-orange.jpg",
     "f3Path": "../images/flowers/windflowers-pink.jpg"
   },
@@ -268,15 +268,15 @@
   {
     "category": "windflowers",
     "subcategory": "all",
-    "f1Path": "../images/flowers/windflowers-red.jpg",
+    "f1Path": "../images/flowers/windflowers-red-S.jpg",
     "f2Path": "../images/flowers/windflowers-blue.jpg",
-    "f3Path": "../images/flowers/windflowers-red.jpg"
+    "f3Path": "../images/flowers/windflowers-red-H.jpg"
   },
   {
     "category": "windflowers",
     "subcategory": "all",
-    "f1Path": "../images/flowers/windflowers-red.jpg",
-    "f2Path": "../images/flowers/windflowers-red.jpg",
+    "f1Path": "../images/flowers/windflowers-red-H.jpg",
+    "f2Path": "../images/flowers/windflowers-red-H.jpg",
     "f3Path": "../images/flowers/windflowers-purple.jpg"
   }
 ]

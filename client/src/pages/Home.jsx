@@ -49,7 +49,7 @@ const AccordionDetails = withStyles((theme) => ({
 }))(MuiAccordionDetails);
 
 export default function CustomizedAccordions() {
-  const [expanded, setExpanded] = React.useState("panel1");
+  const [expanded, setExpanded] = React.useState();
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
@@ -59,22 +59,22 @@ export default function CustomizedAccordions() {
     <div>
       <Box id="page-header">Home</Box>
 
-      <Container id="container-style" maxWidth='md' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', }}>
+      <Container id="container-style" maxWidth='sm'>
 
         <Link id="link" to='/flowers'>
-          <Box id="home-card" style={{ boxShadow: "0px 3px 5px 1px #888888"}}>
+          <Box id="home-card">
             <Typography id="home-text" component="h2" variant="h5">Flowers</Typography>
           </Box>
         </Link>
         
         <Link id="link" to='/items'>
-          <Box id="home-card" style={{ boxShadow: "0px 3px 5px 1px #888888" }}>
+          <Box id="home-card">
             <Typography id="home-text" component="h2" variant="h5">Swap or Drop</Typography>
           </Box>
         </Link>
 
         <Link id="link" to='/villagers'>
-          <Box id="home-card" style={{ boxShadow: "0px 3px 5px 1px #888888"}}>
+          <Box id="home-card">
             <Typography id="home-text" component="h2" variant="h5">Villager</Typography>
           </Box>
         </Link>
@@ -87,98 +87,105 @@ export default function CustomizedAccordions() {
 
         {/* Accordion #1 */}
         <Accordion id="acc-panel1" expanded={expanded === "panel1"} onChange={handleChange("panel1")}>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1d-content" id="panel1d-header">
+          <AccordionSummary expandIcon={<ExpandMoreIcon />} >
             <Typography>Nookazon</Typography>
           </AccordionSummary>
 
           <AccordionDetails>
             <Typography id="acc-details">
               ACNH Auction House. Trade, Review & Wishlist Items too!
-              <Button size="small" variant="contained" id="acc-btn"><a target="_blank" href="https://nookazon.com/">Nookazon Auction</a></Button>
+              <Button id="acc-btn" size="small" variant="contained">
+                <a target="_blank" href="https://nookazon.com/">Nookazon Auction</a></Button>
             </Typography>
           </AccordionDetails>
         </Accordion>
 
         {/* Accordion #2 */}
         <Accordion id="acc-panel2" expanded={expanded === "panel2"} onChange={handleChange("panel2")}>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel3d-content" id="panel3d-header">
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography>ACNH Calendar</Typography>
           </AccordionSummary>
 
           <AccordionDetails>
             <Typography id="acc-details">
               ANCH Handy Dandy Calendar & Companion Guide!
-              <Button size="small" variant="contained" id="acc-btn"><a target="_blank" href="https://www.future-press.com/acnh/">Online Calendar</a></Button>
+              <Button id="acc-btn" size="small" variant="contained">
+                <a target="_blank" href="https://www.future-press.com/acnh/">Online Calendar</a></Button>
             </Typography>
           </AccordionDetails>
         </Accordion>
 
         {/* Accordion #3 */}
         <Accordion id="acc-panel3" expanded={expanded === "panel3"} onChange={handleChange("panel3")}>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2d-content" id="panel2d-header">
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography>Nook Plaza</Typography>
           </AccordionSummary>
 
           <AccordionDetails>
             <Typography id="acc-details">
               Encyclopedia of all the items in the game.
-              <Button size="small" variant="contained" id="acc-btn"><a target="_blank" href="https://nookplaza.net/">Nook Plaza</a></Button>
+              <Button id="acc-btn" size="small" variant="contained">
+                <a target="_blank" href="https://nookplaza.net/">Nook Plaza</a></Button>
             </Typography>
           </AccordionDetails>
         </Accordion>
 
         {/* Accordion #4 */}
         <Accordion id="acc-panel4" expanded={expanded === "panel4"} onChange={handleChange("panel4")}>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2d-content" id="panel2d-header">
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography>VillagerDB News</Typography>
           </AccordionSummary>
 
           <AccordionDetails>
             <Typography id="acc-details">
               Get the latest ACNH News
-              <Button size="small" variant="contained" id="acc-btn"><a target="_blank" href="https://villagerdb.com/cms/news">News</a></Button>
+              <Button id="acc-btn" size="small" variant="contained">
+                <a target="_blank" href="https://villagerdb.com/cms/news">News</a></Button>
             </Typography>
           </AccordionDetails>
         </Accordion>
 
         {/* Accordion #5 */}
         <Accordion id="acc-panel5" expanded={expanded === "panel5"} onChange={handleChange("panel5")}>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2d-content" id="panel2d-header">
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography>Nooks Guide</Typography>
           </AccordionSummary>
 
           <AccordionDetails>
             <Typography id="acc-details">
               Another all inclusive app for ACNH!
-              <Button size="small" variant="contained" id="acc-btn"><a target="_blank" href="https://nooksguide.com/">Nooks Guide</a></Button>
+              <Button id="acc-btn" size="small" variant="contained">
+                <a target="_blank" href="https://nooksguide.com/">Nooks Guide</a></Button>
             </Typography>
           </AccordionDetails>
         </Accordion>
 
         {/* Accordion #6 */}
         <Accordion id="acc-panel6" expanded={expanded === "panel6"} onChange={handleChange("panel6")}>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2d-content" id="panel2d-header">
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography>Completionista</Typography>
           </AccordionSummary>
 
           <AccordionDetails>
             <Typography id="acc-details">
               Easily keep track of all your ACNH stuff in fully featured boards!
-              <Button size="small" variant="contained" id="acc-btn"><a target="_blank" href="https://completionista.com/">Completionista</a></Button>
+              <Button id="acc-btn" size="small" variant="contained">
+                <a target="_blank" href="https://completionista.com/">Completionista</a></Button>
             </Typography>
           </AccordionDetails>
         </Accordion>
 
         {/* Accordion #7 */}
         <Accordion id="acc-panel7" expanded={expanded === "panel7"} onChange={handleChange("panel7")}>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2d-content" id="panel2d-header">
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography>Nook Center</Typography>
           </AccordionSummary>
 
           <AccordionDetails>
             <Typography id="acc-details">
               Happy Villager Tracking!
-              <Button size="small" variant="contained" id="acc-btn"><a target="_blank" href="https://nook.center/en-us">Nook Center</a></Button>
+              <Button id="acc-btn" size="small" variant="contained">
+                <a target="_blank" href="https://nook.center/en-us">Nook Center</a></Button>
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -192,3 +199,6 @@ export default function CustomizedAccordions() {
 // https://www.tanukiforest.com/
 // https://newhorizonshq.com/
 // https://acnh-flower-guide.netlify.app/
+// https://cestislife.github.io/
+// https://cestislife.github.io/img/breeding.png
+// https://gardenscience.ac/
