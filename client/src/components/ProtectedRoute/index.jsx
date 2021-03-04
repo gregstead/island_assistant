@@ -6,12 +6,13 @@ function ProtectedRoute({ component: Component, ...rest }) {
   // usercontext at the global level -- inject usercontext and see if they're signed in
   // determine how they will be authenticated
   const isAuthenticated = useAuth();
+  console.log("isAuthenticated :>> ", isAuthenticated);
 
   return (
     <Route
       {...rest}
       render={(props) => {
-        return isAuthenticated ? (
+        return isAuthenticated.authTokens ? (
           <Component {...props} />
         ) : (
           <Redirect to="/login" />
