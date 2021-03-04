@@ -1,5 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Button, Card, CardActions, CardContent, CardMedia, Container, FormControl, Grid, InputLabel, MenuItem, TextField, Typography, Select } from "@material-ui/core";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Container,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  TextField,
+  Typography,
+  Select,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import BtnStyle from "../components/Button/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -49,7 +63,6 @@ function Items() {
     API.getOne(searchState.category, searchState.searchTerm).then((res) => {
       // Update item state array to render cards
       setItemState((itemState) => [...itemState, res.data]);
-      console.log(itemState);
     });
   }
 
@@ -65,7 +78,6 @@ function Items() {
     e.preventDefault();
     const id = localStorage.getItem("tokens");
     API.addUserItem(id, data);
-    console.log("done");
   }
 
   function handleDeleteClick(e, data) {
@@ -83,14 +95,26 @@ function Items() {
     return (
       <Grid item key={index} xs={12} sm={6} md={4}>
         <Card id="card-background" className={classes.card}>
-          <CardMedia id="item-img" className={classes.cardMedia} image={data.image_url} title={data.name} />
+          <CardMedia
+            id="item-img"
+            className={classes.cardMedia}
+            image={data.image_url}
+            title={data.name}
+          />
           <CardContent className={classes.cardContent}>
-            <Typography id="card-text1" component="h2" gutterBottom variant="h5">
+            <Typography
+              id="card-text1"
+              component="h2"
+              gutterBottom
+              variant="h5"
+            >
               {data.name}
             </Typography>
             <Typography id="item-label">{data.catchphrases[0]}</Typography>
             <br />
-            <Typography id="card-text2">Bell value: {data.sell_nook}</Typography>
+            <Typography id="card-text2">
+              Bell value: {data.sell_nook}
+            </Typography>
             <CardActions>
               <Button
                 id="item-btn"
@@ -126,15 +150,33 @@ function Items() {
             {" "}
             Swap or Drop
           </Typography>
-          <Typography id="page-text" color="textSecondary" paragraph variant="h5">
+          <Typography
+            id="page-text"
+            color="textSecondary"
+            paragraph
+            variant="h5"
+          >
             Choose a category and type in the name of an item to compare!
           </Typography>
           <div className={classes.heroSearch}>
             <Grid container spacing={2} justify="center">
               <Grid item>
-                <FormControl id="input-background" className={classes.formControl} variant="outlined">
-                  <InputLabel id="demo-simple-select-outlined-label">Category</InputLabel>
-                  <Select id="demo-simple-select-outlined" label="Category" labelId="demo-simple-select-outlined-label" name="category" onChange={handleChange} value={searchState.category}>
+                <FormControl
+                  id="input-background"
+                  className={classes.formControl}
+                  variant="outlined"
+                >
+                  <InputLabel id="demo-simple-select-outlined-label">
+                    Category
+                  </InputLabel>
+                  <Select
+                    id="demo-simple-select-outlined"
+                    label="Category"
+                    labelId="demo-simple-select-outlined-label"
+                    name="category"
+                    onChange={handleChange}
+                    value={searchState.category}
+                  >
                     <MenuItem name="category" value="fish">
                       Fish
                     </MenuItem>
@@ -154,8 +196,20 @@ function Items() {
                 </FormControl>
               </Grid>
               <Grid item>
-                <TextField id="input-background" label="Item name" name="searchTerm" onChange={handleChange} type="search" value={searchState.searchTerm} variant="outlined"></TextField>
-                <BtnStyle id="btn" onClick={handleClick} variant="contained"></BtnStyle>
+                <TextField
+                  id="input-background"
+                  label="Item name"
+                  name="searchTerm"
+                  onChange={handleChange}
+                  type="search"
+                  value={searchState.searchTerm}
+                  variant="outlined"
+                ></TextField>
+                <BtnStyle
+                  id="btn"
+                  onClick={handleClick}
+                  variant="contained"
+                ></BtnStyle>
               </Grid>
             </Grid>
           </div>

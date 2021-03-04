@@ -1,7 +1,7 @@
-const nookService = require("../services/nook");
+const nookService = require('../services/nook');
 
 module.exports = {
-  async getAllByCategory(req, res) {
+  async getAllByCategory (req, res) {
     try {
       const { data } = await nookService.getAllByCategory(req.params.category);
       res.json(data);
@@ -10,7 +10,7 @@ module.exports = {
       res.status(500).end();
     }
   },
-  async getVillagerByName(req, res) {
+  async getVillagerByName (req, res) {
     try {
       const { data } = await nookService.getVillagerByName(req.params.name);
       res.json(data);
@@ -19,7 +19,7 @@ module.exports = {
       res.status(500).end();
     }
   },
-  async getOneByCategory(req, res) {
+  async getOneByCategory (req, res) {
     try {
       const { data } = await nookService.getOneByCategory(
         req.params.category,
@@ -30,5 +30,5 @@ module.exports = {
       console.error(err);
       res.status(500).end();
     }
-  },
+  }
 };
