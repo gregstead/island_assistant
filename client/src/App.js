@@ -38,8 +38,6 @@ function App() {
       <div>
         <userContext.Provider value={value}>
           <MiniDrawer />
-
-          {/* <userContext.Provider value={{ authTokens, setAuthTokens: setTokens }}> */}
           <Switch>
             <Route exact path="/" component={Login} />
             <Route path="/login" component={Login} />
